@@ -1,4 +1,5 @@
 <template>
+    <LayoutBasic>
         <div class="grid h-full max-w-6xl text-left m-auto p-8">
             <div class="flex flex-col gap-6">
                 <h1 class="text-4xl font-bold">Impressum</h1>
@@ -13,6 +14,9 @@
                 <p>E-Mail: voxelcorelab@gmail.com</p>
             </div>
         </div>
+    </LayoutBasic>
 </template>
 <script lang="ts" setup>
+
+import LayoutBasic from '../layouts/LayoutBasic.vue'
 </script>
