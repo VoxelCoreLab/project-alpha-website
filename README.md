@@ -1,5 +1,61 @@
-# Vue 3 + TypeScript + Vite
+# Webseite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Name
+Marketing Website
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Description
+A web app designed to promote a game.
+
+## Local setup
+
+#### 1. Install the latest Node LTS v22.x and NPM on your machine.
+
+https://nodejs.org/
+
+#### 2. Install the project dependencies.
+
+Run this command in the root folder of the repository:
+
+`npm ci`
+
+#### 3. Start development server
+
+Run this command in the root folder of the repository:
+
+`npm run dev`
+
+## Build project to make it ready for deployment
+
+#### 1. Install dependencies
+
+Run this command in the root folder of the repository:
+
+`npm ci`
+
+#### 2. Build application
+
+Run this command in the root folder of the repository:
+
+`npm run build`
+
+## Run Lint
+
+Run this command in the root folder of the repository:
+
+`npm run lint`
+
+## Run Unit Tests
+
+Run this command in the root folder of the repository:
+
+`npm run test`
+
+
+## Contributing
+This project is a solo project.
+
+## Authors and acknowledgment
+- Jonas Voland
+
+## License
+MIT
