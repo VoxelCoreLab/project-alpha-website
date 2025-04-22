@@ -15,7 +15,7 @@
                         <li v-for="link in links" :key="link.name"><a :href="link.path">{{ link.name }}</a></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl" href="/">daisyUI</a>
+                <a class="btn btn-ghost text-xl " href="/"><img class="h-8 w-8" alt="" src="../assets/logo.png"></a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
