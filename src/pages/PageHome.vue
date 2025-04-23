@@ -36,7 +36,9 @@
       </div>
     </div>
     <div class="bg-base-100">
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto relative">
+        <div class="absolute top-0 bottom-0 left-0 w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10"></div>
+        <div class="absolute top-0 bottom-0 right-0 w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10"></div>
         <Carousel :itemsToShow="2" :wrapAround="true">
           <Slide v-for="(slide, index) in characterSlides" :key="index">
             <div class="relative w-full h-full">
