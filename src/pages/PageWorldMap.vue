@@ -4,15 +4,17 @@
             <div class="relative max-w-6xl mx-auto">
                 <img alt="" src="../assets/world-map.jpg" class="w-full" />
 
-                <div v-for="point in points" :key="point.id" class="absolute"
+                <div v-for="(point, index) in points" :key="point.id" class="absolute"
                     :style="{ left: point.x + '%', top: point.y + '%' }">
                     <div class="absolute transform -translate-x-1/2 -translate-y-1/2">
                         <div class="dropdown dropdown-center group">
                             <div tabindex="0" role="button"
-                                class="bg-white/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer group-focus-within:border-2 group-focus-within:border-neutral">
-                                <div class="w-5 h-5 bg-white/70 rounded-full"></div>
+                                :style="{ animationDelay: (index * 0.2) + 's' }"
+                                class="group/circle bg-white/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-white/65 group-focus-within:bg-white/65 group-focus-within:border-2 group-focus-within:border-neutral pulstrigger">
+                                <div class="w-5 h-5 bg-white/70 rounded-full group-focus-within:bg-neutral/50 group-hover/circle:bg-neutral/50"></div>
+                                <div class="absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/70 group-hover/circle:bg-base-100/95 group-focus-within:bg-base-100/95 px-2 py-1 mt-15 rounded-md text-sm">{{ point.name}}</div>
                             </div>
-                            <div tabindex="0" role="button" class="absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/70 group-focus-within:bg-base-100/90 px-1 mt-1 rounded-xs">{{ point.name}}</div>
+                            
                             <div tabindex="0" class="dropdown-content card card-sm bg-base-300 z-1 w-64 shadow-lg mt-8">
                                 <div class="card-body">
                                     <p class="font-bold">{{ point.name }}</p>
@@ -44,3 +46,21 @@ const points = [
     { id: 3, x: 38, y: 86, name: 'Another point' }
 ]
 </script>
+
+<style>
+.pulstrigger {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    30% {
+        box-shadow: 0 0 5px 25px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+</style>
