@@ -1,12 +1,13 @@
 <template>
   <LayoutBasic>
     <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8">Game Title</h1>
-    <div>
-      <img alt="" src="../assets/world-map.jpg" class="w-6xl mx-auto shadow-2xl" />
-      <div class="max-w-6xl mx-auto py-4">
-        <a href="/world-map" class="btn btn-soft">Zur Weltkarte</a>
-      </div>
+    <div class="world-map relative">
+      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full max-h-[calc(100vh/2)] object-cover mx-auto" />
     </div>
+
+    <div class="max-w-6xl mx-auto py-4">
+        <a href="/world-map" class="btn btn-neutral">Zur Weltkarte</a>
+      </div>
     <div class="bg-base-300 py-32 mt-16">
       <div class="max-w-6xl mx-auto py-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
@@ -33,3 +34,14 @@
 <script setup lang="ts">
 import LayoutBasic from '../layouts/LayoutBasic.vue'
 </script>
+<style>
+.world-map::after {
+  content: '';
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  background: linear-gradient(180deg, var(--color-base-100) 0, transparent 350px), linear-gradient(180deg, transparent 18%, var(--color-base-100)), radial-gradient(farthest-corner, transparent 0, #180c17 100%);
+}
+</style>
