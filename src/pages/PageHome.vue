@@ -35,10 +35,42 @@
         <p class="w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
       </div>
     </div>
+      <div class="bg-base-100 py-32">
+        
+      <Carousel :height="600" :gap="20" :itemsToShow="2" :wrapAround="true">
+        <Slide v-for="slide in characterSlides" :key="slide.id">
+          <div class="h-full relative">
+            <div class="absolute w-full z-10 text-4xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
+              <div class="relative p-4">{{ slide.name }}</div>
+            </div>
+            <img :src="slide.image" class="w-full h-full object-contain" />
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Navigation class="bg-red-500" />
+          <Pagination />
+        </template>
+      </Carousel>
+
+    </div>
   </LayoutBasic>
 </template>
 <script setup lang="ts">
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
+import bountyHunter from '../assets/characters/bounty-hunter.webp'
+import featherAssassin from '../assets/characters/feather-girl.webp'
+import ghost from '../assets/characters/ghost.webp'
+import princeOfDeath from '../assets/characters/prince-of-death.webp'
+
+const characterSlides = [
+  { id: 1, name: 'Bounty Hunter', image: bountyHunter },
+  { id: 2, name: 'Feather Assassin', image: featherAssassin },
+  { id: 3, name: 'Ghost', image: ghost },
+  { id: 4, name: 'Prince of Death', image: princeOfDeath }
+]
 </script>
 <style>
 .world-map::after {
@@ -50,4 +82,60 @@ import LayoutBasic from '../layouts/LayoutBasic.vue'
   height: 100%;
   background: linear-gradient(180deg, var(--color-base-100) 0, transparent 350px), linear-gradient(180deg, transparent 18%, var(--color-base-100)), radial-gradient(farthest-corner, transparent 0, #180c17 100%);
 }
+</style>
+
+<style>
+:root {
+  --carousel-transition: 300ms;
+  --carousel-opacity-inactive: 0.4;
+  --carousel-opacity-active: 1;
+  --carousel-opacity-near: 0.4;
+}
+
+.carousel {
+  --vc-nav-background: rgba(255, 255, 255, 0.7);
+  --vc-nav-border-radius: 100%;
+  --vc-nav-color: var(--color-neutral);
+  --vc-pgn-active-color: var(--color-secondary);
+  --vc-pgn-background-color: var(--color-neutral);
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition:
+    opacity var(--carousel-transition),
+    transform var(--carousel-transition);
+}
+
+.carousel.is-dragging .carousel__slide {
+  transition:
+    opacity var(--carousel-transition),
+    transform var(--carousel-transition);
+}
+
+
+.carousel__slide--prev {
+  opacity: var(--carousel-opacity-near);
+  transform: rotateY(-10deg) scale(0.8);
+}
+
+.carousel__slide--active {
+  opacity: var(--carousel-opacity-active);
+  transform: rotateY(0) scale(1);
+}
+
+.carousel__slide--next {
+  opacity: var(--carousel-opacity-near);
+  transform: rotateY(10deg) scale(0.8);
+}
+
+.carousel__slide--next ~ .carousel__slide {
+  opacity: var(--carousel-opacity-inactive);
+  transform: translateX(-10px) rotateY(12deg) scale(0.8);
+}
+
+
 </style>
