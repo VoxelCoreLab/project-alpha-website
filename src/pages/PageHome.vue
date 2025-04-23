@@ -12,7 +12,7 @@
         <h2 class="text-6xl pb-4">Newsletter</h2>
         <p class="w-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <fieldset class="fieldset  bg-base-200 border-base-300 rounded-box w-xs border p-4">
-          <legend class="fieldset-legend">What is your E-Mail?</legend>
+          <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
           <input type="text" class="input" placeholder="Hier eingeben" />
           <!-- <p class="label">Optional</p> -->
 
