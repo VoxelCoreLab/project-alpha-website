@@ -35,24 +35,25 @@
         <p class="w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
       </div>
     </div>
-      <div class="bg-base-100 py-32">
-        
-      <Carousel :height="600" :gap="20" :itemsToShow="2" :wrapAround="true">
-        <Slide v-for="slide in characterSlides" :key="slide.id">
-          <div class="h-full relative">
-            <div class="absolute w-full z-10 text-4xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
-              <div class="relative p-4">{{ slide.name }}</div>
+    <div class="bg-base-100">
+      <div class="max-w-6xl mx-auto">
+        <Carousel :itemsToShow="2" :wrapAround="true">
+          <Slide v-for="(slide, index) in characterSlides" :key="index">
+            <div class="relative w-full h-full">
+              <div
+                class="absolute w-full z-10 text-4xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
+                <div class="relative p-4">{{ slide.name }}</div>
+              </div>
+              <img :src="slide.image" class="object-contain h-full w-full" />
             </div>
-            <img :src="slide.image" class="w-full h-full object-contain" />
-          </div>
-        </Slide>
+          </Slide>
 
-        <template #addons>
-          <Navigation class="bg-red-500" />
-          <Pagination />
-        </template>
-      </Carousel>
-
+          <template #addons>
+            <Navigation />
+            <Pagination />
+          </template>
+        </Carousel>
+      </div>
     </div>
   </LayoutBasic>
 </template>
@@ -132,10 +133,16 @@ const characterSlides = [
   transform: rotateY(10deg) scale(0.8);
 }
 
-.carousel__slide--next ~ .carousel__slide {
+.carousel__slide--next~.carousel__slide {
   opacity: var(--carousel-opacity-inactive);
   transform: translateX(-10px) rotateY(12deg) scale(0.8);
 }
 
+.carousel__next {
+  right: 160px;
+}
 
+.carousel__prev {
+  left: 160px;
+}
 </style>
