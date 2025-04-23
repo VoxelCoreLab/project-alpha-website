@@ -6,8 +6,14 @@
     </div>
 
     <div class="max-w-6xl mx-auto py-4">
-        <a href="/world-map" class="btn btn-neutral">Zur Weltkarte</a>
+      <div class="bg-base-200 p-4 rounded-box inline-flex flex-col gap-4">
+        <div class="text-lg">
+          <p>Jede Region flüstert Geschichten – bist du bereit, ihnen zu lauschen?</p>
+          <p>Erkunde jetzt die Spielwelt.</p>
+        </div>
+        <a href="/world-map" class="btn btn-neutral text-lg">Zur Weltkarte</a>
       </div>
+    </div>
     <div class="bg-base-300 py-32 mt-16">
       <div class="max-w-6xl mx-auto py-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
@@ -38,10 +44,10 @@ import LayoutBasic from '../layouts/LayoutBasic.vue'
 .world-map::after {
   content: '';
   position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(180deg, var(--color-base-100) 0, transparent 350px), linear-gradient(180deg, transparent 18%, var(--color-base-100)), radial-gradient(farthest-corner, transparent 0, #180c17 100%);
 }
 </style>
