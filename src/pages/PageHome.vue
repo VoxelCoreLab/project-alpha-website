@@ -69,10 +69,10 @@ import ghost from '../assets/characters/ghost.webp'
 import princeOfDeath from '../assets/characters/prince-of-death.webp'
 
 const characterSlides = [
-  { id: 1, name: 'Bounty Hunter', image: bountyHunter },
-  { id: 2, name: 'Feather Assassin', image: featherAssassin },
-  { id: 3, name: 'Ghost', image: ghost },
-  { id: 4, name: 'Prince of Death', image: princeOfDeath }
+  { id: 1, name: 'Kael Drav', image: bountyHunter },
+  { id: 2, name: 'Selia Nightrune', image: featherAssassin },
+  { id: 3, name: 'Velmon', image: ghost },
+  { id: 4, name: 'Vareth Duskbane', image: princeOfDeath }
 ]
 </script>
 <style>
