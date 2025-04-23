@@ -97,8 +97,10 @@ const characterSlides = [
   --vc-nav-background: rgba(255, 255, 255, 0.7);
   --vc-nav-border-radius: 100%;
   --vc-nav-color: var(--color-neutral);
+  --vc-nav-color-hover: var(--color-secondary);
   --vc-pgn-active-color: var(--color-secondary);
   --vc-pgn-background-color: var(--color-neutral);
+  --vc-pgn-height: 16px;
 }
 
 .carousel__track {
