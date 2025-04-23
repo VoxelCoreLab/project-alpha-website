@@ -19,7 +19,7 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li v-for="link in links" :key="link.name"><a :href="link.path">{{ link.name }}</a></li>
+                    <li v-for="link in links" :key="link.name"><RouterLink :to="link.path" activeClass="underline">{{ link.name }}</RouterLink></li>
                 </ul>
             </div>
         </div>
