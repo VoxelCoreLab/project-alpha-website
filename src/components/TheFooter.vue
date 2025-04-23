@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+    <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10">
         <nav class="grid grid-flow-col gap-4">
             <a v-for="link in links" :key="link.name" class="link link-hover" :href="link.path">{{ link.name }}</a>
         </nav>
