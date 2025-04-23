@@ -47,7 +47,7 @@ const points = [
 ]
 </script>
 
-<style>
+<style scoped>
 .pulstrigger {
     animation: pulse 3s infinite;
 }
