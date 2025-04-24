@@ -19,13 +19,7 @@
         <h2 class="text-6xl pb-4">Newsletter</h2>
         <p class="w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches, den
           Start der Beta und die Veröffentlichung des Spieles.</p>
-        <fieldset class="fieldset  bg-base-200 border-base-300 rounded-box w-xs border p-4 mt-4">
-          <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
-          <input type="text" class="input" placeholder="Hier deine E-Mail eingeben" />
-          <!-- <p class="label">Optional</p> -->
-
-          <button class="btn btn-neutral mt-4">Beim Newsletter anmelden</button>
-        </fieldset>
+        <NewsletterForm />
       </div>
     </div>
     <div class="bg-base-200 py-32">
@@ -67,6 +61,7 @@ import bountyHunter from '../assets/characters/bounty-hunter.webp'
 import featherAssassin from '../assets/characters/feather-girl.webp'
 import ghost from '../assets/characters/ghost.webp'
 import princeOfDeath from '../assets/characters/prince-of-death.webp'
+import NewsletterForm from '../components/NewsletterForm.vue'
 
 const characterSlides = [
   { id: 1, name: 'Kael Drav', image: bountyHunter },
