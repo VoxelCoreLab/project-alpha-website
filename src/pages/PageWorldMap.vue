@@ -50,7 +50,7 @@ const points = [
     },
     {
         id: 2, x: 58.5, y: 55, name: 'Elderglade',
-        description: 'Versteckt im leuchtenden Blauen Kristallwald erhebt sich Elderglade, eine uralte Stadt, in der Naturmagie in jedem Blatt pulsiert. Ihre Bewohner (eine Allianz aus Elfen, Druiden und Kristallwächtern) bewahren das Gleichgewicht zwischen den lebenden Wäldern und den arkanen Strömen unter der Erde. Es heisst, dass Elderglade selbst atmet und nur jene willkommen heisst, die sich den Prüfungen des Waldes zu stellen.'
+        description: 'Versteckt im leuchtenden Blauen Kristallwald erhebt sich Elderglade, eine uralte Stadt, in der Naturmagie in jedem Blatt pulsiert. Ihre Bewohner bewahren das Gleichgewicht zwischen den lebenden Wäldern und den arkanen Strömen unter der Erde. Es heisst, dass Elderglade selbst atmet und nur jene willkommen heisst, die sich den Prüfungen des Waldes zu stellen.'
     },
     {
         id: 3, x: 30, y: 10, name: 'Die weissen Gräber',
