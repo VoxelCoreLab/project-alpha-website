@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.15.0",
+    "vee-validate": "^4.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "vue3-carousel": "^0.15.0"
+    "vue3-carousel": "^0.15.0",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.4",
