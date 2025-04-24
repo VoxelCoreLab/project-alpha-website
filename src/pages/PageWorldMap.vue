@@ -9,12 +9,12 @@
                     <div class="absolute transform -translate-x-1/2 -translate-y-1/2">
                         <div class="dropdown dropdown-center group">
                             <div tabindex="0" role="button" :style="{ animationDelay: (index * 0.2) + 's' }"
-                                class="group/circle z-0 bg-white/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-white/65 group-focus-within:bg-white/65 group-focus-within:border-2 group-focus-within:border-neutral pulstrigger transition-all">
+                                class="group/circle z-0 bg-base-100/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-base-100/70 group-focus-within:bg-base-100/70 group-focus-within:border-2 group-focus-within:border-base-300 pulstrigger transition-all">
                                 <div
-                                    class="w-5 h-5 bg-white/70 rounded-full group-focus-within:bg-neutral/50 group-hover/circle:bg-neutral/50 transition-all">
+                                    class="w-5 h-5 bg-base-100/90 rounded-full group-focus-within:bg-secondary/70 group-hover/circle:bg-secondary/70 transition-all">
                                 </div>
                                 <div
-                                    class="absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/70 group-hover/circle:bg-base-100/95 group-focus-within:bg-base-100/95 px-2 py-1 mt-15 rounded-md text-sm transition-all">
+                                    class="absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 group-focus-within:bg-base-100/70 px-2 py-1 mt-15 rounded-md text-sm transition-all">
                                     {{ point.name }}</div>
                             </div>
 
