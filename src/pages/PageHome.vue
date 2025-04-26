@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-base-100">
+    <div class="bg-base-100 pt-16">
       <div class="max-w-6xl mx-auto relative">
         <div
           class="absolute top-0 bottom-0 left-0 w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
