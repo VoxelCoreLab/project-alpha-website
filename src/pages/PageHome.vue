@@ -1,19 +1,21 @@
 <template>
   <LayoutBasic>
-    <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8">Game Title</h1>
+    <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8">Shadow Infection</h1>
     <div class="world-map relative">
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full max-h-[calc(100vh/2)] object-cover mx-auto" />
-    </div>
-
-    <div class="max-w-6xl mx-auto py-4">
-      <div class="bg-base-200 p-4 rounded-box inline-flex flex-col gap-4">
-        <div class="text-lg">
-          <p>Jede Region flüstert Geschichten – bist du bereit, ihnen zu lauschen?</p>
-          <p>Erkunde jetzt die Spielwelt.</p>
+      <div class="absolute z-10 w-full bottom-0">
+        <div class="max-w-6xl mx-auto py-4">
+          <div class="bg-neutral p-4 rounded-box inline-flex flex-col gap-4 w-96">
+            <div class="text-lg">
+              <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
+              <p>Jede Region flüstert Geschichten – bist du bereit, ihnen zu lauschen?</p>
+            </div>
+            <a href="/world-map" class="btn btn-primary text-lg">Zur Weltkarte</a>
+          </div>
         </div>
-        <a href="/world-map" class="btn btn-neutral text-lg">Zur Weltkarte</a>
       </div>
     </div>
+
     <div class="bg-base-300 py-32 mt-16">
       <div class="max-w-6xl mx-auto py-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
@@ -31,8 +33,12 @@
     </div>
     <div class="bg-base-100">
       <div class="max-w-6xl mx-auto relative">
-        <div class="absolute top-0 bottom-0 left-0 w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10"></div>
-        <div class="absolute top-0 bottom-0 right-0 w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10"></div>
+        <div
+          class="absolute top-0 bottom-0 left-0 w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
+        </div>
+        <div
+          class="absolute top-0 bottom-0 right-0 w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10">
+        </div>
         <Carousel :itemsToShow="2" :wrapAround="true">
           <Slide v-for="(slide, index) in characterSlides" :key="index">
             <div class="relative w-full h-full">
@@ -78,7 +84,7 @@ const characterSlides = [
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, var(--color-base-100) 0, transparent 350px), linear-gradient(180deg, transparent 18%, var(--color-base-100)), radial-gradient(farthest-corner, transparent 0, #180c17 100%);
+  background: linear-gradient(180deg, var(--color-base-100) 0, transparent 100px), linear-gradient(180deg, transparent 70%, var(--color-base-100)), radial-gradient(farthest-corner, transparent 0, #180c17 100%);
 }
 </style>
 
