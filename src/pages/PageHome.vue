@@ -58,10 +58,10 @@
     <div class="bg-base-100 pt-16">
       <div class="max-w-6xl mx-auto relative">
         <div
-          class="absolute top-0 bottom-0 left-0 w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
+          class="absolute top-0 bottom-0 left-0 w-16 md:w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
         </div>
         <div
-          class="absolute top-0 bottom-0 right-0 w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10">
+          class="absolute top-0 bottom-0 right-0 w-16 md:w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10">
         </div>
         <Carousel :itemsToShow="2" :wrapAround="true">
           <Slide v-for="(slide, index) in characterSlides" :key="index">
