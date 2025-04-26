@@ -1,13 +1,14 @@
 <template>
   <LayoutBasic>
-    <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1>
+    <!-- <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1> -->
     <div class="world-map relative">
-      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full max-h-[calc(100vh/2)] object-cover mx-auto" />
+      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-200px)] object-cover mx-auto" />
+      <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto py-4 px-4">
           <div class="bg-neutral p-4 rounded-box inline-flex flex-col gap-4 w-96 shadow-2xl shadow-amber-800/30">
             <div class="text-lg">
-              <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
+              <p class="text-2xl font-bold">Entdecke jetzt die Spielwelt!</p>
               <p>Jede Region flüstert Geschichten – bist du bereit, ihnen zu lauschen?</p>
             </div>
             <a href="/world-map" class="btn btn-primary text-lg">Zur Weltkarte</a>
