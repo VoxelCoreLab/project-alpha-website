@@ -3,7 +3,8 @@
     <!-- <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1> -->
     <div class="world-map relative">
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-6rem)] object-cover mx-auto" />
-      <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
+      <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png"
+        class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto pt-4 px-4 pb-50 grid justify-items-center">
           <div class="p-4 inline-flex flex-col gap-4 drop-shadow-xl/50">
@@ -11,12 +12,16 @@
               <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
-                <a href="/world-map" class="btn btn-secondary text-lg inline-flex items-center gap-2">
-                Zur Weltkarte
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <a href="/world-map"
+                class="btn btn-secondary text-lg inline-flex items-center gap-2 relative overflow-hidden group">
+                <span
+                  class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span class="relative z-10">Zur Weltkarte</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                </a>
+              </a>
             </div>
           </div>
         </div>
