@@ -11,8 +11,8 @@
                         </svg>
                     </div>
                     <ul tabindex="0"
-                        class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-0 shadow border border-secondary/40">
-                        <li v-for="link in links" :key="link.name"><a :href="link.path" class="">{{ link.name }}</a></li>
+                        class="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li v-for="link in links" :key="link.name"><a :href="link.path">{{ link.name }}</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-ghost text-xl " href="/"><img class="h-8 w-8" alt="" src="../assets/logo.png"></a>
