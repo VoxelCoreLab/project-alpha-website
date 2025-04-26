@@ -18,7 +18,7 @@
       <img alt="" src="../assets/arrowDown.png" class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-10 h-10 z-10" />
     </div>
 
-    <div class="bg-base-300 py-32 relative">
+    <div class="bg-base-200 py-32 relative">
       <div class="max-w-6xl mx-auto py-4 px-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
         <p class="w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches, den
@@ -26,7 +26,7 @@
         <NewsletterForm />
       </div>
     </div>
-    <div class="bg-base-200 py-32">
+    <div class="bg-base-300 py-32">
       <div class="max-w-6xl mx-auto py-4 px-4">
         <h2 class="text-6xl pb-4">Spielveröffentlichung</h2>
         <p class="w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
