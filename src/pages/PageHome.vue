@@ -2,8 +2,8 @@
   <LayoutBasic>
     <!-- <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1> -->
     <div class="world-map relative">
-      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-4rem)] object-cover mx-auto" />
-      <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10" />
+      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-6rem)] object-cover mx-auto" />
+      <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto pt-4 px-4 pb-24">
           <div class="bg-neutral p-4 rounded-box border border-secondary/50 inline-flex flex-col gap-4 w-96 shadow-2xl shadow-amber-800/30">
@@ -15,10 +15,10 @@
           </div>
         </div>
       </div>
-      <img alt="" src="../assets/arrowDown.png" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce w-10 h-10 z-10" />
+      <img alt="" src="../assets/arrowDown.png" class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-10 h-10 z-10" />
     </div>
 
-    <div class="bg-base-300 py-32 mt-16">
+    <div class="bg-base-300 py-32 relative">
       <div class="max-w-6xl mx-auto py-4 px-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
         <p class="w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches, den
