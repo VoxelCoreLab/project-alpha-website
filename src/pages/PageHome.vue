@@ -1,10 +1,10 @@
 <template>
   <LayoutBasic>
-    <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8">Shadow Infection</h1>
+    <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1>
     <div class="world-map relative">
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full max-h-[calc(100vh/2)] object-cover mx-auto" />
       <div class="absolute z-10 w-full bottom-0">
-        <div class="max-w-6xl mx-auto py-4">
+        <div class="max-w-6xl mx-auto py-4 px-4">
           <div class="bg-neutral p-4 rounded-box inline-flex flex-col gap-4 w-96 shadow-2xl shadow-amber-800/30">
             <div class="text-lg">
               <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="bg-base-300 py-32 mt-16">
-      <div class="max-w-6xl mx-auto py-4">
+      <div class="max-w-6xl mx-auto py-4 px-4">
         <h2 class="text-6xl pb-4">Newsletter</h2>
         <p class="w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches, den
           Start der Beta und die Veröffentlichung des Spieles.</p>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="bg-base-200 py-32">
-      <div class="max-w-6xl mx-auto py-4">
+      <div class="max-w-6xl mx-auto py-4 px-4">
         <h2 class="text-6xl pb-4">Spielveröffentlichung</h2>
         <p class="w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
         <p class="w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
