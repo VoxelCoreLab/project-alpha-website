@@ -24,8 +24,9 @@
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
-      <h3 class="text-lg font-bold">Beim Newsletter angemeldet</h3>
+      <h3 class="text-2xl font-nebulous-regular">Beim Newsletter angemeldet</h3>
       <p class="py-4">Du hast dich erfolgreich beim Newsletter angemeldet!</p>
+      <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4 -scale-x-90" />
       <div class="modal-action">
         <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
