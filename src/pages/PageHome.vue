@@ -5,7 +5,7 @@
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full max-h-[calc(100vh/2)] object-cover mx-auto" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto py-4">
-          <div class="bg-neutral p-4 rounded-box inline-flex flex-col gap-4 w-96">
+          <div class="bg-neutral p-4 rounded-box inline-flex flex-col gap-4 w-96 shadow-2xl shadow-amber-800/30">
             <div class="text-lg">
               <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
               <p>Jede Region flüstert Geschichten – bist du bereit, ihnen zu lauschen?</p>
