@@ -6,7 +6,7 @@
       <img alt="Spieletitel: Shadow Infection" src="../assets/header_site.webp"
         class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100svh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
       <div class="absolute z-10 w-full bottom-0">
-        <div class="max-w-6xl mx-auto pt-4 px-4 pb-50 grid justify-items-center">
+        <div class="max-w-6xl mx-auto pt-4 px-4 pb-20 md:pb-50 grid justify-items-center">
           <div class="p-4 inline-flex flex-col gap-4 drop-shadow-xl/50">
             <div>
               <p class="text-4xl md:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
