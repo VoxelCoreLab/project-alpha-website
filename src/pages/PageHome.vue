@@ -8,8 +8,8 @@
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto pt-4 px-4 pb-50 grid justify-items-center">
           <div class="p-4 inline-flex flex-col gap-4 drop-shadow-xl/50">
-            <div class="text-lg">
-              <p class="text-4xl font-bold">Entdecke jetzt die Spielwelt!</p>
+            <div>
+              <p class="text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
@@ -32,22 +32,27 @@
     <div class="bg-base-200 py-32 relative">
       <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-2">
         <div>
-          <h2 class="text-6xl pb-4">Newsletter</h2>
+          <h2 class="text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
           <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches,
             den
             Start der Beta und die Veröffentlichung des Spieles.</p>
           <NewsletterForm />
         </div>
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center z-0">
           <img alt="" class="h-80 w-80" src="../assets/newsletter_illustration.png" />
         </div>
       </div>
     </div>
     <div class="bg-base-300 py-32">
-      <div class="max-w-6xl mx-auto py-4 px-4">
-        <h2 class="text-6xl pb-4">Spielveröffentlichung</h2>
-        <p class="w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
-        <p class="w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-2">
+        <div>
+        <h2 class="text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
+        <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
+        <p class="max-w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
+        </div>
+        <div class="flex justify-center items-center">
+          <img alt="" class="h-40" src="../assets/meilenstein.webp" />
+        </div>
       </div>
     </div>
     <div class="bg-base-100">
@@ -62,8 +67,8 @@
           <Slide v-for="(slide, index) in characterSlides" :key="index">
             <div class="relative w-full h-full">
               <div
-                class="absolute w-full z-10 text-4xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
-                <div class="relative p-4">{{ slide.name }}</div>
+                class="absolute w-full z-10 text-5xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
+                <div class="relative p-4 font-grest">{{ slide.name }}</div>
               </div>
               <img :src="slide.image" class="object-contain h-full w-full" />
             </div>
@@ -89,10 +94,10 @@ import princeOfDeath from '../assets/characters/prince-of-death.webp'
 import NewsletterForm from '../components/NewsletterForm.vue'
 
 const characterSlides = [
-  { id: 1, name: 'Kael Drav', image: bountyHunter },
-  { id: 2, name: 'Selia Nightrune', image: featherAssassin },
+  { id: 1, name: 'Kael', image: bountyHunter },
+  { id: 2, name: 'Selia', image: featherAssassin },
   { id: 3, name: 'Velmon', image: ghost },
-  { id: 4, name: 'Vareth Duskbane', image: princeOfDeath }
+  { id: 4, name: 'Vareth', image: princeOfDeath }
 ]
 </script>
 <style>
