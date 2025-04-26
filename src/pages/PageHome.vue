@@ -9,7 +9,7 @@
         <div class="max-w-6xl mx-auto pt-4 px-4 pb-50 grid justify-items-center">
           <div class="p-4 inline-flex flex-col gap-4 drop-shadow-xl/50">
             <div>
-              <p class="text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
+              <p class="text-4xl md:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
@@ -30,23 +30,23 @@
     </div>
 
     <div class="bg-base-200 py-32 relative">
-      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-2">
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
-          <h2 class="text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
+          <h2 class="text-4xl md:text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
           <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches,
             den
             Start der Beta und die Veröffentlichung des Spieles.</p>
           <NewsletterForm />
         </div>
         <div class="flex justify-center items-center z-0">
-          <img alt="" class="h-80 w-80" src="../assets/newsletter_illustration.png" />
+          <img alt="" class="h-40 w-40 lg:h-80 lg:w-80" src="../assets/newsletter_illustration.png" />
         </div>
       </div>
     </div>
     <div class="bg-base-300 py-32">
-      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-2">
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
-        <h2 class="text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
+        <h2 class="text-4xl md:text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
         <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
         <p class="max-w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
         </div>
@@ -168,10 +168,10 @@ const characterSlides = [
 }
 
 .carousel__next {
-  right: 160px;
+  right: 100px;
 }
 
 .carousel__prev {
-  left: 160px;
+  left: 100px;
 }
 </style>
