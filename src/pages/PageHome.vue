@@ -30,11 +30,17 @@
     </div>
 
     <div class="bg-base-200 py-32 relative">
-      <div class="max-w-6xl mx-auto py-4 px-4">
-        <h2 class="text-6xl pb-4">Newsletter</h2>
-        <p class="w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches, den
-          Start der Beta und die Veröffentlichung des Spieles.</p>
-        <NewsletterForm />
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-2">
+        <div>
+          <h2 class="text-6xl pb-4">Newsletter</h2>
+          <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches,
+            den
+            Start der Beta und die Veröffentlichung des Spieles.</p>
+          <NewsletterForm />
+        </div>
+        <div class="flex justify-center items-center">
+          <img alt="" class="h-80 w-80" src="../assets/newsletter_illustration.png" />
+        </div>
       </div>
     </div>
     <div class="bg-base-300 py-32">
