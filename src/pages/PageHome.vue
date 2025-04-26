@@ -5,7 +5,7 @@
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-4rem)] object-cover mx-auto" />
       <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10" />
       <div class="absolute z-10 w-full bottom-0">
-        <div class="max-w-6xl mx-auto py-4 px-4">
+        <div class="max-w-6xl mx-auto pt-4 px-4 pb-24">
           <div class="bg-neutral p-4 rounded-box border border-secondary/50 inline-flex flex-col gap-4 w-96 shadow-2xl shadow-amber-800/30">
             <div class="text-lg">
               <p class="text-2xl font-bold">Entdecke jetzt die Spielwelt!</p>
