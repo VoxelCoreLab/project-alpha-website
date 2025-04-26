@@ -1,6 +1,6 @@
 <template>
   <form @submit="onSubmit">
-    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mt-4">
+    <fieldset class="fieldset bg-base-100 border-base-200 rounded-box w-xs border p-4 mt-4 shadow-lg">
       <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
       <label class="input"
         :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
