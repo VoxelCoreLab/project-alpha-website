@@ -67,7 +67,7 @@
           <Slide v-for="(slide, index) in characterSlides" :key="index">
             <div class="relative w-full h-full">
               <div
-                class="absolute w-full z-10 text-5xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10">
+                class="absolute w-full z-10 text-3xl md:text-5xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-5 md:mb-10">
                 <div class="relative p-4 font-grest">{{ slide.name }}</div>
               </div>
               <img :src="slide.image" class="object-contain h-full w-full" />
@@ -168,10 +168,20 @@ const characterSlides = [
 }
 
 .carousel__next {
-  right: 100px;
+  right: 8rem;
 }
 
 .carousel__prev {
-  left: 100px;
+  left: 8rem;
+}
+
+@media (max-width: 640px) {
+  .carousel__next {
+    right: 4rem;
+  }
+
+  .carousel__prev {
+    left: 4rem;
+  }
 }
 </style>
