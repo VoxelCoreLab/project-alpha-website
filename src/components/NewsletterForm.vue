@@ -26,7 +26,7 @@
       </form>
       <h3 class="text-lg font-nebulous-regular md:text-2xl">Beim Newsletter angemeldet</h3>
       <p class="py-4">Du hast dich erfolgreich beim Newsletter angemeldet!</p>
-      <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4 -scale-x-90" />
+      <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4" />
       <div class="modal-action">
         <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
