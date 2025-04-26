@@ -2,3 +2,24 @@
 @plugin "daisyui" {
     themes: night --default;
 }
+
+@font-face {
+    font-family: 'NebulousRegular';
+    src: url('./assets/fonts/nebulous-font/NebulousRegular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Grest';
+    src: url('./assets/fonts/grest-font/Grest.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-nebulous-regular: "NebulousRegular", sans-serif;
+    --font-grest: "Grest", sans-serif;
+}
