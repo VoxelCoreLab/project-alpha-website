@@ -2,7 +2,7 @@
   <LayoutBasic>
     <!-- <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1> -->
     <div class="world-map relative">
-      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-200px)] object-cover mx-auto" />
+      <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100vh-4rem)] object-cover mx-auto" />
       <img alt="Spieletitel: Shadow Infection" src="../assets/shadowInfectionHeading.png" class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100vh/3)] object-cover mx-auto z-10" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto py-4 px-4">
@@ -15,6 +15,7 @@
           </div>
         </div>
       </div>
+      <img alt="" src="../assets/arrowDown.png" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce w-10 h-10 z-10" />
     </div>
 
     <div class="bg-base-300 py-32 mt-16">
