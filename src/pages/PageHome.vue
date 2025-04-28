@@ -7,13 +7,13 @@
         class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100svh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
       <div class="absolute z-10 w-full bottom-0">
         <div class="max-w-6xl mx-auto pt-4 px-4 pb-20 md:pb-50 grid justify-items-center">
-          <div class="p-4 inline-flex flex-col gap-4 drop-shadow-xl/50">
+          <div class="p-4 inline-flex flex-col gap-4 md:gap-6 drop-shadow-xl/50">
             <div>
               <p class="text-4xl md:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
-                class="btn btn-secondary text-lg inline-flex items-center gap-2 relative overflow-hidden group">
+                class="btn btn-secondary btn-lg md:btn-xl inline-flex items-center gap-2 relative overflow-hidden group">
                 <span
                   class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <span class="relative z-10">Zur Weltkarte</span>
