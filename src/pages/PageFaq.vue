@@ -26,20 +26,16 @@ const breadcrumbs = [
 
 const faqs: { question: string, answer: string }[] = [
     {
-        question: 'Weleches Betriebssystem wird benötigt?',
-        answer: 'Das Spiel läuft auf Windows 11'
-    },
-    {
         question: 'Was für ein Genre ist das Spiel?',
         answer: 'Das Spiel ist ein Co-op Online Arena Survival Game.'
     },
     {
-        question: 'Wie lange dauert eine Runde?',
-        answer: 'Eine Runde dauert etwa 30 Minuten'
-    },
-    {
         question: 'Wie viele Spieler können mitspielen?',
         answer: 'Das Spiel ist für 1-5 Spieler ausgelegt.'
+    },
+    {
+        question: 'Wie lange dauert eine Runde?',
+        answer: 'Eine Runde dauert etwa 30 Minuten'
     },
     {
         question: 'Wie viele Karten gibt es?',
@@ -48,6 +44,14 @@ const faqs: { question: string, answer: string }[] = [
     {
         question: 'Welche Steuerung wird in Shadow Infection verwendet?',
         answer: 'Das Spiel wird mit Maus und Tastatur gespielt.'
+    },
+    {
+        question: 'Weleches Betriebssystem wird benötigt?',
+        answer: 'Das Spiel läuft auf Windows 11'
+    },
+    {
+        question: 'Wann wird das Spiel veröffentlicht?',
+        answer: 'Das Spiel wird voraussichtlich im Jahr 2026 veröffentlicht.'
     }
 ]
 </script>
