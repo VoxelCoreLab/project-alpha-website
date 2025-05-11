@@ -1,7 +1,7 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="max-w-2xl mx-auto px-8 py-8">
-            <h1 class="text-5xl font-bold font-nebulous-regular">FAQ</h1>
+            <h1 class="text-4xl md:text-8xl font-bold font-nebulous-regular">FAQ</h1>
             <p class="text-sm">Hier findest du die häufigsten Fragen und Antworten zu unserem Spiel.</p>
             <div class="mt-4 grid gap-2">
                 <div v-for="(faq, index) in faqs" :key="index" tabindex="0" class="collapse collapse-arrow bg-base-100 border-secondary/40 border">
