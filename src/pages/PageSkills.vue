@@ -32,6 +32,20 @@ import imgSkillSwiftness from '../assets/iconSkills/swiftness.jpg'
 import imgSpiritBlessing from '../assets/iconSkills/spirit_blessing.jpg'
 import imgShadowForm from '../assets/iconSkills/assassin_shadow_form.jpg'
 import imgPoision from '../assets/iconSkills/passive_poison.jpg'
+import imgShieldGuard from '../assets/iconSkills/monk_force_shield.jpg'
+import imgShieldingHands from '../assets/iconSkills/monk_hands.jpg'
+import imgHealingLeaf from '../assets/iconSkills/monk_healing_leaf.jpg'
+import imgResurrection from '../assets/iconSkills/monk_resurrection.jpg'
+import imgRuneOfHealing from '../assets/iconSkills/monk_rune_of_healing.jpg'
+import imgMinionOfTheDead from '../assets/iconSkills/necro_minion_of_the_dead.jpg'
+import imgBlessingOfTheLion from '../assets/iconSkills/ritual_blessing_of_the_lion.jpg'
+import imgPreservation from '../assets/iconSkills/ritual_ghost_healing.jpg'
+import imgBloodsong from '../assets/iconSkills/ritual_ghost.jpg'
+import imgEssenceStrike from '../assets/iconSkills/ritual_lighting_strike.jpg'
+import imgSouldMend from '../assets/iconSkills/ritual_soul_mend.jpg'
+import imgBarrier from '../assets/iconSkills/wizard_barrier.jpg'
+import imgConeOfCold from '../assets/iconSkills/wizard_ConeOfCold.jpg'
+import imgIceBlast from '../assets/iconSkills/wizard_ice_blast.jpg'
 
 const breadcrumbs = [
     {
@@ -72,7 +86,118 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         cooldown: 0,
         maxCharges: 0,
         type: 'Passive'
+    },
+    {
+        name: 'Shield Guard',
+        description: 'Beschreibung der Fähigkeit 5',
+        image: imgShieldGuard,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Shielding Hands',
+        description: 'Beschreibung der Fähigkeit 6',
+        image: imgShieldingHands,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Healing Leaf',
+        description: 'Beschreibung der Fähigkeit 7',
+        image: imgHealingLeaf,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    }, 
+    {
+        name: 'Resurrection',
+        description: 'Beschreibung der Fähigkeit 8',
+        image: imgResurrection,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Ultimate'
+    },
+    {
+        name: 'Rune of Healing',
+        description: 'Beschreibung der Fähigkeit 9',
+        image: imgRuneOfHealing,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Ultimate'
+    },
+    {
+        name: 'Minion of the Dead',
+        description: 'Beschreibung der Fähigkeit 10',
+        image: imgMinionOfTheDead,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Blessing of the Lion',
+        description: 'Beschreibung der Fähigkeit 11',
+        image: imgBlessingOfTheLion,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Passive'
+    },
+    {
+        name: 'Preservation',
+        description: 'Beschreibung der Fähigkeit 12',
+        image: imgPreservation,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Ultimate'
+    },
+    {
+        name: 'Bloodsong',
+        description: 'Beschreibung der Fähigkeit 13',
+        image: imgBloodsong,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Essence Strike',
+        description: 'Beschreibung der Fähigkeit 14',
+        image: imgEssenceStrike,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Soul Mend',
+        description: 'Beschreibung der Fähigkeit 15',
+        image: imgSouldMend,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Barrier',
+        description: 'Beschreibung der Fähigkeit 16',
+        image: imgBarrier,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Cone of Cold',
+        description: 'Beschreibung der Fähigkeit 17',
+        image: imgConeOfCold,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
+    },
+    {
+        name: 'Ice Blast',
+        description: 'Beschreibung der Fähigkeit 18',
+        image: imgIceBlast,
+        cooldown: 0,
+        maxCharges: 0,
+        type: 'Normal'
     }
-
 ]
 </script>
