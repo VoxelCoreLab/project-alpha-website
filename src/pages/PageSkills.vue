@@ -1,8 +1,15 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="max-w-7xl mx-auto px-8 py-8">
-            <h1 class="text-4xl md:text-8xl font-bold font-nebulous-regular">Fertigkeiten</h1>
-            <div class="mt-4 grid gap-4 gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <h1 class="text-4xl md:text-8xl font-nebulous-regular uppercase">Fertigkeiten</h1>
+            <div class="filter mt-2">
+                <input v-model="filterSkillType" class="btn filter-reset" value="" type="radio" name="skillType" aria-label="All"/>
+                <input v-model="filterSkillType" class="btn" type="radio" value="Passive" name="skillType" aria-label="Passive"/>
+                <input v-model="filterSkillType" class="btn" type="radio" value="Normal" name="skillType" aria-label="Normal"/>
+                <input v-model="filterSkillType" class="btn" type="radio" value="Ultimate" name="skillType" aria-label="Ultimate"/>
+            </div>
+            <div class="text-lg mt-4">Sichtbar {{ skillsSorted.length }} von {{ skills.length }}</div>
+            <div class="mt-2 grid gap-4 gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <div v-for="skill in skillsSorted" :key="skill.name"
                     class="bg-base-100 border-secondary/40 border @container">
                     <div class="grid grid-cols-1 @lg:grid-cols-[1fr_2fr]">
@@ -48,7 +55,7 @@ import imgSouldMend from '../assets/iconSkills/ritual_soul_mend.jpg'
 import imgBarrier from '../assets/iconSkills/wizard_barrier.jpg'
 import imgConeOfCold from '../assets/iconSkills/wizard_ConeOfCold.jpg'
 import imgIceBlast from '../assets/iconSkills/wizard_ice_blast.jpg'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const breadcrumbs = [
     {
@@ -148,10 +155,10 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Preservation',
-        description: 'Beschwört einen Geist, der Verbündete in der Nähe alle 10 Sekunden über 5 Sekunden um 20 Lebenspunkte heilt.',
+        description: 'Beschwört einen Geist für 60 Sekunden, der Verbündete in der Nähe alle 10 Sekunden über 5 Sekunden um 20 Lebenspunkte heilt.',
         image: imgPreservation,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 70,
+        maxCharges: 1,
         type: 'Ultimate'
     },
     {
@@ -204,8 +211,16 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     }
 ]
 
+const filterSkillType = ref('')
+
 const skillsSorted = computed(() => {
-    return skills.sort((a, b) => {
+    var skillsFiltered = skills.filter(skill => {
+        if (filterSkillType.value === '') {
+            return true
+        }
+        return skill.type === filterSkillType.value
+    })
+    return skillsFiltered.sort((a, b) => {
         if (a.type === b.type) {
             return a.name.localeCompare(b.name)
         }
