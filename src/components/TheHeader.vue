@@ -31,7 +31,7 @@ const links = [
     { name: 'Home', path: '/' },
     { name: 'Weltkarte', path: '/world-map' },
     { name: 'Spielverlauf', path: '/game-process' },
-    { name: 'Gameplay', path: '/gameplay' },
+    { name: 'Fähigkeiten', path: '/skills' },
     { name: 'FAQ', path: '/faq' }
 ]
 </script>
