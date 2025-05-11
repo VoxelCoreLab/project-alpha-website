@@ -3,22 +3,24 @@
         <div class="max-w-7xl mx-auto px-8 py-8">
             <h1 class="text-4xl md:text-8xl font-bold font-nebulous-regular">Fertigkeiten</h1>
             <div class="mt-4 grid gap-4 gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div v-for="skill in skills" :key="skill.name" class="bg-base-100 border-secondary/40 border @container">
+                <div v-for="skill in skillsSorted" :key="skill.name"
+                    class="bg-base-100 border-secondary/40 border @container">
                     <div class="grid grid-cols-1 @lg:grid-cols-[1fr_2fr]">
-                    <div class="aspect-square"><img :src="skill.image" class="aspect-square" /></div>
-                    <div class="p-4">
-                        <h2 class="text-2xl font-semibold">{{ skill.name }}</h2>
-                        <div class="badge"
-                            :class="{ 
-                                'badge-neutral': skill.type == 'Passive',
-                                'badge-secondary': skill.type == 'Normal',
-                                'badge-warning': skill.type == 'Ultimate'
-                            }">{{ skill.type }}</div>
-                        <p class="text-sm">Maximale Ladungen: {{ skill.maxCharges }}</p>
-                        <p class="text-sm">Cooldown: {{ skill.cooldown }}s</p>
-                        <p class="text-sm">{{ skill.description }}</p>
+                        <div class="aspect-square"><img :src="skill.image" class="aspect-square" /></div>
+                        <div class="p-4">
+                            <div class="flex justify-between">
+                                <h2 class="text-2xl font-semibold">{{ skill.name }}</h2>
+                                <div class="badge" :class="{
+                                    'badge-neutral': skill.type == 'Passive',
+                                    'badge-secondary': skill.type == 'Normal',
+                                    'badge-warning': skill.type == 'Ultimate'
+                                }">{{ skill.type }}</div>
+                            </div>
+                            <p class="text-base py-2">{{ skill.description }}</p>
+                            <p class="text-sm" v-if="skill.maxCharges">Maximale Ladungen: {{ skill.maxCharges }}</p>
+                            <p class="text-sm" v-if="skill.cooldown">Abklingzeit: {{ skill.cooldown }}s</p>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
 
@@ -46,6 +48,7 @@ import imgSouldMend from '../assets/iconSkills/ritual_soul_mend.jpg'
 import imgBarrier from '../assets/iconSkills/wizard_barrier.jpg'
 import imgConeOfCold from '../assets/iconSkills/wizard_ConeOfCold.jpg'
 import imgIceBlast from '../assets/iconSkills/wizard_ice_blast.jpg'
+import { computed } from 'vue'
 
 const breadcrumbs = [
     {
@@ -65,23 +68,23 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Spirit Blessing',
-        description: 'Beschreibung der Fähigkeit 2',
+        description: 'Heilt für 60. Du opfert 20% deiner Lebenspunkte. Du opferst keine Lebenspunkte, wenn du dich in Hörweite eines Geists befindest.',
         image: imgSpiritBlessing,
-        cooldown: 15,
-        maxCharges: 3,
+        cooldown: 30,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
         name: 'Shadow Form',
-        description: 'Beschreibung der Fähigkeit 3',
+        description: 'Du bewegst dich 15 Sekunden lang 10% schneller und erleidest nur 50% des eingehenden Schadens.',
         image: imgShadowForm,
-        cooldown: 60,
+        cooldown: 70,
         maxCharges: 1,
         type: 'Ultimate'
     },
     {
         name: 'Apply Poison',
-        description: 'Beschreibung der Fähigkeit 4',
+        description: 'Deine Fernkampfangriffe vergiften den Gegner 5 Sekunden lang und verursachen 2 Schaden pro Sekunde.',
         image: imgPoision,
         cooldown: 0,
         maxCharges: 0,
@@ -89,18 +92,18 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Shield Guard',
-        description: 'Beschreibung der Fähigkeit 5',
+        description: 'Schildert einen Spieler für 25.',
         image: imgShieldGuard,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 30,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
         name: 'Shielding Hands',
-        description: 'Beschreibung der Fähigkeit 6',
+        description: 'Reduziert 20 Sekunden lang den eingehenden Schaden um 3.',
         image: imgShieldingHands,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 40,
+        maxCharges: 2,
         type: 'Normal'
     },
     {
@@ -110,21 +113,21 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         cooldown: 0,
         maxCharges: 0,
         type: 'Normal'
-    }, 
+    },
     {
         name: 'Resurrection',
-        description: 'Beschreibung der Fähigkeit 8',
+        description: 'Belebt einen verbündeten Spieler mit voller Gesundheit wieder.',
         image: imgResurrection,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 120,
+        maxCharges: 1,
         type: 'Ultimate'
     },
     {
         name: 'Rune of Healing',
-        description: 'Beschreibung der Fähigkeit 9',
+        description: 'Heilt 30 Lebenspunkte. Heilt 60 weitere Lebenspunkte über 5 Sekunden, wenn das Ziel unter 50% Gesundheit hat.',
         image: imgRuneOfHealing,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 60,
+        maxCharges: 1,
         type: 'Ultimate'
     },
     {
@@ -137,7 +140,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Blessing of the Lion',
-        description: 'Beschreibung der Fähigkeit 11',
+        description: 'Gewinne jede Sekunde, die du dich bewegst, 1 Schild bis zu 20.',
         image: imgBlessingOfTheLion,
         cooldown: 0,
         maxCharges: 0,
@@ -145,7 +148,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Preservation',
-        description: 'Beschreibung der Fähigkeit 12',
+        description: 'Beschwört einen Geist, der Verbündete in der Nähe alle 10 Sekunden über 5 Sekunden um 20 Lebenspunkte heilt.',
         image: imgPreservation,
         cooldown: 0,
         maxCharges: 0,
@@ -153,34 +156,34 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Bloodsong',
-        description: 'Beschreibung der Fähigkeit 13',
+        description: 'Ruft einen Geist herbei, der Gegner in der Nähe angreift.',
         image: imgBloodsong,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 60,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
         name: 'Essence Strike',
-        description: 'Beschreibung der Fähigkeit 14',
+        description: 'Wirke einen Blitz, der 30 Schaden verursacht.',
         image: imgEssenceStrike,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 35,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
         name: 'Soul Mend',
-        description: 'Beschreibung der Fähigkeit 15',
+        description: 'Heilt für 40. Entfernt einen Zustand für jeden Geist in Hörweite.',
         image: imgSouldMend,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 40,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
         name: 'Barrier',
-        description: 'Beschreibung der Fähigkeit 16',
+        description: 'Platziert eine solide Wand über 40 Sekunden.',
         image: imgBarrier,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 60,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
@@ -200,4 +203,13 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     }
 ]
+
+const skillsSorted = computed(() => {
+    return skills.sort((a, b) => {
+        if (a.type === b.type) {
+            return a.name.localeCompare(b.name)
+        }
+        return a.type.localeCompare(b.type)
+    })
+})
 </script>
