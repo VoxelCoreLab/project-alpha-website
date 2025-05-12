@@ -13,7 +13,7 @@
             <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu bg-base-200 min-h-full w-80 p-2 pt-3">
                 <!-- Sidebar content here -->
-                <li class="flex flex-row">
+                <li class="flex flex-row pb-3">
                     <label for="my-drawer" aria-label="close sidebar" class="btn btn-square btn-ghost">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             class="inline-block h-6 w-6 stroke-current">
@@ -23,8 +23,9 @@
                     </label>
                     <a class="btn btn-ghost text-xl" href="/"><img class="h-8 w-8" alt="" src="../assets/logo.png"></a>
                 </li>
+                <hr class="text-secondary pb-3" />
                 <li v-for="link in links" :key="link.name">
-                    <RouterLink :to="link.path" activeClass="underline">{{ link.name }}</RouterLink>
+                    <RouterLink class="py-2 text-lg" :to="link.path" activeClass="underline">{{ link.name }}</RouterLink>
                 </li>
             </ul>
         </div>
