@@ -2,14 +2,14 @@
     <div class="breadcrumbs text-sm max-w-7xl mx-auto px-8 py-4">
         <ul>
             <li>
-                <a href="/">
+                <RouterLink to="/">
                     <IconHome class="h-4 w-4" />
-                </a>
+                </RouterLink>
             </li>
             <li v-for="(item, index) in items" :key="index">
-                <a :href="item.href">
+                <RouterLink :to="item.href">
                     {{ item.text }}
-                </a>
+                </RouterLink>
             </li>
         </ul>
     </div>
