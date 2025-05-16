@@ -7,34 +7,57 @@
                 <div v-for="(point, index) in points" :key="point.id" class="absolute z-0 focus-within:z-10"
                     :style="{ left: point.x + '%', top: point.y + '%' }">
                     <div class="absolute transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="dropdown dropdown-center group">
+                        <div class="group">
                             <div tabindex="0" role="button" :style="{ animationDelay: (index * 0.2) + 's' }"
-                                class="group/circle z-0 bg-base-100/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-base-100/70 group-focus-within:bg-base-100/70 group-focus-within:border-2 group-focus-within:border-base-300 pulstrigger transition-all">
+                                @click="openPoint(point.id)" @keydown.enter="openPoint(point.id)"
+                                class="group/circle z-0 bg-base-100/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-base-100/70 pulstrigger transition-all">
                                 <div
-                                    class="w-5 h-5 bg-base-100/90 rounded-full group-focus-within:bg-secondary/70 group-hover/circle:bg-secondary/70 transition-all">
+                                    class="w-5 h-5 bg-base-100/90 rounded-full group-hover/circle:bg-secondary/70 transition-all">
                                 </div>
                                 <div
-                                    class="absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 group-focus-within:bg-base-100/70 px-2 py-1 mt-15 rounded-md text-sm transition-all">
+                                    class="hidden sm:block absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 px-2 py-1 mt-15 rounded-md text-sm transition-all">
                                     {{ point.name }}</div>
-                            </div>
-
-                            <div tabindex="0" class="dropdown-content card card-sm bg-base-300 absolute w-64 shadow-lg mt-8">
-                                <div class="card-body">
-                                    <p class="font-bold text-sm">{{ point.name }}</p>
-                                    <p class="text-sm">{{ point.description }}</p>
-                                </div>
-                                <button class="btn btn-neutral btn-sm btn-circle btn-ghost absolute right-2 top-2"
-                                    onclick="document.activeElement.blur()">✕</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Point Dialog -->
+                <dialog ref="mapPointDialog" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        </form>
+                        <h3 class="text-lg font-bold">{{ getActivePoint?.name }}</h3>
+                        <p class="py-4">{{ getActivePoint?.description }}</p>
+                    </div>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
             </div>
         </div>
     </LayoutBasic>
 </template>
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
+
+const mapPointDialog = ref<HTMLDialogElement | null>(null)
+const activePoint = ref<number | null>(null)
+const getActivePoint = computed(() => {
+    return points.find(point => point.id === activePoint.value)
+})
+
+const openMapPointDialog = () => {
+    mapPointDialog.value?.showModal()
+}
+
+const openPoint = (pointId: number) => {
+    activePoint.value = pointId
+    mapPointDialog.value?.showModal()
+}
+
 
 const breadcrumbs = [
     {
