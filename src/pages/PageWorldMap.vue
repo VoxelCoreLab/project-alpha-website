@@ -29,7 +29,10 @@
                             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                         </form>
                         <h3 class="text-lg font-bold">{{ getActivePoint?.name }}</h3>
-                        <p class="py-4">{{ getActivePoint?.description }}</p>
+                        <div class="max-h-[60vh] overflow-y-auto">
+                            <img class="w-full aspect-video h-auto rounded-lg mt-4" :src="getActivePoint?.image" alt="" />
+                            <p class="py-4">{{ getActivePoint?.description }}</p>
+                        </div>
                     </div>
                     <form method="dialog" class="modal-backdrop">
                         <button>close</button>
@@ -42,6 +45,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
+import imgDusterhafen from '../assets/illustration/dusterhafen.webp'
+import imgElderglade from '../assets/illustration/elderglade.webp'
+import imgWhitegraves from '../assets/illustration/whitegrave.webp'
+import imgMausoleum from '../assets/illustration/mausoleum.webp'
 
 const mapPointDialog = ref<HTMLDialogElement | null>(null)
 const activePoint = ref<number | null>(null)
@@ -66,21 +73,21 @@ const breadcrumbs = [
     }
 ]
 
-const points = [
+const points: { id: number, x: number, y: number, name: string, description: string, image: string }[] = [
     {
-        id: 1, x: 78, y: 52, name: 'Das verderbte Mausoleum',
+        id: 1, x: 78, y: 52, name: 'Das verderbte Mausoleum', image: imgMausoleum,
         description: 'Tief im Herzen eines verfluchten Sumpfes liegt das verderbte Mausoleum, einst Ruhestätte eines vergessenen Schattenkults. Dort brach vor Jahrhunderten die Schattenseuche aus. Ein dunkler Fluch, der Fleisch, Geist und Licht gleichermassen zerfrisst. Noch heute wabern schwarze Nebel durch die zerfallenen Hallen, und aus den Gräbern flüstern Stimmen, die längst tot sein sollten.'
     },
     {
-        id: 2, x: 58.5, y: 55, name: 'Elderglade',
+        id: 2, x: 58.5, y: 55, name: 'Elderglade', image: imgElderglade,
         description: 'Versteckt im leuchtenden Blauen Kristallwald erhebt sich Elderglade, eine uralte Stadt, in der Naturmagie in jedem Blatt pulsiert. Ihre Bewohner bewahren das Gleichgewicht zwischen den lebenden Wäldern und den arkanen Strömen unter der Erde. Es heisst, dass Elderglade selbst atmet und nur jene willkommen heisst, die sich den Prüfungen des Waldes zu stellen.'
     },
     {
-        id: 3, x: 30, y: 10, name: 'Die weissen Gräber',
+        id: 3, x: 30, y: 10, name: 'Die weissen Gräber', image: imgWhitegraves,
         description: 'Weit im gefrorenen Norden, wo selbst der Wind zu flüstern scheint, liegen die Weissen Gräber. Uralte Hügel aus ewigem Schnee, die einst gefallenen Königen und vergessenen Helden gehörten. Doch unter dem Eis regen sich Schatten, und die Geister der Toten wandeln unruhig, gefesselt an ein uraltes, gebrochenes Schwurband. Kein Lebender bleibt dort lange. Denn die Kälte zehrt nicht nur am Körper, sondern auch an der Seele.'
     },
     {
-        id: 3, x: 38, y: 86, name: 'Düsterhafen',
+        id: 4, x: 38, y: 86, name: 'Düsterhafen', image: imgDusterhafen,
         description: 'Düsterhafen liegt verborgen in einer immerwährenden Nebelbucht, wo die Sonne nur als blasses Flackern durch den grauen Dunst dringt. Einst ein sicherer Handelsposten, wurde die Stadt von verfluchten Piraten übernommen, die ihre Seelen für ewige Beute dem Tiefenmeer geopfert haben.'
     },
     /*
