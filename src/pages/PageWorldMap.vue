@@ -26,7 +26,7 @@
                 <dialog ref="mapPointDialog" class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box">
                         <form method="dialog">
-                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            <button class="btn btn-circle btn-ghost absolute right-4 top-4">✕</button>
                         </form>
                         <h3 class="text-lg font-bold">{{ getActivePoint?.name }}</h3>
                         <div class="max-h-[60vh] overflow-y-auto">
