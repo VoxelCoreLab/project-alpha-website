@@ -55,7 +55,7 @@ const openMapPointDialog = () => {
 
 const openPoint = (pointId: number) => {
     activePoint.value = pointId
-    mapPointDialog.value?.showModal()
+    openMapPointDialog()
 }
 
 
