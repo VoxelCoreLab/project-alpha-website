@@ -66,7 +66,7 @@ const breadcrumbs = [
 
 const skills: { name: string, description: string, image: string, cooldown: number, maxCharges: number, type: 'Passive' | 'Normal' | 'Ultimate' }[] = [
     {
-        name: 'Swiftness',
+        name: 'Schnelligkeit',
         description: 'Du bewegst dich 3 Sekunden lang 50% schneller.',
         image: imgSkillSwiftness,
         cooldown: 30,
@@ -74,7 +74,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Spirit Blessing',
+        name: 'Geistiger Segen',
         description: 'Heilt für 60. Du opfert 20% deiner Lebenspunkte. Du opferst keine Lebenspunkte, wenn du dich in Hörweite eines Geists befindest.',
         image: imgSpiritBlessing,
         cooldown: 30,
@@ -82,7 +82,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Shadow Form',
+        name: 'Schattenform',
         description: 'Du bewegst dich 15 Sekunden lang 10% schneller und erleidest nur 50% des eingehenden Schadens.',
         image: imgShadowForm,
         cooldown: 70,
@@ -90,7 +90,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Ultimate'
     },
     {
-        name: 'Apply Poison',
+        name: 'Gift anwenden',
         description: 'Deine Fernkampfangriffe vergiften den Gegner 5 Sekunden lang und verursachen 2 Schaden pro Sekunde.',
         image: imgPoision,
         cooldown: 0,
@@ -98,15 +98,15 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Passive'
     },
     {
-        name: 'Shield Guard',
-        description: 'Schildert einen Spieler für 25.',
+        name: 'Schildwache',
+        description: 'Schildet einen Spieler für 25.',
         image: imgShieldGuard,
         cooldown: 30,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Shielding Hands',
+        name: 'Schützende Hände',
         description: 'Reduziert 20 Sekunden lang den eingehenden Schaden um 3.',
         image: imgShieldingHands,
         cooldown: 40,
@@ -114,7 +114,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Healing Leaf',
+        name: 'Heilendes Blatt',
         description: 'Beschreibung der Fähigkeit 7',
         image: imgHealingLeaf,
         cooldown: 0,
@@ -122,7 +122,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Resurrection',
+        name: 'Auferstehung',
         description: 'Belebt einen verbündeten Spieler mit voller Gesundheit wieder.',
         image: imgResurrection,
         cooldown: 120,
@@ -130,7 +130,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Ultimate'
     },
     {
-        name: 'Rune of Healing',
+        name: 'Rune der Heilung',
         description: 'Heilt 30 Lebenspunkte. Heilt 60 weitere Lebenspunkte über 5 Sekunden, wenn das Ziel unter 50% Gesundheit hat.',
         image: imgRuneOfHealing,
         cooldown: 60,
@@ -138,7 +138,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Ultimate'
     },
     {
-        name: 'Minion of the Dead',
+        name: 'Lakai der Toten',
         description: 'Beschreibung der Fähigkeit 10',
         image: imgMinionOfTheDead,
         cooldown: 0,
@@ -146,7 +146,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Blessing of the Lion',
+        name: 'Segen des Löwen',
         description: 'Gewinne jede Sekunde, die du dich bewegst, 1 Schild bis zu 20.',
         image: imgBlessingOfTheLion,
         cooldown: 0,
@@ -154,7 +154,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Passive'
     },
     {
-        name: 'Preservation',
+        name: 'Bewahrung',
         description: 'Beschwört einen Geist für 60 Sekunden, der Verbündete in der Nähe alle 10 Sekunden über 5 Sekunden um 20 Lebenspunkte heilt.',
         image: imgPreservation,
         cooldown: 70,
@@ -162,7 +162,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Ultimate'
     },
     {
-        name: 'Bloodsong',
+        name: 'Blutgesang',
         description: 'Ruft einen Geist herbei, der Gegner in der Nähe angreift.',
         image: imgBloodsong,
         cooldown: 60,
@@ -170,7 +170,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Essence Strike',
+        name: 'Essenz-Schlag',
         description: 'Wirke einen Blitz, der 30 Schaden verursacht.',
         image: imgEssenceStrike,
         cooldown: 35,
@@ -178,7 +178,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Soul Mend',
+        name: 'Seelenheilung',
         description: 'Heilt für 40. Entfernt einen Zustand für jeden Geist in Hörweite.',
         image: imgSouldMend,
         cooldown: 40,
@@ -186,7 +186,7 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Barrier',
+        name: 'Barriere',
         description: 'Platziert eine solide Wand über 40 Sekunden.',
         image: imgBarrier,
         cooldown: 60,
@@ -194,19 +194,19 @@ const skills: { name: string, description: string, image: string, cooldown: numb
         type: 'Normal'
     },
     {
-        name: 'Cone of Cold',
-        description: 'Beschreibung der Fähigkeit 17',
+        name: 'Frostkegel',
+        description: 'Verlangsamt Gegner in einem Kegel vor dir 5 Sekunden lang um 50% und fügt ihnen 20 Schaden zu.',
         image: imgConeOfCold,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 40,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Ice Blast',
-        description: 'Beschreibung der Fähigkeit 18',
+        name: 'Eissprengung',
+        description: 'Feuert einen langen Strahl ab, der allen getroffenen Gegnern 50 Schaden zufügt.',
         image: imgIceBlast,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 45,
+        maxCharges: 1,
         type: 'Normal'
     }
 ]
