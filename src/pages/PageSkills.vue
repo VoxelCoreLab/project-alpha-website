@@ -115,10 +115,10 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Heilendes Blatt',
-        description: 'Beschreibung der Fähigkeit 7',
+        description: 'Heilt das Ziel über 9 Sekunden lang alle 3 Sekunden um 15 Lebenspunkte.',
         image: imgHealingLeaf,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 30,
+        maxCharges: 2,
         type: 'Normal'
     },
     {
@@ -139,10 +139,10 @@ const skills: { name: string, description: string, image: string, cooldown: numb
     },
     {
         name: 'Lakai der Toten',
-        description: 'Beschreibung der Fähigkeit 10',
+        description: 'Beschwört einen untoten Lakai aus einer Leiche in der Nähe, der an deiner Seite kämpft.',
         image: imgMinionOfTheDead,
-        cooldown: 0,
-        maxCharges: 0,
+        cooldown: 40,
+        maxCharges: 1,
         type: 'Normal'
     },
     {
