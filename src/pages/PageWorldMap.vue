@@ -2,7 +2,7 @@
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="mx-4">
             <div class="relative max-w-6xl mx-auto">
-                <img alt="" src="../assets/world-map.jpg" class="w-full" />
+                <img alt="" src="../assets/world-map-mix.webp" class="w-full" />
 
                 <div v-for="(point, index) in points" :key="point.id" class="absolute z-0 focus-within:z-10"
                     :style="{ left: point.x + '%', top: point.y + '%' }">
@@ -60,10 +60,12 @@ const points = [
         id: 3, x: 38, y: 86, name: 'Düsterhafen',
         description: 'Düsterhafen liegt verborgen in einer immerwährenden Nebelbucht, wo die Sonne nur als blasses Flackern durch den grauen Dunst dringt. Einst ein sicherer Handelsposten, wurde die Stadt von verfluchten Piraten übernommen, die ihre Seelen für ewige Beute dem Tiefenmeer geopfert haben.'
     },
+    /*
     {
         id: 3, x: 85, y: 80, name: 'Geistersee',
         description: 'Die Geistersee ist ein endlos weites, nebelverhangenes Meer, dessen Wasser bei Nacht gespenstisch silbern leuchtet. Die alten Seefahrer sagen, wer weit genug hinaussegle, hört die Glocken einer ewigen Flotte läuten. Ein Ruf der Toten, dem niemand widerstehen kann.'
     }
+    */
 ]
 </script>
 
