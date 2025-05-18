@@ -24,7 +24,7 @@
 
                 <!-- Point Dialog -->
                 <dialog ref="mapPointDialog" class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box">
+                    <div class="modal-box" :key="activePoint ||  ''">
                         <form method="dialog">
                             <button class="btn btn-circle btn-ghost absolute right-4 top-4">✕</button>
                         </form>
