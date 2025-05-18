@@ -30,13 +30,13 @@
                         </form>
                         <h3 class="text-lg font-bold">{{ getActivePoint?.name }}</h3>
                         <div class="max-h-[60vh] overflow-y-auto">
-                            <img class="w-full aspect-video h-auto rounded-lg mt-4" :src="getActivePoint?.image"
+                            <img class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300" :src="getActivePoint?.image"
                                 alt="" />
                             <h2 class="text-lg font-semibold mt-4">Monster</h2>
                             <div class="grid grid-cols-4 gap-2 mt-2">
                                 <div v-for="(monster, index) in getActivePoint?.monsters" :key="index"
                                     class="bg-base-100/60 rounded-lg">
-                                    <img class="w-full aspect-square h-auto rounded-lg" :src="monster" alt="" />
+                                    <img class="w-full aspect-square h-auto rounded-lg bg-base-300" :src="monster" alt="" />
                                 </div>
                             </div>
                             <h2 class="text-lg font-semibold mt-4">Schwierigkeit</h2>
