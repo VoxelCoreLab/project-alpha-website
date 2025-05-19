@@ -13,7 +13,7 @@
                 <div v-for="skill in skillsSorted" :key="skill.name"
                     class="bg-base-100 border-secondary/40 border @container">
                     <div class="grid grid-cols-1 @lg:grid-cols-[1fr_2fr]">
-                        <div class="aspect-square"><img :src="skill.image" class="aspect-square" /></div>
+                        <div class="aspect-square"><img :src="skill.image" class="aspect-square bg-base-300 skeleton" /></div>
                         <div class="p-4">
                             <div class="flex justify-between">
                                 <h2 class="text-2xl font-semibold">{{ skill.name }}</h2>
