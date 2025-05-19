@@ -1,8 +1,8 @@
 <template>
   <form @submit="onSubmit">
-    <fieldset class="fieldset bg-base-100 rounded-box w-xs p-4 mt-4 shadow-lg border border-secondary/40">
+    <fieldset class="fieldset bg-base-100 rounded-box p-4 mt-4 shadow-lg border border-secondary/40 w-full md:w-xs">
       <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
-      <label class="input"
+      <label class="input w-full"
         :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
         <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">

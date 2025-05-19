@@ -29,8 +29,8 @@
       <img alt="" src="../assets/arrowDown.png" class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-10 h-10 z-10" />
     </div>
 
-    <div class="bg-base-200 py-32 relative">
-      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div class="bg-base-200 py-8 md:py-32 relative">
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
         <div>
           <h2 class="text-4xl md:text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
           <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates,
@@ -44,8 +44,8 @@
         </div>
       </div>
     </div>
-    <div class="bg-base-300 py-32">
-      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div class="bg-base-300 py-8 md:py-32">
+      <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
         <div>
           <h2 class="text-4xl md:text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
           <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-base-100 pt-16">
+    <div class="bg-base-100 pt-8 md:pt-16">
       <div class="max-w-6xl mx-auto relative">
         <div
           class="absolute top-0 bottom-0 left-0 w-16 md:w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
