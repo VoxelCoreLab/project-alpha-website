@@ -29,11 +29,11 @@
                             <button class="btn btn-circle btn-ghost absolute right-4 top-4">✕</button>
                         </form>
                         <h3 class="text-lg font-bold px-6"><span :key="activePoint || ''">{{ getActivePoint?.name }}</span></h3>
-                        <div class="max-h-[60vh] overflow-y-auto pb-6 px-6">
-                            <img :key="activePoint || ''" class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300"
+                        <div class="max-h-[60vh] overflow-y-auto pb-6 px-6" :key="activePoint || ''">
+                            <img class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300"
                                 :src="getActivePoint?.image" alt="" />
                             <h2 class="text-lg font-semibold mt-4">Monster</h2>
-                            <div class="grid grid-cols-4 gap-2 mt-2" :key="activePoint || ''">
+                            <div class="grid grid-cols-4 gap-2 mt-2">
                                 <div v-for="(monster, index) in getActivePoint?.monsters" :key="index"
                                     class="bg-base-100/60 rounded-lg">
                                     <img class="w-full aspect-square h-auto rounded-lg bg-base-300" :src="monster"
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <h2 class="text-lg font-semibold mt-4">Schwierigkeit</h2>
-                            <div class="flex items-center gap-2 pt-2" :key="activePoint || ''">
+                            <div class="flex items-center gap-2 pt-2">
                                 <div v-for="i in 3" :key="i" class="w-8 h-8 rounded-full" :class="{
                                     'text-red-600': i <= (getActivePoint?.difficulty ?? 0),
                                     'text-white/30': i > (getActivePoint?.difficulty ?? 0)
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <h2 class="text-lg font-semibold mt-4">Geschichte</h2>
-                            <p class="pt-2"><span :key="activePoint || ''">{{ getActivePoint?.description }}</span></p>
+                            <p class="pt-2">{{ getActivePoint?.description }}</p>
                         </div>
                     </div>
                     <form method="dialog" class="modal-backdrop">
