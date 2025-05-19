@@ -3,17 +3,17 @@
     <!-- <h1 class="text-8xl font-bold max-w-6xl mx-auto py-8 px-4">Shadow Infection</h1> -->
     <div class="world-map relative">
       <img alt="" src="../assets/world-map-teaser.jpg" class="w-full h-[calc(100svh-6rem)] object-cover mx-auto" />
-      <img alt="Spieletitel: Shadow Infection" src="../assets/header_site.webp"
-        class="absolute top-4 left-1/2 -translate-x-1/2 max-h-[calc(100svh/3)] object-cover mx-auto z-10 drop-shadow-xl/50" />
-      <div class="absolute z-10 w-full bottom-0">
-        <div class="max-w-6xl mx-auto pt-4 px-4 pb-20 md:pb-50 grid justify-items-center">
-          <div class="p-4 inline-flex flex-col gap-4 md:gap-6 drop-shadow-xl/50">
+      <div class="absolute z-10 w-full h-full top-0 items-center justify-center flex flex-col">
+        <img alt="Spieletitel: Shadow Infection" src="../assets/header_site.webp"
+          class="max-h-[calc(100svh/3)] object-cover mx-auto drop-shadow-xl/50" />
+        <div class="max-w-6xl max-h-1/2 mx-auto pt-4 lg:pt-16 px-4 grid justify-items-center">
+          <div class="inline-flex flex-col gap-4 md:gap-6 drop-shadow-xl/50">
             <div>
-              <p class="text-4xl md:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
+              <p class="text-[clamp(var(--text-4xl),5vw,var(--text-6xl))] text-4xl lg:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
-                class="btn btn-secondary btn-lg md:btn-xl inline-flex items-center gap-2 relative overflow-hidden group">
+                class="btn btn-secondary btn-md lg:btn-xl inline-flex items-center gap-2 relative overflow-hidden group">
                 <span
                   class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <span class="relative z-10">Zur Weltkarte</span>
@@ -33,7 +33,8 @@
       <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
           <h2 class="text-4xl md:text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
-          <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates, Patches,
+          <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates,
+            Patches,
             den
             Start der Beta und die Veröffentlichung des Spieles.</p>
           <NewsletterForm />
@@ -46,9 +47,9 @@
     <div class="bg-base-300 py-32">
       <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
-        <h2 class="text-4xl md:text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
-        <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
-        <p class="max-w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
+          <h2 class="text-4xl md:text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
+          <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
+          <p class="max-w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
         </div>
         <div class="flex justify-center items-center">
           <img alt="" class="h-40" src="../assets/meilenstein.webp" />
