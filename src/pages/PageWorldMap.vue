@@ -15,7 +15,7 @@
                                     class="w-5 h-5 bg-base-100/90 rounded-full group-hover/circle:bg-secondary/70 transition-all">
                                 </div>
                                 <div
-                                    class="hidden sm:block absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 px-2 py-1 mt-15 rounded-md text-sm transition-all">
+                                    class="hidden sm:block absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 px-2 py-1 top-8 rounded-md text-sm transition-all">
                                     {{ point.name }}</div>
                             </div>
                         </div>
