@@ -24,19 +24,20 @@
 
                 <!-- Point Dialog -->
                 <dialog ref="mapPointDialog" class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box" :key="activePoint ||  ''">
+                    <div class="modal-box pb-0 px-0" :key="activePoint || ''">
                         <form method="dialog">
                             <button class="btn btn-circle btn-ghost absolute right-4 top-4">✕</button>
                         </form>
-                        <h3 class="text-lg font-bold">{{ getActivePoint?.name }}</h3>
-                        <div class="max-h-[60vh] overflow-y-auto">
-                            <img class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300" :src="getActivePoint?.image"
-                                alt="" />
+                        <h3 class="text-lg font-bold px-6">{{ getActivePoint?.name }}</h3>
+                        <div class="max-h-[60vh] overflow-y-auto pb-6 px-6">
+                            <img class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300"
+                                :src="getActivePoint?.image" alt="" />
                             <h2 class="text-lg font-semibold mt-4">Monster</h2>
                             <div class="grid grid-cols-4 gap-2 mt-2">
                                 <div v-for="(monster, index) in getActivePoint?.monsters" :key="index"
                                     class="bg-base-100/60 rounded-lg">
-                                    <img class="w-full aspect-square h-auto rounded-lg bg-base-300" :src="monster" alt="" />
+                                    <img class="w-full aspect-square h-auto rounded-lg bg-base-300" :src="monster"
+                                        alt="" />
                                 </div>
                             </div>
                             <h2 class="text-lg font-semibold mt-4">Schwierigkeit</h2>
@@ -45,9 +46,9 @@
                                     'text-red-600': i <= (getActivePoint?.difficulty ?? 0),
                                     'text-white/30': i > (getActivePoint?.difficulty ?? 0)
                                 }">
-                                    <svg class="h-8 w-8" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px"
-                                        viewBox="0 0 931.316 931.316" xml:space="preserve">
+                                    <svg class="h-8 w-8" fill="currentColor" version="1.1" id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="800px" height="800px" viewBox="0 0 931.316 931.316" xml:space="preserve">
                                         <g>
                                             <path d="M390.53,702.023h150.255l-75.127-129.996L390.53,702.023z M443.361,674.271l22.297-38.582l22.296,38.582H443.361
 		L443.361,674.271z" />
@@ -89,7 +90,7 @@
                                 </div>
                             </div>
                             <h2 class="text-lg font-semibold mt-4">Geschichte</h2>
-                            <p class="py-2">{{ getActivePoint?.description }}</p>
+                            <p class="pt-2">{{ getActivePoint?.description }}</p>
                         </div>
                     </div>
                     <form method="dialog" class="modal-backdrop">
