@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumbs text-sm max-w-7xl mx-auto px-8 py-4">
+    <div class="breadcrumbs text-sm max-w-7xl mx-auto px-4 md:px-8 py-2 md:py-4">
         <ul>
             <li>
                 <RouterLink to="/">
