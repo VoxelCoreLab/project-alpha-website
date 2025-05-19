@@ -1,6 +1,6 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
-        <div class="mx-4">
+        <div class="m-4 md:m-8">
             <div class="relative max-w-6xl mx-auto">
                 <img alt="" src="../assets/world-map-mix.webp" class="w-full" />
 
