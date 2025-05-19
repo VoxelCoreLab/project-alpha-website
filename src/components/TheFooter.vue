@@ -1,6 +1,6 @@
 <template>
-    <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10 pt-32">
-        <nav class="grid grid-flow-col gap-4">
+    <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10 pt-16 md:pt-32">
+        <nav class="flex flex-wrap justify-center gap-4">
             <a v-for="link in links" :key="link.name" class="link link-hover" :href="link.path">{{ link.name }}</a>
         </nav>
         <!---
