@@ -2,7 +2,7 @@
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="m-4 md:m-8">
             <div class="relative max-w-6xl mx-auto">
-                <img alt="" src="../assets/world-map-mix.webp" class="w-full" />
+                <img alt="" src="../assets/world-map-mix.webp" class="w-full bg-base-300 skeleton" />
 
                 <div v-for="(point, index) in points" :key="point.id" class="absolute z-0 focus-within:z-10"
                     :style="{ left: point.x + '%', top: point.y + '%' }">
