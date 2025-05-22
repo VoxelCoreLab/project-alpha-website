@@ -1,8 +1,8 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
-        <div class="m-auto grid h-full max-w-5xl p-8 text-left">
+        <div class="m-auto grid h-full max-w-5xl p-4 md:p-8 text-left">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex flex-col justify-center gap-2 md:gap-4">
+                <div class="flex flex-col md:justify-center gap-2 md:gap-4">
                     <h1 class="text-4xl md:text-8xl font-nebulous-regular uppercase">{{ characterName }}</h1>
                     <p class="max-w-md">{{ character?.backstory }}</p>
                 </div>

@@ -1,6 +1,6 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
-        <div class="m-auto grid h-full max-w-6xl p-8 text-left">
+        <div class="m-auto grid h-full max-w-6xl p-4 md:p-8 text-left">
             <div class="flex flex-col gap-6">
                 <h1 class="text-4xl font-bold">Kontakt</h1>
                 <p>E-Mail: voxelcorelab@gmail.com</p>
