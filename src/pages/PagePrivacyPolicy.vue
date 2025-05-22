@@ -1,6 +1,6 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
-        <div class="m-auto grid h-full max-w-2xl p-8 text-left">
+        <div class="m-auto grid h-full max-w-2xl p-4 md:p-8 text-left">
             <div class="flex flex-col gap-6">
                 <h1 class="break-all text-2xl font-bold md:text-4xl">
                     Datenschutzerklärung
