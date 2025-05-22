@@ -9,6 +9,7 @@ const router = createRouter({
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },
+        { path: '/characters', component: () => import('../pages/PageCharacters.vue') },
         { path: '/characters/:characterId', component: () => import('../pages/PageCharacter.vue') },
         { path: '/faq', component: () => import('../pages/PageFaq.vue') },
         { path: '/imprint', component: () => import('../pages/PageImprint.vue') },

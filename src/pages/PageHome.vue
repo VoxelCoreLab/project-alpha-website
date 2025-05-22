@@ -88,18 +88,11 @@
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
-import bountyHunter from '../assets/characters/bounty-hunter.webp'
-import featherAssassin from '../assets/characters/feather-girl.webp'
-import ghost from '../assets/characters/ghost.webp'
-import princeOfDeath from '../assets/characters/prince-of-death.webp'
 import NewsletterForm from '../components/NewsletterForm.vue'
+import { useCharacters } from '../composables/useCharacters'
 
-const characterSlides = [
-  { id: 1, name: 'Kael', image: bountyHunter },
-  { id: 2, name: 'Selira', image: featherAssassin },
-  { id: 3, name: 'Velmon', image: ghost },
-  { id: 4, name: 'Vareth', image: princeOfDeath }
-]
+const { characters } = useCharacters();
+const characterSlides = characters
 </script>
 <style>
 .world-map::after {
