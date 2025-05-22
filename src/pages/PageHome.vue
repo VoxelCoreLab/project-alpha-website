@@ -69,7 +69,7 @@
             <div class="relative w-full h-full">
               <div
                 class="absolute w-full z-10 text-2xl md:text-5xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10 md:mb-20">
-                <RouterLink :to="`/characters/${slide.name.toLowerCase()}`" class="relative px-2 py-1 md:px-3 md:py-2 font-grest border border-secondary bg-secondary/25 backdrop-blur-lg hover:bg-secondary/50 transition-colors">{{ slide.name }}</RouterLink>
+                <RouterLink :to="`/characters/${slide.name.toLowerCase()}`" class="relative px-2 py-1 md:px-3 md:py-2 font-grest uppercase border border-secondary bg-secondary/25 backdrop-blur-lg hover:bg-secondary/50 transition-colors">{{ slide.name }}</RouterLink>
               </div>
               <img :src="slide.image" class="object-contain h-full w-full" />
             </div>
