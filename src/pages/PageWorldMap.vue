@@ -12,8 +12,7 @@
                                 @click="openPoint(point.id)" @keydown.enter="openPoint(point.id)"
                                 class="group/circle z-0 bg-base-100/60 w-8 h-8 rounded-full grid justify-center items-center cursor-pointer hover:bg-base-100/70 pulstrigger transition-all">
                                 <div
-                                    class="w-5 h-5 bg-base-100/90 rounded-full group-hover/circle:bg-secondary/70 transition-all">
-                                </div>
+                                    class="w-5 h-5 bg-base-100/90 rounded-full group-hover/circle:bg-secondary/70 transition-all font-bold [line-height:19px] text-sm text-center justify-center"><span class="sm:hidden">{{point.letter}}</span></div>
                                 <div
                                     class="hidden sm:block absolute whitespace-nowrap cursor-pointer [inset-inline-end:_calc(1/2_*_100%)] translate-x-[50%] bg-base-100/60 group-hover/circle:bg-base-100/70 px-2 py-1 top-8 rounded-md text-sm transition-all">
                                     {{ point.name }}</div>
@@ -21,7 +20,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Point Dialog -->
                 <dialog ref="mapPointDialog" class="modal modal-bottom sm:modal-middle">
                     <div class="modal-box pb-0 px-0">
@@ -98,6 +96,11 @@
                     </form>
                 </dialog>
             </div>
+            <div class="flex gap-2 flex-wrap mt-4 sm:hidden">
+                <div v-for="(point) in points" :key="point.id">
+                    <button @click="openPoint(point.id)" class="btn btn-soft btn-sm pl-1"><div class="bg-base-300/90 rounded-full px-2 py-1 font-bold self-center items-center text-center">{{point.letter}}</div>{{ point.name }}</button>
+                </div>
+            </div>
         </div>
     </LayoutBasic>
 </template>
@@ -156,30 +159,34 @@ const breadcrumbs = [
     }
 ]
 
-const points: { id: number, x: number, y: number, name: string, description: string, image: string, monsters: string[], difficulty: number }[] = [
+const points: { id: number, x: number, y: number, name: string, description: string, image: string, monsters: string[], difficulty: number, letter: string }[] = [
     {
         id: 1, x: 78, y: 52, name: 'Das verderbte Mausoleum', image: imgMausoleum,
         description: 'Tief im Herzen eines verfluchten Sumpfes liegt das verderbte Mausoleum, einst Ruhestätte eines vergessenen Schattenkults. Dort brach vor Jahrhunderten die Schattenseuche aus. Ein dunkler Fluch, der Fleisch, Geist und Licht gleichermassen zerfrisst. Noch heute wabern schwarze Nebel durch die zerfallenen Hallen, und aus den Gräbern flüstern Stimmen, die längst tot sein sollten.',
         monsters: [imgMausoleumMonster1, imgMausoleumMonster2, imgMausoleumMonster3, imgMausoleumMonster4, imgMausoleumMonster5, imgMausoleumMonster6],
-        difficulty: 3
+        difficulty: 3,
+        letter: 'A'
     },
     {
         id: 2, x: 58.5, y: 55, name: 'Elderglade', image: imgElderglade,
         description: 'Versteckt im leuchtenden Blauen Kristallwald erhebt sich Elderglade, eine uralte Stadt, in der Naturmagie in jedem Blatt pulsiert. Ihre Bewohner bewahren das Gleichgewicht zwischen den lebenden Wäldern und den arkanen Strömen unter der Erde. Es heisst, dass Elderglade selbst atmet und nur jene willkommen heisst, die sich den Prüfungen des Waldes zu stellen.',
         monsters: [imgEldergladeMonster1, imgEldergladeMonster2, imgEldergladeMonster3, imgEldergladeMonster4],
-        difficulty: 1
+        difficulty: 1,
+        letter: 'B'
     },
     {
         id: 3, x: 30, y: 10, name: 'Die weissen Gräber', image: imgWhitegraves,
         description: 'Weit im gefrorenen Norden, wo selbst der Wind zu flüstern scheint, liegen die Weissen Gräber. Uralte Hügel aus ewigem Schnee, die einst gefallenen Königen und vergessenen Helden gehörten. Doch unter dem Eis regen sich Schatten, und die Geister der Toten wandeln unruhig, gefesselt an ein uraltes, gebrochenes Schwurband. Kein Lebender bleibt dort lange. Denn die Kälte zehrt nicht nur am Körper, sondern auch an der Seele.',
         monsters: [imgWhitegravesMonster1, imgWhitegravesMonster2, imgWhitegravesMonster3, imgWhitegravesMonster4, imgWhitegravesMonster5],
-        difficulty: 3
+        difficulty: 3,
+        letter: 'C'
     },
     {
         id: 4, x: 38, y: 86, name: 'Düsterhafen', image: imgDusterhafen,
         description: 'Düsterhafen liegt verborgen in einer immerwährenden Nebelbucht, wo die Sonne nur als blasses Flackern durch den grauen Dunst dringt. Einst ein sicherer Handelsposten, wurde die Stadt von verfluchten Piraten übernommen, die ihre Seelen für ewige Beute dem Tiefenmeer geopfert haben.',
         monsters: [imgDusterhafenMonster1, imgDusterhafenMonster2, imgDusterhafenMonster3, imgDusterhafenMonster4, imgDusterhafenMonster5],
-        difficulty: 2
+        difficulty: 2,
+        letter: 'D'
     },
     /*
     {
