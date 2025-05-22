@@ -23,7 +23,7 @@ const router = createRouter({
             component: () => import('../pages/PageNotFound.vue'),
         },
     ],
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior(_to, _from, savedPosition) {
         if (savedPosition) {
             return savedPosition
         } else {
