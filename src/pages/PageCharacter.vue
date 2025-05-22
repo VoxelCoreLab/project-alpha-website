@@ -7,7 +7,7 @@
                     <p class="max-w-md">{{ character?.backstory }}</p>
                 </div>
                 <div class="flex justify-center items-center">
-                    <img :src="character?.image" class="h-full w-full max-h-[50svh] md:max-h-[calc(100svh-20rem)] object-contain" />
+                    <img :src="character?.image" class="h-full w-full max-h-[50svh] md:h-[50svh] md:max-h-[calc(100svh-20rem)] object-contain" />
                 </div>
             </div>
         </div>
