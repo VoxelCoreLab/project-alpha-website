@@ -9,11 +9,13 @@
         <div class="max-w-6xl max-h-1/2 mx-auto pt-4 lg:pt-16 px-4 grid justify-items-center">
           <div class="inline-flex flex-col gap-4 md:gap-6 drop-shadow-xl/50">
             <div>
-              <p class="text-[clamp(var(--text-4xl),5vw,var(--text-6xl))] text-4xl lg:text-6xl font-nebulous-regular text-center">Entdecke jetzt die Spielwelt!</p>
+              <p
+                class="text-[clamp(var(--text-4xl),5vw,var(--text-6xl))] text-4xl lg:text-6xl font-nebulous-regular text-center">
+                Entdecke jetzt die Spielwelt!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
-                class="btn btn-secondary btn-md lg:btn-xl inline-flex items-center gap-2 relative overflow-hidden group">
+                class="btn btn-secondary btn-md lg:btn-xl inline-flex items-center gap-2 relative overflow-hidden group scale-100 hover:scale-103 transition-transform duration-300">
                 <span
                   class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <span class="relative z-10">Zur Weltkarte</span>
@@ -69,7 +71,9 @@
             <div class="relative w-full h-full">
               <div
                 class="absolute w-full z-10 text-2xl md:text-5xl font-bold text-center text-base-content/80 flex items-center justify-center bottom-0 mb-10 md:mb-20">
-                <RouterLink :to="`/characters/${slide.name.toLowerCase()}`" class="relative px-2 py-1 md:px-3 md:py-2 font-grest uppercase border border-secondary bg-secondary/25 backdrop-blur-lg hover:bg-secondary/50 transition-colors">{{ slide.name }}</RouterLink>
+                <RouterLink :to="`/characters/${slide.name.toLowerCase()}`"
+                  class="relative px-2 py-1 md:px-3 md:py-2 font-grest uppercase border border-secondary bg-secondary/25 backdrop-blur-lg hover:bg-secondary/50 transition-colors">
+                  {{ slide.name }}</RouterLink>
               </div>
               <img :src="slide.image" class="object-contain h-full w-full" />
             </div>
