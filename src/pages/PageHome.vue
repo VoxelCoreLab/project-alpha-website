@@ -75,7 +75,7 @@
                   class="relative px-2 py-1 md:px-3 md:py-2 font-grest uppercase border border-secondary bg-secondary/25 backdrop-blur-lg hover:bg-secondary/50 transition-colors">
                   {{ slide.name }}</RouterLink>
               </div>
-              <img :src="slide.image" class="object-contain h-full w-full" />
+              <img :src="slide.image" class="object-contain h-full w-full" alt="" />
             </div>
           </Slide>
 
