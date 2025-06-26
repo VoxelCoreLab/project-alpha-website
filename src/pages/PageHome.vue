@@ -66,7 +66,7 @@
         <div
           class="absolute top-0 bottom-0 right-0 w-16 md:w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10">
         </div>
-        <Carousel :itemsToShow="2" :wrapAround="true">
+        <Carousel :itemsToShow="2" :wrapAround="true" tabindex="-1">
           <Slide v-for="(slide, index) in characterSlides" :key="index">
             <div class="relative w-full h-full">
               <div
@@ -80,8 +80,8 @@
           </Slide>
 
           <template #addons>
-            <Navigation />
-            <Pagination />
+            <Navigation tabindex="-1" />
+            <Pagination ref="paginationRef" />
           </template>
         </Carousel>
       </div>
@@ -94,9 +94,22 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
 import NewsletterForm from '../components/NewsletterForm.vue'
 import { useCharacters } from '../composables/useCharacters'
+import { ComponentPublicInstance, nextTick, onMounted, ref } from 'vue'
 
 const { characters } = useCharacters();
 const characterSlides = characters
+
+const paginationRef = ref<ComponentPublicInstance | null>(null)
+
+onMounted(async () => {
+  await nextTick()
+  const el = paginationRef.value?.$el as HTMLElement | undefined
+  if (el) {
+    el.querySelectorAll('button').forEach((btn) => {
+      btn.setAttribute('tabindex', '-1')
+    })
+  }
+})
 </script>
 <style>
 .world-map::after {
