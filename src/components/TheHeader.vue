@@ -3,7 +3,8 @@
         <div class="navbar bg-base-100 max-w-7xl mx-auto">
             <div class="navbar-start w-auto">
                 <div class="flex-none md:hidden">
-                    <label for="my-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                    <label for="my-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost" role="button" tabindex="0"
+                        @keydown.enter.prevent="openDrawer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             class="inline-block h-6 w-6 stroke-current">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -27,4 +28,9 @@
 import { useNavigationLinks } from '../composables/useNavigationLinks';
 
 const { links } = useNavigationLinks();
+
+function openDrawer() {
+    const drawer = document.getElementById('my-drawer') as HTMLInputElement | null;
+    if (drawer) drawer.checked = true;
+}
 </script>
