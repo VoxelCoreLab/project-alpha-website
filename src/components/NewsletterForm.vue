@@ -23,7 +23,7 @@
         {{ errors.email }}
       </div>
 
-      <button class="btn btn-neutral mt-4">Beim Newsletter anmelden</button>
+      <button class="btn btn-secondary mt-4">Beim Newsletter anmelden</button>
     </fieldset>
   </form>
 
