@@ -4,7 +4,7 @@
       <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
       <label class="input w-full floating-label"
         :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
-        <span>Your Email</span>
+        <span>Deine E-Mail</span>
         <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
