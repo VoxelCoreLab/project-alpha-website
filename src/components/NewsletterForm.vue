@@ -11,7 +11,7 @@
           </g>
         </svg>
         <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
-          placeholder="Hier deine E-Mail eingeben..." />
+          placeholder="Hier deine E-Mail eingeben..." autocomplete="email" />
       </label>
       <div v-if="isEmailFieldTouched && errors.email" class="text-error">{{ errors.email }}</div>
 
