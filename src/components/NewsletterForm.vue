@@ -2,8 +2,9 @@
   <form @submit="onSubmit">
     <fieldset class="fieldset bg-base-100 rounded-box p-4 mt-4 shadow-lg border border-secondary/40 w-full md:w-xs">
       <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
-      <label class="input w-full"
+      <label class="input w-full floating-label"
         :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
+        <span>Your Email</span>
         <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -13,7 +14,14 @@
         <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
           placeholder="Hier deine E-Mail eingeben..." autocomplete="email" />
       </label>
-      <div v-if="isEmailFieldTouched && errors.email" class="text-error">{{ errors.email }}</div>
+      <div
+        v-if="isEmailFieldTouched && errors.email"
+        class="text-error"
+        role="alert"
+        aria-live="assertive"
+      >
+        {{ errors.email }}
+      </div>
 
       <button class="btn btn-neutral mt-4">Beim Newsletter anmelden</button>
     </fieldset>
