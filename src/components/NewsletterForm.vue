@@ -14,12 +14,7 @@
         <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
           placeholder="Hier deine E-Mail eingeben..." autocomplete="email" />
       </label>
-      <div
-        v-if="isEmailFieldTouched && errors.email"
-        class="text-error"
-        role="alert"
-        aria-live="assertive"
-      >
+      <div v-if="isEmailFieldTouched && errors.email" class="text-error" role="alert" aria-live="assertive">
         {{ errors.email }}
       </div>
 
@@ -66,12 +61,40 @@ const validationSchema = toTypedSchema(
 const { handleSubmit, errors, validate } = useForm({
   validationSchema,
 });
-const { value: email, handleBlur } = useField('email');
-const onSubmit = handleSubmit(_ => {
+const { value: email, handleBlur } = useField<string>('email');
+const onSubmit = handleSubmit(async _ => {
   validate();
-  newsletterSuccessModal.value?.showModal()
+  try {
+    await signUpForNewsletter(email.value);
+    newsletterSuccessModal.value?.showModal()
+  } catch (error) {
+    console.error('Failed to subscribe:', error);
+    return;
+  }
 });
 
 const isEmailFieldTouched = useIsFieldTouched('email')
 const isEmailFieldValid = useIsFieldValid('email')
+
+const signUpForNewsletter = async (email: string) => {
+  const LISTMONK_API = 'https://listmonk.pibern.ch/api/public/subscription';
+  const LISTMONK_LIST_ID = '12c5bcdb-496d-4285-9566-a708ba4df46b';
+  const payload = {
+    email,
+    name: '',
+    list_uuids: [LISTMONK_LIST_ID],
+  };
+
+  const response = await fetch(LISTMONK_API, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error('Failed to subscribe to the newsletter');
+  }
+  return response.json();
+}
 </script>
