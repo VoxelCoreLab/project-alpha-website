@@ -25,7 +25,7 @@ const characterName = characterId.charAt(0).toUpperCase() + characterId.slice(1)
 
 const breadcrumbs = [
     {
-        text: 'Charaktere',
+        text: 'Characters',
         href: '/characters'
     },
     {

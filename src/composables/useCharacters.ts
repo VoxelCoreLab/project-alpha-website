@@ -7,28 +7,29 @@ const characters: { id: string, name: string, backstory: string, image: string }
     {
         id: 'selira',
         name: 'Selira',
-        backstory: 'Eine Assassinin aus dem Schattenzirkel. Hinterlässt silberne Dornen bei ihren Opfern.',
+        backstory: 'An assassin from the Shadow Circle. Leaves silver thorns with her victims.',
         image: imgSelira
     },
     {
         id: 'kael',
         name: 'Kael',
-        backstory: 'Ein maskierter Kopfgeldjäger mit Jagdgewehr. Redet nicht. Verfehlt nie. Seine Liste ist persönlich und tödlich.',
+        backstory: 'A masked bounty hunter with a hunting rifle. Speaks not. Never misses. His list is personal and deadly.',
         image: imgKael
     },
     {
         id: 'velmon',
         name: 'Velmon',
-        backstory: 'Ein ruheloser Geist. Einst Sternenweise, jetzt Bote dunkler Vorzeichen. Flüstert Warnungen.',
+        backstory: 'A restless spirit. Once a Sage of the Stars, now a harbinger of dark omens. Whispers warnings.',
         image: imgVelmon
     },
     {
         id: 'vareth',
         name: 'Vareth',
-        backstory: 'Verfluchter Prinz eines toten Reiches. Halb lebendig, halb Tod. Jeder Schlag bringt ihn seinem göttlichen Erbe näher.',
+        backstory: 'Cursed prince of a dead kingdom. Half alive, half death. Each strike brings him closer to his divine heritage.',
         image: imgVareth
     }
 ]
+
 
 export function useCharacters() {
     return {

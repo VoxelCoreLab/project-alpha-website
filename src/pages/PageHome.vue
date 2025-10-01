@@ -11,14 +11,14 @@
             <div>
               <p
                 class="text-[clamp(var(--text-4xl),5vw,var(--text-6xl))] text-4xl lg:text-6xl font-nebulous-regular text-center">
-                Entdecke jetzt die Spielwelt!</p>
+                Discover the game world now!</p>
             </div>
             <div class="self-center">
               <a href="/world-map"
                 class="btn btn-secondary btn-md lg:btn-xl inline-flex items-center gap-2 relative overflow-hidden group scale-100 hover:scale-103 transition-transform duration-300">
                 <span
                   class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                <span class="relative z-10">Zur Weltkarte</span>
+                <span class="relative z-10">To the World Map</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -35,10 +35,7 @@
       <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
         <div>
           <h2 class="text-4xl md:text-8xl pb-4 font-nebulous-regular uppercase sticky z-10">Newsletter</h2>
-          <p class="max-w-lg">Erhalte News zum Spiel direkt in dein Postfach. Wir informieren dich über Updates,
-            Patches,
-            den
-            Start der Beta und die Veröffentlichung des Spieles.</p>
+          <p class="max-w-lg">Get news about the game straight to your inbox. You will be the first to know about updates, patches, and the game’s release.</p>
           <NewsletterForm />
         </div>
         <div class="flex justify-center items-center z-0">
@@ -50,8 +47,8 @@
       <div class="max-w-6xl mx-auto py-4 px-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
         <div>
           <h2 class="text-4xl md:text-8xl pb-4 break-all font-nebulous-regular uppercase">Release</h2>
-          <p class="max-w-lg">Die Beta-Phase ist voraussichtlich Ende 2025</p>
-          <p class="max-w-lg">Die offizielle Veröffentlichung ist für das Jahr 2026 geplant.</p>
+          <p class="max-w-lg">The game is currently in development.</p>
+          <p class="max-w-lg">Sign up to the Newsletter to receive updates about the release.</p>
         </div>
         <div class="flex justify-center items-center">
           <img alt="" class="h-40" src="../assets/meilenstein.webp" />

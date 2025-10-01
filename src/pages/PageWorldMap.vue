@@ -30,7 +30,7 @@
                         <div class="max-h-[60vh] overflow-y-auto pb-6 px-6" :key="activePoint || ''">
                             <img class="w-full aspect-video h-auto rounded-lg mt-4 bg-base-300 skeleton"
                                 :src="getActivePoint?.image" alt="" />
-                            <h2 class="text-lg font-semibold mt-4">Monster</h2>
+                            <h2 class="text-lg font-semibold mt-4">Monsters</h2>
                             <div class="grid grid-cols-4 gap-2 mt-2">
                                 <div v-for="(monster, index) in getActivePoint?.monsters" :key="index"
                                     class="bg-base-100/60 rounded-lg">
@@ -38,7 +38,7 @@
                                         alt="" />
                                 </div>
                             </div>
-                            <h2 class="text-lg font-semibold mt-4">Schwierigkeit</h2>
+                            <h2 class="text-lg font-semibold mt-4">Difficulty</h2>
                             <div class="flex items-center gap-2 pt-2">
                                 <div v-for="i in 3" :key="i" class="w-8 h-8 rounded-full" :class="{
                                     'text-red-600': i <= (getActivePoint?.difficulty ?? 0),
@@ -87,7 +87,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h2 class="text-lg font-semibold mt-4">Geschichte</h2>
+                            <h2 class="text-lg font-semibold mt-4">Lore</h2>
                             <p class="pt-2">{{ getActivePoint?.description }}</p>
                         </div>
                     </div>
@@ -154,36 +154,36 @@ const openPoint = (pointId: number) => {
 
 const breadcrumbs = [
     {
-        text: 'Weltkarte',
+        text: 'World Map',
         href: '/world-map'
     }
 ]
 
 const points: { id: number, x: number, y: number, name: string, description: string, image: string, monsters: string[], difficulty: number, letter: string }[] = [
     {
-        id: 1, x: 78, y: 52, name: 'Das verderbte Mausoleum', image: imgMausoleum,
-        description: 'Tief im Herzen eines verfluchten Sumpfes liegt das verderbte Mausoleum, einst Ruhestätte eines vergessenen Schattenkults. Dort brach vor Jahrhunderten die Schattenseuche aus. Ein dunkler Fluch, der Fleisch, Geist und Licht gleichermassen zerfrisst. Noch heute wabern schwarze Nebel durch die zerfallenen Hallen, und aus den Gräbern flüstern Stimmen, die längst tot sein sollten.',
+        id: 1, x: 78, y: 52, name: 'The Corrupted Mausoleum', image: imgMausoleum,
+        description: 'Deep in the heart of a cursed swamp lies the Corrupted Mausoleum, once the resting place of a forgotten shadow cult. Centuries ago, the Shadow Plague broke out there. A dark curse that devours flesh, spirit, and light alike. Even today, black mists swirl through the crumbling halls, and voices whisper from graves that should long be silent.',
         monsters: [imgMausoleumMonster1, imgMausoleumMonster2, imgMausoleumMonster3, imgMausoleumMonster4, imgMausoleumMonster5, imgMausoleumMonster6],
         difficulty: 3,
         letter: 'A'
     },
     {
         id: 2, x: 58.5, y: 55, name: 'Elderglade', image: imgElderglade,
-        description: 'Versteckt im leuchtenden Blauen Kristallwald erhebt sich Elderglade, eine uralte Stadt, in der Naturmagie in jedem Blatt pulsiert. Ihre Bewohner bewahren das Gleichgewicht zwischen den lebenden Wäldern und den arkanen Strömen unter der Erde. Es heisst, dass Elderglade selbst atmet und nur jene willkommen heisst, die sich den Prüfungen des Waldes zu stellen.',
+        description: 'Hidden within the glowing Blue Crystal Forest stands Elderglade, an ancient city where nature magic pulses in every leaf. Its inhabitants maintain the balance between the living forests and the arcane currents beneath the earth. It is said that Elderglade itself breathes and only welcomes those who dare to face the trials of the forest.',
         monsters: [imgEldergladeMonster1, imgEldergladeMonster2, imgEldergladeMonster3, imgEldergladeMonster4],
         difficulty: 1,
         letter: 'B'
     },
     {
-        id: 3, x: 30, y: 10, name: 'Die weissen Gräber', image: imgWhitegraves,
-        description: 'Weit im gefrorenen Norden, wo selbst der Wind zu flüstern scheint, liegen die Weissen Gräber. Uralte Hügel aus ewigem Schnee, die einst gefallenen Königen und vergessenen Helden gehörten. Doch unter dem Eis regen sich Schatten, und die Geister der Toten wandeln unruhig, gefesselt an ein uraltes, gebrochenes Schwurband. Kein Lebender bleibt dort lange. Denn die Kälte zehrt nicht nur am Körper, sondern auch an der Seele.',
+        id: 3, x: 30, y: 10, name: 'The White Graves', image: imgWhitegraves,
+        description: 'Far in the frozen North, where even the wind seems to whisper, lie the White Graves. Ancient mounds of eternal snow, once belonging to fallen kings and forgotten heroes. Yet beneath the ice, shadows stir, and the spirits of the dead wander restlessly, bound to an ancient, broken oath. No living soul lingers there for long. For the cold preys not only on the body, but on the soul as well.',
         monsters: [imgWhitegravesMonster1, imgWhitegravesMonster2, imgWhitegravesMonster3, imgWhitegravesMonster4, imgWhitegravesMonster5],
         difficulty: 3,
         letter: 'C'
     },
     {
-        id: 4, x: 38, y: 86, name: 'Düsterhafen', image: imgDusterhafen,
-        description: 'Düsterhafen liegt verborgen in einer immerwährenden Nebelbucht, wo die Sonne nur als blasses Flackern durch den grauen Dunst dringt. Einst ein sicherer Handelsposten, wurde die Stadt von verfluchten Piraten übernommen, die ihre Seelen für ewige Beute dem Tiefenmeer geopfert haben.',
+        id: 4, x: 38, y: 86, name: 'Black Harbor', image: imgDusterhafen,
+        description: 'Black Harbor lies hidden within a bay of everlasting mist, where the sun pierces the gray haze only as a pale flicker. Once a secure trading post, the city was seized by cursed pirates who sacrificed their souls to the Deep Sea in exchange for eternal plunder. Now, the harbor is a labyrinth of decaying docks and haunted taverns, where the restless dead seek to reclaim what was lost to the depths.',
         monsters: [imgDusterhafenMonster1, imgDusterhafenMonster2, imgDusterhafenMonster3, imgDusterhafenMonster4, imgDusterhafenMonster5],
         difficulty: 2,
         letter: 'D'
