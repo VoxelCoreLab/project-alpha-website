@@ -1,9 +1,9 @@
 export function useNavigationLinks() {
     const links = [
         { name: 'Home', path: '/' },
-        { name: 'Weltkarte', path: '/world-map' },
-        { name: 'Charaktere', path: '/characters' },
-        { name: 'Fertigkeiten', path: '/skills' },
+        { name: 'World Map', path: '/world-map' },
+        { name: 'Characters', path: '/characters' },
+        { name: 'Skills', path: '/skills' },
         { name: 'FAQ', path: '/faq' }
     ]
     return {

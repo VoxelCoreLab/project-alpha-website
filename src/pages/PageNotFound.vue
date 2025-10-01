@@ -10,7 +10,7 @@
           </h1>
           <div class="max-w-sm lg:max-w-md xl:max-w-2xl">
             <a href="/" class="link-hover link font-bold lg:text-xl xl:text-2xl"
-              >Zurück zur Startseite</a
+              >Back to Home</a
             >
           </div>
         </div>

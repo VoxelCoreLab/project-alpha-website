@@ -2,7 +2,7 @@
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="grid h-full max-w-6xl text-left m-auto p-4 md:p-8">
             <div class="flex flex-col gap-6">
-                <h1 class="text-4xl font-bold">Impressum</h1>
+                <h1 class="text-4xl font-bold">Imprint</h1>
                 <h2 class="text-2xl font-bold">Voxel Core Lab GmbH</h2>
                 <p>Sitz: Bern</p>
                 <p>

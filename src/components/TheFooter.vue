@@ -40,8 +40,8 @@
 </template>
 <script setup lang="ts">
 const links = [
-    { name: 'Impressum', path: '/imprint' },
-    { name: 'Kontakt', path: '/contact' },
-    { name: 'Datenschutzerklärung', path: '/privacy-policy' }
+    { name: 'Imprint', path: '/imprint' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Privacy Policy', path: '/privacy-policy' }
 ]
 </script>

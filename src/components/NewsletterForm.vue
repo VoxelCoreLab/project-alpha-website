@@ -1,10 +1,10 @@
 <template>
   <form @submit="onSubmit">
     <fieldset class="fieldset bg-base-100 rounded-box p-4 mt-4 shadow-lg border border-secondary/40 w-full md:w-xs">
-      <legend class="fieldset-legend">Was ist deine E-Mail?</legend>
+      <legend class="fieldset-legend">What is your E-Mail?</legend>
       <label class="input w-full floating-label"
         :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
-        <span>Deine E-Mail</span>
+        <span>Your Email</span>
         <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
@@ -12,13 +12,13 @@
           </g>
         </svg>
         <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
-          placeholder="Hier deine E-Mail eingeben..." autocomplete="email" />
+          placeholder="Enter your email..." autocomplete="email" />
       </label>
       <div v-if="isEmailFieldTouched && errors.email" class="text-error" role="alert" aria-live="assertive">
         {{ errors.email }}
       </div>
 
-      <button class="btn btn-secondary mt-4">Beim Newsletter anmelden</button>
+      <button class="btn btn-secondary mt-4">Subscribe to Newsletter</button>
     </fieldset>
   </form>
 
@@ -27,8 +27,8 @@
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
-      <h3 class="text-lg font-nebulous-regular md:text-2xl">Beim Newsletter angemeldet</h3>
-      <p class="py-4">Du hast dich erfolgreich beim Newsletter angemeldet!</p>
+      <h3 class="text-lg font-nebulous-regular md:text-2xl">Subscribed to Newsletter</h3>
+      <p class="py-4">You have successfully subscribed to the newsletter!</p>
       <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4" />
       <div class="modal-action">
         <form method="dialog">
@@ -54,8 +54,8 @@ const newsletterSuccessModal = ref<HTMLDialogElement | null>(null);
 const validationSchema = toTypedSchema(
   zod.object({
     email: zod.string({
-      required_error: 'Eine valide E-Mail eingeben: beispiel@mail.com'
-    }).nonempty('Eine valide E-Mail eingeben: beispiel@mail.com').email({ message: 'Eine valide E-Mail eingeben: beispiel@mail.com' }),
+      required_error: 'Enter a valid E-Mail: example@mail.com'
+    }).nonempty('Enter a valid E-Mail: example@mail.com').email({ message: 'Enter a valid E-Mail: example@mail.com' }),
   }).required()
 );
 const { handleSubmit, errors, validate } = useForm({

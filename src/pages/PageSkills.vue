@@ -1,14 +1,14 @@
 <template>
     <LayoutBasic :breadcrumbs="breadcrumbs">
         <div class="max-w-7xl mx-auto p-4 md:p-8">
-            <h1 class="text-4xl md:text-8xl font-nebulous-regular uppercase">Fertigkeiten</h1>
+            <h1 class="text-4xl md:text-8xl font-nebulous-regular uppercase">Skills</h1>
             <div class="filter mt-2">
                 <input v-model="filterSkillType" class="btn filter-reset" value="" type="radio" name="skillType" aria-label="All"/>
                 <input v-model="filterSkillType" class="btn" type="radio" value="Passive" name="skillType" aria-label="Passive"/>
                 <input v-model="filterSkillType" class="btn" type="radio" value="Normal" name="skillType" aria-label="Normal"/>
                 <input v-model="filterSkillType" class="btn" type="radio" value="Ultimate" name="skillType" aria-label="Ultimate"/>
             </div>
-            <div class="text-lg mt-4">Sichtbar {{ skillsSorted.length }} von {{ skills.length }}</div>
+            <div class="text-lg mt-4">Visible {{ skillsSorted.length }} of {{ skills.length }}</div>
             <div class="mt-2 grid gap-4 gird-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <div v-for="skill in skillsSorted" :key="skill.name"
                     class="bg-base-100 border-secondary/40 border @container">
@@ -66,150 +66,151 @@ const breadcrumbs = [
 
 const skills: { name: string, description: string, image: string, cooldown: number, maxCharges: number, type: 'Passive' | 'Normal' | 'Ultimate' }[] = [
     {
-        name: 'Schnelligkeit',
-        description: 'Du bewegst dich 3 Sekunden lang 50% schneller.',
+        name: 'Swiftness',
+        description: 'You move 50% faster for 3 seconds.',
         image: imgSkillSwiftness,
         cooldown: 30,
         maxCharges: 2,
         type: 'Normal'
     },
     {
-        name: 'Geistiger Segen',
-        description: 'Heilt für 60. Du opfert 20% deiner Lebenspunkte. Du opferst keine Lebenspunkte, wenn du dich in Hörweite eines Geists befindest.',
+        name: 'Spiritual Blessing',
+        description: 'Heals for 60. You sacrifice 20% of your health. You do not sacrifice health if you are within earshot of a spirit.',
         image: imgSpiritBlessing,
         cooldown: 30,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Schattenform',
-        description: 'Du bewegst dich 15 Sekunden lang 10% schneller und erleidest nur 50% des eingehenden Schadens.',
+        name: 'Shadow Form',
+        description: 'You move 10% faster for 15 seconds and take only 50% of incoming damage.',
         image: imgShadowForm,
         cooldown: 70,
         maxCharges: 1,
         type: 'Ultimate'
     },
     {
-        name: 'Gift anwenden',
-        description: 'Deine Fernkampfangriffe vergiften den Gegner 5 Sekunden lang und verursachen 2 Schaden pro Sekunde.',
+        name: 'Apply Poison',
+        description: 'Your ranged attacks poison the target for 5 seconds, dealing 2 damage per second.',
         image: imgPoision,
         cooldown: 0,
         maxCharges: 0,
         type: 'Passive'
     },
     {
-        name: 'Schildwache',
-        description: 'Schildet einen Spieler für 25.',
+        name: 'Sentinel',
+        description: 'Shields a player for 25.',
         image: imgShieldGuard,
         cooldown: 30,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Schützende Hände',
-        description: 'Reduziert 20 Sekunden lang den eingehenden Schaden um 3.',
+        name: 'Protective Hands',
+        description: 'Reduces incoming damage by 3 for 20 seconds.',
         image: imgShieldingHands,
         cooldown: 40,
         maxCharges: 2,
         type: 'Normal'
     },
     {
-        name: 'Heilendes Blatt',
-        description: 'Heilt das Ziel über 9 Sekunden lang alle 3 Sekunden um 15 Lebenspunkte.',
+        name: 'Healing Leaf',
+        description: 'Heals the target for 15 health every 3 seconds over 9 seconds.',
         image: imgHealingLeaf,
         cooldown: 30,
         maxCharges: 2,
         type: 'Normal'
     },
     {
-        name: 'Auferstehung',
-        description: 'Belebt einen verbündeten Spieler mit voller Gesundheit wieder.',
+        name: 'Resurrection',
+        description: 'Revives an allied player with full health.',
         image: imgResurrection,
         cooldown: 120,
         maxCharges: 1,
         type: 'Ultimate'
     },
     {
-        name: 'Rune der Heilung',
-        description: 'Heilt 30 Lebenspunkte. Heilt 60 weitere Lebenspunkte über 5 Sekunden, wenn das Ziel unter 50% Gesundheit hat.',
+        name: 'Rune of Healing',
+        description: 'Heals 30 health. Heals an additional 60 health over 5 seconds if the target is below 50% health.',
         image: imgRuneOfHealing,
         cooldown: 60,
         maxCharges: 1,
         type: 'Ultimate'
     },
     {
-        name: 'Lakai der Toten',
-        description: 'Beschwört einen untoten Lakai aus einer Leiche in der Nähe, der an deiner Seite kämpft.',
+        name: 'Minion of the Dead',
+        description: 'Summons an undead minion from a nearby corpse to fight by your side.',
         image: imgMinionOfTheDead,
         cooldown: 40,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Segen des Löwen',
-        description: 'Gewinne jede Sekunde, die du dich bewegst, 1 Schild bis zu 20.',
+        name: 'Blessing of the Lion',
+        description: 'Gain 1 shield per second while moving, up to 20.',
         image: imgBlessingOfTheLion,
         cooldown: 0,
         maxCharges: 0,
         type: 'Passive'
     },
     {
-        name: 'Bewahrung',
-        description: 'Beschwört einen Geist für 60 Sekunden, der Verbündete in der Nähe alle 10 Sekunden über 5 Sekunden um 20 Lebenspunkte heilt.',
+        name: 'Preservation',
+        description: 'Summons a spirit for 60 seconds that heals nearby allies for 20 health over 5 seconds every 10 seconds.',
         image: imgPreservation,
         cooldown: 70,
         maxCharges: 1,
         type: 'Ultimate'
     },
     {
-        name: 'Blutgesang',
-        description: 'Ruft einen Geist herbei, der Gegner in der Nähe angreift.',
+        name: 'Bloodsong',
+        description: 'Summons a spirit that attacks nearby enemies.',
         image: imgBloodsong,
         cooldown: 60,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Essenz-Schlag',
-        description: 'Wirke einen Blitz, der 30 Schaden verursacht.',
+        name: 'Essence Strike',
+        description: 'Casts a lightning bolt dealing 30 damage.',
         image: imgEssenceStrike,
         cooldown: 35,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Seelenheilung',
-        description: 'Heilt für 40. Entfernt einen Zustand für jeden Geist in Hörweite.',
+        name: 'Soul Mend',
+        description: 'Heals for 40. Removes one condition for each spirit within earshot.',
         image: imgSouldMend,
         cooldown: 40,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Barriere',
-        description: 'Platziert eine solide Wand über 40 Sekunden.',
+        name: 'Barrier',
+        description: 'Places a solid wall for 40 seconds.',
         image: imgBarrier,
         cooldown: 60,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Frostkegel',
-        description: 'Verlangsamt Gegner in einem Kegel vor dir 5 Sekunden lang um 50% und fügt ihnen 20 Schaden zu.',
+        name: 'Cone of Cold',
+        description: 'Slows enemies in a cone in front of you by 50% for 5 seconds and deals 20 damage.',
         image: imgConeOfCold,
         cooldown: 40,
         maxCharges: 1,
         type: 'Normal'
     },
     {
-        name: 'Eissprengung',
-        description: 'Feuert einen langen Strahl ab, der allen getroffenen Gegnern 50 Schaden zufügt.',
+        name: 'Ice Blast',
+        description: 'Fires a long beam dealing 50 damage to all enemies hit.',
         image: imgIceBlast,
         cooldown: 45,
         maxCharges: 1,
         type: 'Normal'
     }
 ]
+
 
 const filterSkillType = ref('')
 
