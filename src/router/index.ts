@@ -19,6 +19,10 @@ const router = createRouter({
             component: () => import('../pages/PagePrivacyPolicy.vue'),
         },
         {
+            path: '/general-terms-and-conditions',
+            component: () => import('../pages/PageGeneralTermsAndConditions.vue'),
+        },
+        {
             path: '/:catchAll(.*)',
             name: 'PageNotFound',
             component: () => import('../pages/PageNotFound.vue'),

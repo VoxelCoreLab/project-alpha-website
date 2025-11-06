@@ -41,6 +41,7 @@
 <script setup lang="ts">
 const links = [
     { name: 'Imprint', path: '/imprint' },
+    { name: 'General Terms and Conditions', path: '/general-terms-and-conditions' },
     { name: 'Contact', path: '/contact' },
     { name: 'Privacy Policy', path: '/privacy-policy' }
 ]
