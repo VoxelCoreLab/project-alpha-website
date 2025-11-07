@@ -47,7 +47,7 @@
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                     <!-- Left Side - Features Content -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 scroll-animate" data-animation="slide-left">
                         <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
                             Game Features
                         </h2>
@@ -60,7 +60,7 @@
                         -->
 
                         <div class="space-y-4 mt-8">
-                            <div class="feature-item flex items-start gap-4">
+                            <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="100">
                                 <div
                                     class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
 
-                            <div class="feature-item flex items-start gap-4">
+                            <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="200">
                                 <div
                                     class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
@@ -109,7 +109,7 @@
 
                             -->
 
-                            <div class="feature-item flex items-start gap-4">
+                            <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="300">
                                 <div
                                     class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
 
-                            <div class="feature-item flex items-start gap-4">
+                            <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="400">
                                 <div
                                     class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
@@ -145,7 +145,7 @@
                     </div>
 
                     <!-- Right Side - Screenshot -->
-                    <div class="relative">
+                    <div class="relative scroll-animate" data-animation="slide-right">
                         <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-secondary/30">
                             <img src="../assets/illustration/mausoleum.webp" alt="Shadow Infection Gameplay Screenshot"
                                 class="w-full h-auto" />
@@ -174,7 +174,7 @@
             </div>
 
             <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-2xl mx-auto text-center">
+                <div class="max-w-2xl mx-auto text-center scroll-animate" data-animation="fade-up">
                     <h2 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-6">
                         Newsletter
                     </h2>
@@ -212,8 +212,41 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import NewsletterForm from '../components/NewsletterForm.vue';
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+    // Create intersection observer for scroll animations
+    observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target as HTMLElement;
+                const delay = element.dataset.delay || '0';
+                
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, parseInt(delay));
+                
+                // Unobserve after animation triggers
+                observer?.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with scroll-animate class
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer?.observe(el));
+});
+
+onUnmounted(() => {
+    observer?.disconnect();
+});
 </script>
 
 <style scoped>
@@ -236,6 +269,43 @@ import NewsletterForm from '../components/NewsletterForm.vue';
 
 .animate-fade-in-delay {
     animation: fade-in 1s ease-out 0.3s both;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+}
+
+/* Slide from left */
+.scroll-animate[data-animation="slide-left"] {
+    transform: translateX(-50px);
+}
+
+.scroll-animate[data-animation="slide-left"].visible {
+    transform: translateX(0);
+}
+
+/* Slide from right */
+.scroll-animate[data-animation="slide-right"] {
+    transform: translateX(50px);
+}
+
+.scroll-animate[data-animation="slide-right"].visible {
+    transform: translateX(0);
+}
+
+/* Fade up */
+.scroll-animate[data-animation="fade-up"] {
+    transform: translateY(30px);
+}
+
+.scroll-animate[data-animation="fade-up"].visible {
+    transform: translateY(0);
 }
 
 /* Video Background Styling */
