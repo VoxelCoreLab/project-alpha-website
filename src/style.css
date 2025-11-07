@@ -4,10 +4,7 @@
 }
 @plugin "daisyui/theme" {
     name: "night";
-    default: true;
-
-    --color-base-100: #0D0A13;
-    --color-base-content: #f2f2f2;
+    default: false;
 }
 
 
@@ -19,7 +16,7 @@
   --color-base-100: #0D0A13;
   --color-base-200: #2c2733;
   --color-base-300: #1a1620;
-  --color-base-content: #f2f2f2;
+  --color-base-content: #fcfcfc;
   --color-primary: #445562;
   --color-primary-content: #f2f2f2;
   --color-secondary: #ffffff;
@@ -44,6 +41,7 @@
   --border: 2px;
   --depth: 0;
   --noise: 0;
+  --default-font-family: "Merriweather_Sans", sans-serif;
 }
 
 @font-face {
@@ -62,7 +60,25 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Cinzel';
+    src: url('./assets/fonts/Cinzel/Cinzel-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-stretch: 62.5% 100%;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather_Sans';
+    src: url('./assets/fonts/Merriweather_Sans/MerriweatherSans-VariableFont_wght.ttf') format('truetype-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 100%;
+    font-display: swap;
+}
+
 @theme {
     --font-nebulous-regular: "NebulousRegular", sans-serif;
     --font-grest: "Grest", sans-serif;
+    --font-cinzel: "Cinzel", serif;
+    --font-merriweather-sans: "Merriweather_Sans", sans-serif;
 }

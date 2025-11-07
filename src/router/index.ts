@@ -1,11 +1,12 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
-import PageHome from '../pages/PageHome.vue'
+import PageLandingSite from '../pages/PageLandingSite.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
-        { path: '/', component: PageHome },
+        { path: '/', component: PageLandingSite },
+        { path: '/old', component: () => import('../pages/PageHome.vue') },
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },

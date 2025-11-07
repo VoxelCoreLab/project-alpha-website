@@ -1,5 +1,5 @@
 <template>
-    <div class="grid min-h-svh grid-rows-[auto_1fr_auto]">
+    <div class="grid min-h-svh grid-rows-[1fr_auto]">
         <TheHeader />
         <main>
             <TheBreadcrumbs v-if="breadcrumbs" :items="breadcrumbs" />

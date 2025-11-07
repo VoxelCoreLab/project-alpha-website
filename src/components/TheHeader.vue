@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-base-100 shadow-sm">
+    <header class="bg-base-100 shadow-sm sticky top-0 z-20">
         <div class="navbar bg-base-100 max-w-7xl mx-auto">
             <div class="navbar-start w-auto">
                 <div class="flex-none md:hidden">
@@ -16,8 +16,8 @@
             </div>
             <div class="navbar-center hidden md:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li v-for="link in links" :key="link.name">
-                        <RouterLink :to="link.path" activeClass="underline">{{ link.name }}</RouterLink>
+                    <li class="rounded" v-for="link in links" :key="link.name">
+                        <RouterLink :to="link.path" class="uppercase font-bold rounded" activeClass="underline">{{ link.name }}</RouterLink>
                     </li>
                 </ul>
             </div>
