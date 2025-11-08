@@ -17,14 +17,16 @@
   --color-base-200: oklch(20% 0 0);
   --color-base-300: oklch(26% 0 0);
   --color-base-content: #f7f7f7;
-  --color-primary: #445562;
+  //--color-primary: #445562;
+  --color-primary: hsl(206 18% 53% / 1);
+    //--color-primary: hsl(206 48% 63% / 1);
   --color-primary-content: #f2f2f2;
   --color-secondary: #ffffff;
   --color-secondary-content: #0d0d0d;
   --color-accent: #988366;
   --color-accent-content: #0d0d0d;
   --color-neutral: oklch(12% 0.042 264.695);
-  --color-neutral-content: #f2f2f2;
+  --color-neutral-content: #f7f7f7;
   --color-info: #3669af;
   --color-info-content: #fff;
   --color-success: #8fc584;
