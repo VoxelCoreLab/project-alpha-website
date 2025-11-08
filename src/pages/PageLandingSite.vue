@@ -4,7 +4,7 @@
         <section class="hero-section relative min-h-[80vh] flex items-center justify-center overflow-hidden">
             <!-- Video Background -->
             <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
-                <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover">
+                <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <source src="../assets/video/video-background.mp4" type="video/mp4" />
                     <!--<source src="/video/hero-background.webm" type="video/webm" />-->
                 </video>
@@ -197,13 +197,13 @@
                     <!-- Social Proof -->
                     <div class="mt-12 flex items-center justify-center gap-8 text-base-content/60">
                         <div class="text-center">
-                            <div class="text-2xl font-bold text-secondary">10K+</div>
-                            <div class="text-sm">Subscribers</div>
+                            <div class="text-2xl font-bold text-secondary">Follow</div>
+                            <div class="text-sm">The Journey</div>
                         </div>
                         <div class="w-px h-12 bg-base-content/20"></div>
                         <div class="text-center">
                             <div class="text-2xl font-bold text-secondary">Weekly</div>
-                            <div class="text-sm">Updates</div>
+                            <div class="text-sm">Dev Updates</div>
                         </div>
                         <div class="w-px h-12 bg-base-content/20"></div>
                         <div class="text-center">
