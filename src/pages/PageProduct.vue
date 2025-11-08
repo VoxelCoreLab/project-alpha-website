@@ -80,7 +80,7 @@
                                         </svg>
                                         <span>All future updates included</span>
                                     </div>
-                                    <div class="flex items-center gap-2">
+                                    <!--                                    <div class="flex items-center gap-2">
                                         <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -88,6 +88,7 @@
                                         </svg>
                                         <span>Cross-platform multiplayer</span>
                                     </div>
+                                    -->
                                 </div>
 
                                 <div class="divider"></div>

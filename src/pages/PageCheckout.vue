@@ -223,6 +223,7 @@
                                                 </svg>
                                                 <span>All future updates</span>
                                             </li>
+                                            <!--
                                             <li class="flex items-start gap-2">
                                                 <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -231,6 +232,7 @@
                                                 </svg>
                                                 <span>Cross-platform multiplayer</span>
                                             </li>
+                                            -->
                                         </ul>
                                     </div>
 
