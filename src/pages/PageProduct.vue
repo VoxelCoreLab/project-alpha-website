@@ -128,9 +128,7 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center">
-                        About the Game
-                    </h2>
+                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center">About the Game</h2>
 
                     <div class="prose prose-lg max-w-none">
                         <p class="text-base-content/80 text-lg leading-relaxed mb-6">

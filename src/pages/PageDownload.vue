@@ -21,7 +21,7 @@
                         <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
                             <div class="card-body items-center text-center">
                                 <IconWindows class="w-16 h-16 mb-4 text-primary" />
-                                <h2 class="card-title text-xl font-cinzel uppercase">Windows</h2>
+                                <h2 class="card-title text-xl uppercase">Windows</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Windows 10/11</p>
                                 <button class="btn btn-primary btn-block">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@
                         <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
                             <div class="card-body items-center text-center">
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
-                                <h2 class="card-title text-xl font-cinzel uppercase">Mac</h2>
+                                <h2 class="card-title text-xl uppercase">Mac</h2>
                                 <p class="text-sm text-base-content/60 mb-4">macOS 10.15+</p>
                                 <button class="btn btn-primary btn-block">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@
                         <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
                             <div class="card-body items-center text-center">
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
-                                <h2 class="card-title text-xl font-cinzel uppercase">Linux</h2>
+                                <h2 class="card-title text-xl uppercase">Linux</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Ubuntu 20.04+</p>
                                 <button class="btn btn-primary btn-block">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@
                     <!-- System Requirements -->
                     <div class="mt-12 text-center">
                         <div class="divider"></div>
-                        <h3 class="text-xl font-cinzel uppercase text-secondary mb-4">System Requirements</h3>
+                        <h3 class="text-xl font-cinzel font-bold italic uppercase text-secondary mb-4">System Requirements</h3>
                         <p class="text-sm text-base-content/70 max-w-2xl mx-auto">
                             Make sure your system meets the minimum requirements. 
                             For the best experience, we recommend a dedicated graphics card and at least 8GB of RAM.
