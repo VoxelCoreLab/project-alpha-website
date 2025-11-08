@@ -30,7 +30,7 @@
                                         <label class="label">
                                             <span class="label-text font-semibold">Email Address</span>
                                         </label>
-                                        <input type="email" placeholder="your.email@example.com"
+                                        <input v-model="email" type="email" placeholder="your.email@example.com"
                                             class="input input-bordered w-full" required />
                                     </div>
 
@@ -272,17 +272,23 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 
+const email = ref('');
+
 const handleProceedToPayment = () => {
-    // TODO: Implement actual payment processing
-    // This would typically redirect to a payment gateway (Stripe, PayPal, etc.)
-    alert('Payment processing coming soon! You will be redirected to a secure payment gateway.');
+    // Validate email
+    if (!email.value || !email.value.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+    }
 
-    // Example: Redirect to payment processor
-    // window.location.href = 'https://payment-gateway.com/checkout';
-
-    // Or handle payment integration here
+    // Build Stripe payment URL with the email as a locked prefilled parameter
+    const stripeUrl = `https://buy.stripe.com/test_fZu5kDcfj0L4b5p6TZ3gk00?locked_prefilled_email=${encodeURIComponent(email.value)}&prefilled_promo_code=EARLYACCESS`;
+    
+    // Redirect to Stripe payment page
+    window.location.href = stripeUrl;
 };
 </script>
 
