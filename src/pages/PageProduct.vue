@@ -206,7 +206,7 @@
         </section>
 
         <!-- System Requirements Section -->
-        <section class="py-20 bg-base-300">
+        <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center">
@@ -267,6 +267,7 @@
         </section>
 
         <!-- Final CTA Section -->
+        <!--
         <section class="py-20 bg-gradient-to-b from-base-200 to-base-300">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-6">
@@ -281,6 +282,7 @@
                 </button>
             </div>
         </section>
+        -->
     </LayoutBasic>
 </template>
 
