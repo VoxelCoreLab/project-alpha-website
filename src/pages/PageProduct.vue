@@ -277,7 +277,7 @@
                 </p>
                 <button @click="handleCheckout"
                     class="btn btn-accent btn-lg text-xl px-12 uppercase shadow-xl hover:shadow-2xl transition-all">
-                    Buy Now - €15.00
+                    Buy Now - €15.00 <span class="line-through">€20.00</span>
                 </button>
             </div>
         </section>

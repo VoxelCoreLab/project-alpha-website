@@ -3,7 +3,7 @@
         <!-- Checkout Hero Section -->
         <section class="py-12 bg-gradient-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto">
+                <div class="max-w-6xl mx-auto">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
                         Checkout
                     </h1>
@@ -15,7 +15,7 @@
         <!-- Checkout Content -->
         <section class="py-12 bg-base-200">
             <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto">
+                <div class="max-w-6xl mx-auto">
                     <div class="grid lg:grid-cols-3 gap-8">
                         <!-- Left Column - Order Details Form -->
                         <div class="lg:col-span-2 space-y-6">
