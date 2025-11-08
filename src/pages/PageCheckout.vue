@@ -25,7 +25,7 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
                                     </h2>
-                                    <p>Important: This Account E-Mail that will get access to the game.</p>
+                                    <p>Important: This Account E-Mail will get access to the game.</p>
                                     <div class="form-control">
                                         <label class="input w-full floating-label"
                                             :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
