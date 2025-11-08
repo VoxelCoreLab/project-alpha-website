@@ -7,6 +7,7 @@ const router = createRouter({
     routes: [
         { path: '/', component: PageLandingSite },
         { path: '/old', component: () => import('../pages/PageHome.vue') },
+        { path: '/product', component: () => import('../pages/PageProduct.vue') },
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },

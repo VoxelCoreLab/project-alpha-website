@@ -26,10 +26,10 @@
                     <p class="mb-12 font-cinzel font-black italic uppercase text-base-content text-xl">
                         Shadow Infection – is a co-op PvE and PvP<br /> online action arena game in development.
                     </p>
-                    <a href="#buy"
+                    <RouterLink to="/product"
                         class="btn btn-accent btn-lg text-xl px-12 py-6 h-auto min-h-0 shadow-2xl uppercase outline outline-[#E6D7C3]">
                         Buy Now
-                    </a>
+                    </RouterLink>
                 </div>
             </div>
 
@@ -144,9 +144,9 @@
                                 </div>
                             </div>
                             <!-- Call To Action inside Features -->
-                            <button class="btn btn-accent btn-lg scroll-animate" data-animation="fade-up" data-delay="500">
+                            <RouterLink to="/product" class="btn btn-accent btn-lg scroll-animate" data-animation="fade-up" data-delay="500">
                                 Buy Now
-                            </button>
+                            </RouterLink>
                         </div>
                     </div>
 
