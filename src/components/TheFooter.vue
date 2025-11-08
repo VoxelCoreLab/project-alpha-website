@@ -1,6 +1,6 @@
 <template>
     <footer class="footer footer-horizontal footer-center bg-base-100 text-base-content rounded p-10 pt-16 md:pb-16">
-        <div class="py-16">
+        <div class="">
             <div class="uppercase font-bold text-secondary/50">Socials</div>
             <div class="">
                 <div class="grid grid-flow-col gap-4">

@@ -197,7 +197,7 @@
                     </div>
 
                     <!-- Social Proof -->
-                    <div class="mt-12 flex items-center justify-center gap-8 text-base-content/60">
+                    <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-base-content/60">
                         <div class="text-center">
                             <div class="text-2xl font-bold text-secondary">Follow</div>
                             <div class="text-sm">The Journey</div>

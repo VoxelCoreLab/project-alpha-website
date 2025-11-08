@@ -23,10 +23,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex-1 md:flex-none gap-2">
+            <div class="flex gap-2 items-center">
                 <RouterLink to="/product" class="btn btn-xs text-sm btn-outline btn-primary">Buy now</RouterLink>
                 <div class="dropdown dropdown-end">
-                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-sm btn-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -35,7 +35,7 @@
                     </div>
                     <ul tabindex="-1"
                         class="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><RouterLink to="/download">Download Game</RouterLink></li>
+                        <li><RouterLink to="/download">Download</RouterLink></li>
                         <li><RouterLink to="/logout">Logout</RouterLink></li>
                     </ul>
                 </div>
