@@ -192,10 +192,8 @@
                                                 overview</span>
                                         </div>
                                     </div>
-
+                                    <!--
                                     <div class="divider"></div>
-
-                                    <!-- What's Included -->
                                     <div class="space-y-2">
                                         <h3 class="font-semibold text-sm uppercase tracking-wide">What's Included:</h3>
                                         <ul class="space-y-2 text-sm">
@@ -223,7 +221,6 @@
                                                 </svg>
                                                 <span>All future updates</span>
                                             </li>
-                                            <!--
                                             <li class="flex items-start gap-2">
                                                 <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -232,9 +229,9 @@
                                                 </svg>
                                                 <span>Cross-platform multiplayer</span>
                                             </li>
-                                            -->
                                         </ul>
                                     </div>
+                                    -->
 
                                     <div class="divider"></div>
 
