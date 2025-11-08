@@ -284,23 +284,16 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import IconApple from '../components/IconApple.vue';
 import IconLinux from '../components/IconLinux.vue';
 import IconWindows from '../components/IconWindows.vue';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 
+const router = useRouter();
+
 const handleCheckout = () => {
-    // TODO: Implement checkout functionality
-    // This would typically redirect to a payment processor or checkout page
-    alert('Checkout functionality coming soon! The game will be available for €15.00 (25% off the regular €20.00 price)');
-
-    // Example: Redirect to checkout page
-    // window.location.href = '/checkout';
-
-    // Or use Vue Router
-    // import { useRouter } from 'vue-router';
-    // const router = useRouter();
-    // router.push('/checkout');
+    router.push('/checkout');
 };
 </script>
 
