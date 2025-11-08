@@ -24,7 +24,7 @@
                 <!-- Call to Action -->
                 <div class="animate-fade-in-delay">
                     <p class="mb-12 font-cinzel font-black italic uppercase text-base-content text-xl">
-                        Shadow Infection – is a co-op PvE and<br /> PvP online action arena game.
+                        Shadow Infection – is a co-op PvE and PvP<br /> online action arena game in development.
                     </p>
                     <a href="#buy"
                         class="btn btn-accent btn-lg text-xl px-12 py-6 h-auto min-h-0 hover:scale-110 transition-transform duration-300 shadow-2xl uppercase">
