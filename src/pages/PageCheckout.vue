@@ -25,20 +25,16 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
                                     </h2>
-
+                                    <p>Important: This Account E-Mail that will get access to the game.</p>
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text font-semibold">Email Address</span>
                                         </label>
                                         <input type="email" placeholder="your.email@example.com"
                                             class="input input-bordered w-full" required />
-                                        <label class="label">
-                                            <span class="label-text-alt text-base-content/60">
-                                                Your game key will be sent to this email
-                                            </span>
-                                        </label>
                                     </div>
 
+                                    <!--
                                     <div class="grid md:grid-cols-2 gap-4">
                                         <div class="form-control">
                                             <label class="label">
@@ -56,10 +52,12 @@
                                                 required />
                                         </div>
                                     </div>
+                                    -->
                                 </div>
                             </div>
 
                             <!-- Billing Address -->
+                            <!--
                             <div class="card bg-base-100 shadow-xl">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
@@ -113,6 +111,7 @@
                                     </div>
                                 </div>
                             </div>
+                        -->
 
                             <!-- Newsletter Opt-in -->
                             <!--
