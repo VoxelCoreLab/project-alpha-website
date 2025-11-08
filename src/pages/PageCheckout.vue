@@ -25,12 +25,12 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
                                     </h2>
-                                    
+
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text font-semibold">Email Address</span>
                                         </label>
-                                        <input type="email" placeholder="your.email@example.com" 
+                                        <input type="email" placeholder="your.email@example.com"
                                             class="input input-bordered w-full" required />
                                         <label class="label">
                                             <span class="label-text-alt text-base-content/60">
@@ -44,16 +44,16 @@
                                             <label class="label">
                                                 <span class="label-text font-semibold">First Name</span>
                                             </label>
-                                            <input type="text" placeholder="John" 
-                                                class="input input-bordered w-full" required />
+                                            <input type="text" placeholder="John" class="input input-bordered w-full"
+                                                required />
                                         </div>
 
                                         <div class="form-control">
                                             <label class="label">
                                                 <span class="label-text font-semibold">Last Name</span>
                                             </label>
-                                            <input type="text" placeholder="Doe" 
-                                                class="input input-bordered w-full" required />
+                                            <input type="text" placeholder="Doe" class="input input-bordered w-full"
+                                                required />
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Billing Address
                                     </h2>
-                                    
+
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text font-semibold">Country</span>
@@ -91,16 +91,16 @@
                                             <label class="label">
                                                 <span class="label-text font-semibold">City</span>
                                             </label>
-                                            <input type="text" placeholder="Berlin" 
-                                                class="input input-bordered w-full" required />
+                                            <input type="text" placeholder="Berlin" class="input input-bordered w-full"
+                                                required />
                                         </div>
 
                                         <div class="form-control">
                                             <label class="label">
                                                 <span class="label-text font-semibold">Postal Code</span>
                                             </label>
-                                            <input type="text" placeholder="10115" 
-                                                class="input input-bordered w-full" required />
+                                            <input type="text" placeholder="10115" class="input input-bordered w-full"
+                                                required />
                                         </div>
                                     </div>
 
@@ -108,13 +108,14 @@
                                         <label class="label">
                                             <span class="label-text font-semibold">Street Address</span>
                                         </label>
-                                        <input type="text" placeholder="Main Street 123" 
+                                        <input type="text" placeholder="Main Street 123"
                                             class="input input-bordered w-full" required />
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Newsletter Opt-in -->
+                            <!--
                             <div class="card bg-base-100 shadow-xl">
                                 <div class="card-body">
                                     <div class="form-control">
@@ -127,6 +128,7 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
                         </div>
 
                         <!-- Right Column - Order Summary -->
@@ -141,14 +143,14 @@
                                     <div class="space-y-4 mb-4">
                                         <div class="flex gap-4">
                                             <div class="w-20 h-20 bg-base-300 rounded-lg overflow-hidden flex-shrink-0">
-                                                <img src="../assets/TitelLogoUpdate.png" 
-                                                    alt="Shadow Infection"
+                                                <img src="../assets/TitelLogoUpdate.png" alt="Shadow Infection"
                                                     class="w-full h-full object-contain p-2" />
                                             </div>
                                             <div class="flex-1">
                                                 <h3 class="font-bold text-lg">Shadow Infection</h3>
                                                 <p class="text-sm text-base-content/60">Digital Download</p>
-                                                <div class="badge badge-accent badge-sm mt-1">Early Access - 25% OFF</div>
+                                                <div class="badge badge-accent badge-sm mt-1">Early Access - 25% OFF
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -180,12 +182,14 @@
                                             <span class="text-accent">€15.00</span>
                                         </div>
                                         <div class="alert alert-info py-2 px-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 class="stroke-current shrink-0 w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                </path>
                                             </svg>
-                                            <span class="text-xs">Final tax calculation will be shown on the payment overview</span>
+                                            <span class="text-xs">Final tax calculation will be shown on the payment
+                                                overview</span>
                                         </div>
                                     </div>
 
@@ -196,34 +200,34 @@
                                         <h3 class="font-semibold text-sm uppercase tracking-wide">What's Included:</h3>
                                         <ul class="space-y-2 text-sm">
                                             <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" 
+                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                        d="M5 13l4 4L19 7"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
                                                 </svg>
                                                 <span>Instant digital download</span>
                                             </li>
                                             <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" 
+                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                        d="M5 13l4 4L19 7"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
                                                 </svg>
                                                 <span>Early access builds</span>
                                             </li>
                                             <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" 
+                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                        d="M5 13l4 4L19 7"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
                                                 </svg>
                                                 <span>All future updates</span>
                                             </li>
                                             <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none" 
+                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                                        d="M5 13l4 4L19 7"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
                                                 </svg>
                                                 <span>Cross-platform multiplayer</span>
                                             </li>
@@ -244,7 +248,8 @@
                                     </button>
 
                                     <div class="flex items-center justify-center gap-2 mt-3">
-                                        <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
                                             </path>
@@ -275,10 +280,10 @@ const handleProceedToPayment = () => {
     // TODO: Implement actual payment processing
     // This would typically redirect to a payment gateway (Stripe, PayPal, etc.)
     alert('Payment processing coming soon! You will be redirected to a secure payment gateway.');
-    
+
     // Example: Redirect to payment processor
     // window.location.href = 'https://payment-gateway.com/checkout';
-    
+
     // Or handle payment integration here
 };
 </script>
