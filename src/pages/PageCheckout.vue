@@ -27,11 +27,21 @@
                                     </h2>
                                     <p>Important: This Account E-Mail that will get access to the game.</p>
                                     <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text font-semibold">Email Address</span>
+                                        <label class="input w-full floating-label"
+                                            :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
+                                            <span>Email Address</span>
+                                            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                                </g>
+                                            </svg>
+                                            <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
+                                                placeholder="your.email@example.com" autocomplete="email" />
                                         </label>
-                                        <input v-model="email" type="email" placeholder="your.email@example.com"
-                                            class="input input-bordered w-full" required />
+                                        <div v-if="isEmailFieldTouched && errors.email" class="text-error mt-2" role="alert" aria-live="assertive">
+                                            {{ errors.email }}
+                                        </div>
                                     </div>
 
                                     <!--
@@ -272,20 +282,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useField, useForm, useIsFieldTouched, useIsFieldValid } from 'vee-validate';
+import { toTypedSchema } from '@vee-validate/zod';
+import * as zod from 'zod';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 
-const email = ref('');
+const validationSchema = toTypedSchema(
+    zod.object({
+        email: zod.string({
+            required_error: 'Enter a valid E-Mail: example@mail.com'
+        }).nonempty('Enter a valid E-Mail: example@mail.com').email({ message: 'Enter a valid E-Mail: example@mail.com' }),
+    }).required()
+);
 
-const handleProceedToPayment = () => {
-    // Validate email
-    if (!email.value || !email.value.includes('@')) {
-        alert('Please enter a valid email address.');
+const { errors, validate } = useForm({
+    validationSchema,
+});
+
+const { value: email, handleBlur } = useField<string>('email');
+const isEmailFieldTouched = useIsFieldTouched('email');
+const isEmailFieldValid = useIsFieldValid('email');
+
+const handleProceedToPayment = async () => {
+    // Validate the form
+    const result = await validate();
+    
+    if (!result.valid) {
         return;
     }
 
     // Build Stripe payment URL with the email as a locked prefilled parameter
-    const stripeUrl = `https://buy.stripe.com/test_fZu5kDcfj0L4b5p6TZ3gk00?locked_prefilled_email=${encodeURIComponent(email.value)}&prefilled_promo_code=EARLYACCESS`;
+    const stripeUrl = `https://buy.stripe.com/test_fZu5kDcfj0L4b5p6TZ3gk00?locked_prefilled_email=${encodeURIComponent(email.value as string)}&prefilled_promo_code=EARLYACCESS`;
     
     // Redirect to Stripe payment page
     window.location.href = stripeUrl;
