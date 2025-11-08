@@ -27,19 +27,21 @@
                         Shadow Infection – is a co-op PvE and PvP<br /> online action arena game in development.
                     </p>
                     <a href="#buy"
-                        class="btn btn-accent btn-lg text-xl px-12 py-6 h-auto min-h-0 hover:scale-110 transition-transform duration-300 shadow-2xl uppercase">
+                        class="btn btn-accent btn-lg text-xl px-12 py-6 h-auto min-h-0 shadow-2xl uppercase outline outline-[#E6D7C3]">
                         Buy Now
                     </a>
                 </div>
             </div>
 
             <!-- Scroll Indicator -->
+            <!--
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
                 <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
             </div>
+            -->
         </section>
 
         <!-- Game Features Section -->
