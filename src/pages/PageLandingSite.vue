@@ -161,10 +161,12 @@
                             </div>
                         </div>
                         <!-- Floating Badge -->
+                        <!--
                         <div
                             class="absolute -top-6 -right-6 bg-secondary text-secondary-content px-6 py-3 rounded-lg shadow-xl font-bold text-lg rotate-3">
                             Ingame Screenshot
                         </div>
+                        -->
                     </div>
                 </div>
             </div>
