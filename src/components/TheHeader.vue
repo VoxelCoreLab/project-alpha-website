@@ -23,7 +23,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="navbar-end flex-1 md:flex-none gap-2">
+            <div class="flex-1 md:flex-none gap-2">
                 <button class="btn btn-xs text-sm btn-outline btn-primary">Buy now</button>
                 <div class="dropdown dropdown-end">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
