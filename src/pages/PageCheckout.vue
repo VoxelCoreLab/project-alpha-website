@@ -142,7 +142,7 @@
 
                         <!-- Right Column - Order Summary -->
                         <div class="lg:col-span-1">
-                            <div class="card bg-base-100 shadow-xl border-2 border-accent sticky top-4">
+                            <div class="card bg-base-100 shadow-xl border-2 border-primary sticky top-4">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Order Summary
@@ -158,7 +158,7 @@
                                             <div class="flex-1">
                                                 <h3 class="font-bold text-lg">Shadow Infection</h3>
                                                 <p class="text-sm text-base-content/60">Digital Download</p>
-                                                <div class="badge badge-accent badge-sm mt-1">Early Access - 25% OFF
+                                                <div class="badge badge-success badge-sm mt-1">Early Access - 25% OFF
                                                 </div>
                                             </div>
                                         </div>
@@ -188,17 +188,16 @@
                                     <div class="space-y-2">
                                         <div class="flex justify-between items-center text-xl font-bold">
                                             <span>Estimated Total</span>
-                                            <span class="text-accent">€15.00</span>
+                                            <span>€15.00</span>
                                         </div>
-                                        <div class="alert alert-info py-2 px-3">
+                                        <div class="alert bg-transparent text-base-content/50 py-2 px-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 class="stroke-current shrink-0 w-5 h-5">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                                                 </path>
                                             </svg>
-                                            <span class="text-xs">Final tax calculation will be shown on the payment
-                                                overview</span>
+                                            <span class="text-xs">Final tax calculation will be shown on the payment overview</span>
                                         </div>
                                     </div>
                                     <!--
@@ -246,7 +245,7 @@
 
                                     <!-- Proceed Button -->
                                     <button @click="handleProceedToPayment"
-                                        class="btn btn-accent btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all">
+                                        class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">

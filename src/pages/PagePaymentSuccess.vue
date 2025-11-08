@@ -32,7 +32,7 @@
                             <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                                 <router-link
                                     to="/download"
-                                    class="btn btn-accent btn-lg uppercase shadow-lg hover:shadow-xl">
+                                    class="btn btn-primary btn-lg uppercase shadow-lg hover:shadow-xl">
                                     Go to Download
                                 </router-link>
                             </div>

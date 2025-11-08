@@ -39,15 +39,15 @@
                         </div>
 
                         <!-- Pricing Card -->
-                        <div class="card bg-base-100 shadow-xl border-2 border-accent">
+                        <div class="card bg-base-100 shadow-xl border-2 border-primary">
                             <div class="card-body">
                                 <div class="flex items-center justify-between mb-4">
                                     <div>
-                                        <div class="badge badge-accent badge-lg mb-2">
+                                        <div class="badge badge-success badge-lg mb-2">
                                             Early Access - 25% OFF
                                         </div>
                                         <div class="flex items-baseline gap-3">
-                                            <span class="text-4xl font-bold text-accent">€15.00</span>
+                                            <span class="text-4xl font-bold">€15.00</span>
                                             <span class="text-2xl text-base-content/50 line-through">€20.00</span>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
                                 <div class="divider"></div>
 
                                 <button @click="handleCheckout"
-                                    class="btn btn-accent btn-lg w-full text-xl uppercase shadow-lg hover:shadow-xl transition-all">
+                                    class="btn btn-primary btn-lg w-full text-xl uppercase shadow-lg hover:shadow-xl transition-all">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
