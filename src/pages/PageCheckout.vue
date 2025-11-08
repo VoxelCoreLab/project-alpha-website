@@ -302,6 +302,8 @@ const { value: email, handleBlur, setTouched } = useField<string>('email');
 const isEmailFieldTouched = useIsFieldTouched('email');
 const isEmailFieldValid = useIsFieldValid('email');
 
+const stripeBasePaymentLink = import.meta.env.VITE_STRIPE_BASE_PAYMENT_LINK;
+
 const handleProceedToPayment = async () => {
     // Mark the email field as touched to show validation errors
     setTouched(true);
@@ -314,7 +316,7 @@ const handleProceedToPayment = async () => {
     }
 
     // Build Stripe payment URL with the email as a locked prefilled parameter
-    const stripeUrl = `https://buy.stripe.com/test_fZu5kDcfj0L4b5p6TZ3gk00?locked_prefilled_email=${encodeURIComponent(email.value as string)}&prefilled_promo_code=EARLYACCESS`;
+    const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(email.value as string)}&prefilled_promo_code=EARLYACCESS`;
     
     // Redirect to Stripe payment page
     window.location.href = stripeUrl;
