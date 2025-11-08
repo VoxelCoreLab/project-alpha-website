@@ -299,11 +299,14 @@ const { errors, validate } = useForm({
     validationSchema,
 });
 
-const { value: email, handleBlur } = useField<string>('email');
+const { value: email, handleBlur, setTouched } = useField<string>('email');
 const isEmailFieldTouched = useIsFieldTouched('email');
 const isEmailFieldValid = useIsFieldValid('email');
 
 const handleProceedToPayment = async () => {
+    // Mark the email field as touched to show validation errors
+    setTouched(true);
+    
     // Validate the form
     const result = await validate();
     
