@@ -267,11 +267,13 @@
                             </div>
 
                             <!-- Back to Product Link -->
+                            <!--
                             <div class="mt-4 text-center">
                                 <router-link to="/product" class="link link-hover text-sm">
                                     ← Back to product page
                                 </router-link>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
