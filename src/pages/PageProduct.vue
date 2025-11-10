@@ -34,7 +34,7 @@
                             <div class="card-body">
                                 <div>
                                     <h1
-                                        class="text-5xl md:text-6xl font-cinzel font-bold italic uppercase text-base-content mb-4">
+                                        class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-base-content mb-4">
                                         Shadow Infection
                                     </h1>
                                     <p class="text-xl text-base-content/80">
