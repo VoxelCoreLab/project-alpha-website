@@ -6,9 +6,9 @@
                 <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <!-- Left Side - Product Image/Media -->
                     <div class="relative">
-                        <div class="aspect-video bg-base-300 rounded-xl overflow-hidden shadow-2xl">
-                            <img src="../assets/TitelLogoUpdate.png" alt="Shadow Infection"
-                                class="w-full h-full object-contain p-8" />
+                        <div class="aspect-[3/4] bg-base-300 rounded-xl overflow-hidden shadow-2xl">
+                            <img src="../assets/LandscapeWithTitle4_3_v2.png" alt="Shadow Infection"
+                                class="w-full h-full object-cover object-top border-accent/10 border-4 rounded-xl" />
                         </div>
                         <!-- Platforms Badge -->
                         <div class="mt-6 flex gap-4 justify-center">
