@@ -3,7 +3,7 @@
         <!-- Product Hero Section -->
         <section class="product-hero relative bg-gradient-to-b from-base-300 to-base-200 py-20">
             <div class="container mx-auto px-4">
-                <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
                     <!-- Left Side - Product Image/Media -->
                     <div class="relative">
                         <div class="aspect-[3/4] bg-base-300 rounded-xl overflow-hidden shadow-2xl">
@@ -29,18 +29,20 @@
 
                     <!-- Right Side - Product Info & Pricing -->
                     <div class="space-y-6">
-                        <div>
-                            <h1 class="text-5xl md:text-6xl font-cinzel font-bold italic uppercase text-secondary mb-4">
-                                Shadow Infection
-                            </h1>
-                            <p class="text-xl text-base-content/80">
-                                A co-op PvE and PvP online action arena game
-                            </p>
-                        </div>
-
                         <!-- Pricing Card -->
                         <div class="card bg-base-100 shadow-xl border-2 border-primary">
                             <div class="card-body">
+                                <div>
+                                    <h1
+                                        class="text-5xl md:text-6xl font-cinzel font-bold italic uppercase text-base-content mb-4">
+                                        Shadow Infection
+                                    </h1>
+                                    <p class="text-xl text-base-content/80">
+                                        A co-op PvE and PvP online action arena game
+                                    </p>
+
+                                </div>
+                                <div class="divider"></div>
                                 <div class="flex items-center justify-between mb-4">
                                     <div>
                                         <div class="badge badge-success badge-lg mb-2">
@@ -128,7 +130,8 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center">About the Game</h2>
+                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center">About
+                        the Game</h2>
 
                     <div class="prose prose-lg max-w-none">
                         <p class="text-base-content/80 text-lg leading-relaxed mb-6">
