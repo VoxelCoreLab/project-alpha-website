@@ -1,22 +1,19 @@
 <template>
- <div>
-    <div class="hero min-h-svh">
-      <div class="hero-content text-center text-neutral-content">
-        <div class="flex flex-col items-center">
-          <h1
-            class="p-8 text-4xl font-bold md:text-6xl lg:text-8xl xl:text-9xl"
-          >
-            404 Not Found
-          </h1>
-          <div class="max-w-sm lg:max-w-md xl:max-w-2xl">
-            <a href="/" class="link-hover link font-bold lg:text-xl xl:text-2xl"
-              >Back to Home</a
-            >
-          </div>
-        </div>
+  <LayoutBasic>
+    <div class="grid md:grid-cols-2 max-w-7xl mx-auto items-center gap-12 px-4 py-16">
+      <div>
+        <p class="text-5xl md:text-6xl font-cinzel font-bold italic mb-3">Ooops....</p>
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">404 Page Not Found</h1>
+        <p class="mb-4">The page you are looking for does not exist. It might have been moved or deleted.</p>
+        <router-link to="/" class="btn btn-primary w-full md:btn-wide">Back to Home</router-link>
+      </div>
+      <div>
+        <img src="../assets/characters/ghost.webp" alt="404 Not Found Illustration" class="w-full h-auto"/>
       </div>
     </div>
-  </div>
+  </LayoutBasic>
 </template>
 <script lang="ts" setup>
+import LayoutBasic from '../layouts/LayoutBasic.vue';
+
 </script>
