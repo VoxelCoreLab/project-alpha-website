@@ -3,7 +3,7 @@
         <!-- Checkout Hero Section -->
         <section class="py-12 bg-gradient-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
+                <div class="max-w-6xl mx-auto scroll-animate" data-animation="fade-up">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
                         Checkout
                     </h1>
@@ -20,7 +20,7 @@
                         <!-- Left Column - Order Details Form -->
                         <div class="lg:col-span-2 space-y-6">
                             <!-- Customer Information -->
-                            <div class="card bg-base-100 shadow-xl">
+                            <div class="card bg-base-100 shadow-xl scroll-animate" data-animation="slide-left" data-delay="100">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
@@ -154,7 +154,7 @@
 
                         <!-- Right Column - Order Summary -->
                         <div class="lg:col-span-1">
-                            <div class="card bg-base-100 shadow-xl border-2 border-primary sticky top-4">
+                            <div class="card bg-base-100 shadow-xl border-2 border-primary sticky top-4 scroll-animate" data-animation="slide-right" data-delay="100">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Order Summary
@@ -296,6 +296,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
 import { useField, useForm, useIsFieldTouched, useIsFieldValid } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
@@ -336,8 +337,80 @@ const handleProceedToPayment = async () => {
     // Redirect to Stripe payment page
     window.location.href = stripeUrl;
 };
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+    // Create intersection observer for scroll animations
+    observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target as HTMLElement;
+                const delay = element.dataset.delay || '0';
+                
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, parseInt(delay));
+                
+                // Unobserve after animation triggers
+                observer?.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with scroll-animate class
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer?.observe(el));
+});
+
+onUnmounted(() => {
+    observer?.disconnect();
+});
 </script>
 
 <style scoped>
-/* Custom styles if needed */
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+}
+
+/* Slide from left */
+.scroll-animate[data-animation="slide-left"] {
+    transform: translateX(-25px);
+}
+
+.scroll-animate[data-animation="slide-left"].visible {
+    transform: translateX(0);
+}
+
+/* Slide from right */
+.scroll-animate[data-animation="slide-right"] {
+    transform: translateX(25px);
+}
+
+.scroll-animate[data-animation="slide-right"].visible {
+    transform: translateX(0);
+}
+
+/* Fade up */
+.scroll-animate[data-animation="fade-up"] {
+    transform: translateY(15px);
+}
+
+.scroll-animate[data-animation="fade-up"].visible {
+    transform: translateY(0);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 </style>
