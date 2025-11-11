@@ -153,11 +153,11 @@
                     <!-- Right Side - Screenshot -->
                     <div class="relative scroll-animate" data-animation="slide-right">
                         <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-accent/10">
-                            <img src="../assets/screenshots_ingame/Shot_03.webp" alt="Shadow Infection Gameplay Screenshot"
+                            <img src="../assets/screenshots_ingame/shot_06.webp" alt="Shadow Infection Gameplay Screenshot"
                                 class="w-full h-auto" />
                             <!-- Glow Effect -->
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent pointer-events-none">
+                                class="absolute inset-0 bg-gradient-to-t from-base-300/20 to-transparent pointer-events-none">
                             </div>
                         </div>
                         <!-- Floating Badge -->
