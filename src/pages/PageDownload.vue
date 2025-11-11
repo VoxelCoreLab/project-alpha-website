@@ -3,7 +3,7 @@
         <!-- Hero -->
         <section class="pt-12 bg-gradient-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto text-center">
+                <div class="max-w-5xl mx-auto text-center scroll-animate" data-animation="fade-up">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-4">
                         Download Shadow Infection
                     </h1>
@@ -18,7 +18,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Windows -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-left" data-delay="100">
                             <div class="card-body items-center text-center">
                                 <IconWindows class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Windows</h2>
@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- Mac -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="fade-up" data-delay="150">
                             <div class="card-body items-center text-center">
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
@@ -48,7 +48,7 @@
                         </div>
 
                         <!-- Linux -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-right" data-delay="200">
                             <div class="card-body items-center text-center">
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- System Requirements -->
-                    <div class="mt-12 text-center">
+                    <div class="mt-12 text-center scroll-animate" data-animation="fade-up" data-delay="300">
                         <div class="divider"></div>
                         <h3 class="text-xl font-cinzel font-bold italic uppercase text-secondary mb-4">System Requirements</h3>
                         <p class="text-sm text-base-content/70 max-w-2xl mx-auto">
@@ -78,8 +78,85 @@
     </LayoutBasic>
 </template>
 <script setup lang="ts">
-import LayoutBasic from '../layouts/LayoutBasic.vue'
-import IconWindows from '../components/IconWindows.vue'
-import IconApple from '../components/IconApple.vue'
-import IconLinux from '../components/IconLinux.vue'
+import { onMounted, onUnmounted } from 'vue';
+import LayoutBasic from '../layouts/LayoutBasic.vue';
+import IconWindows from '../components/IconWindows.vue';
+import IconApple from '../components/IconApple.vue';
+import IconLinux from '../components/IconLinux.vue';
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(() => {
+    // Create intersection observer for scroll animations
+    observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target as HTMLElement;
+                const delay = element.dataset.delay || '0';
+                
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, parseInt(delay));
+                
+                // Unobserve after animation triggers
+                observer?.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with scroll-animate class
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer?.observe(el));
+});
+
+onUnmounted(() => {
+    observer?.disconnect();
+});
 </script>
+
+<style scoped>
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+}
+
+/* Slide from left */
+.scroll-animate[data-animation="slide-left"] {
+    transform: translateX(-25px);
+}
+
+.scroll-animate[data-animation="slide-left"].visible {
+    transform: translateX(0);
+}
+
+/* Slide from right */
+.scroll-animate[data-animation="slide-right"] {
+    transform: translateX(25px);
+}
+
+.scroll-animate[data-animation="slide-right"].visible {
+    transform: translateX(0);
+}
+
+/* Fade up */
+.scroll-animate[data-animation="fade-up"] {
+    transform: translateY(15px);
+}
+
+.scroll-animate[data-animation="fade-up"].visible {
+    transform: translateY(0);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+</style>
