@@ -18,7 +18,7 @@
         {{ errors.email }}
       </div>
 
-      <button class="btn btn-primary mt-4">Subscribe to Newsletter</button>
+      <button class="btn btn-primary mt-4 uppercase">Subscribe to Newsletter</button>
     </fieldset>
   </form>
 
