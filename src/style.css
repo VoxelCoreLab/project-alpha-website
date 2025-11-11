@@ -41,7 +41,10 @@
   --border: 2px;
   --depth: 0;
   --noise: 0;
-  --default-font-family: "Merriweather_Sans", sans-serif;
+}
+
+:root {
+    --default-font-family: "Merriweather_Sans", sans-serif;
 }
 
 @font-face {
