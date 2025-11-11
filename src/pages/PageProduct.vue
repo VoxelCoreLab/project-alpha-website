@@ -3,7 +3,8 @@
         <!-- Product Hero Section -->
         <section class="product-hero relative bg-gradient-to-b from-base-300 to-base-200 py-20">
             <div class="container mx-auto px-4">
-                <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start scroll-animate" data-animation="fade-up">
+                <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start scroll-animate"
+                    data-animation="fade-up">
                     <!-- Left Side - Product Image/Media -->
                     <div class="relative scroll-animate" data-animation="slide-left">
                         <div class="aspect-[3/4] bg-base-300 rounded-xl overflow-hidden shadow-2xl">
@@ -104,10 +105,15 @@
                                     </svg>
                                     Proceed to Checkout
                                 </button>
-
-                                <p class="text-sm text-center text-base-content/60 mt-2">
-                                    Secure payment processing
-                                </p>
+                                <div class="flex items-center justify-center gap-2 mt-3">
+                                    <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                        </path>
+                                    </svg>
+                                    <span class="text-xs text-base-content/60">Secure SSL encrypted payment</span>
+                                </div>
                             </div>
                         </div>
 
@@ -130,11 +136,13 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate" data-animation="fade-up">About
+                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate"
+                        data-animation="fade-up">About
                         the Game</h2>
 
                     <div class="prose prose-lg max-w-none">
-                        <p class="text-base-content/80 text-lg leading-relaxed mb-6 scroll-animate" data-animation="fade-up" data-delay="100">
+                        <p class="text-base-content/80 text-lg leading-relaxed mb-6 scroll-animate"
+                            data-animation="fade-up" data-delay="100">
                             Shadow Infection is an intense co-op PvE and PvP online action arena game set in a dark
                             fantasy world
                             consumed by mysterious shadows. Team up with friends to survive waves of enemies or compete
@@ -143,7 +151,8 @@
                         </p>
 
                         <div class="grid md:grid-cols-2 gap-6 mt-8">
-                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left" data-delay="200">
+                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left"
+                                data-delay="200">
                                 <div class="card-body">
                                     <h3 class="card-title text-secondary">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,7 +167,8 @@
                                 </div>
                             </div>
 
-                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right" data-delay="200">
+                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right"
+                                data-delay="200">
                                 <div class="card-body">
                                     <h3 class="card-title text-secondary">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,7 +183,8 @@
                                 </div>
                             </div>
 
-                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left" data-delay="300">
+                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left"
+                                data-delay="300">
                                 <div class="card-body">
                                     <h3 class="card-title text-secondary">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +198,8 @@
                                 </div>
                             </div>
 
-                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right" data-delay="300">
+                            <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right"
+                                data-delay="300">
                                 <div class="card-body">
                                     <h3 class="card-title text-secondary">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,12 +222,14 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate" data-animation="fade-up">
+                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate"
+                        data-animation="fade-up">
                         System Requirements
                     </h2>
 
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left" data-delay="100">
+                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-left"
+                            data-delay="100">
                             <div class="card-body">
                                 <h3 class="card-title text-xl mb-4 flex items-center gap-2">
                                     <IconWindows class="w-6 h-6 p-0.5" />
@@ -231,7 +245,8 @@
                             </div>
                         </div>
 
-                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="fade-up" data-delay="200">
+                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="fade-up"
+                            data-delay="200">
                             <div class="card-body">
                                 <h3 class="card-title text-xl mb-4 flex items-center gap-2">
                                     <IconApple class="w-6 h-6" />
@@ -247,7 +262,8 @@
                             </div>
                         </div>
 
-                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right" data-delay="300">
+                        <div class="card bg-base-100 shadow-lg scroll-animate" data-animation="slide-right"
+                            data-delay="300">
                             <div class="card-body">
                                 <h3 class="card-title text-xl mb-4 flex items-center gap-2">
                                     <IconLinux class="w-6 h-6" />
@@ -310,11 +326,11 @@ onMounted(() => {
             if (entry.isIntersecting) {
                 const element = entry.target as HTMLElement;
                 const delay = element.dataset.delay || '0';
-                
+
                 setTimeout(() => {
                     element.classList.add('visible');
                 }, parseInt(delay));
-                
+
                 // Unobserve after animation triggers
                 observer?.unobserve(element);
             }
@@ -347,7 +363,7 @@ onUnmounted(() => {
 
 /* Slide from left */
 .scroll-animate[data-animation="slide-left"] {
-    transform: translateX(-50px);
+    transform: translateX(-25px);
 }
 
 .scroll-animate[data-animation="slide-left"].visible {
@@ -356,7 +372,7 @@ onUnmounted(() => {
 
 /* Slide from right */
 .scroll-animate[data-animation="slide-right"] {
-    transform: translateX(50px);
+    transform: translateX(25px);
 }
 
 .scroll-animate[data-animation="slide-right"].visible {
@@ -365,7 +381,7 @@ onUnmounted(() => {
 
 /* Fade up */
 .scroll-animate[data-animation="fade-up"] {
-    transform: translateY(30px);
+    transform: translateY(15px);
 }
 
 .scroll-animate[data-animation="fade-up"].visible {
