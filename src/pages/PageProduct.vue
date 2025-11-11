@@ -12,16 +12,17 @@
                                 class="w-full h-full object-cover object-top border-accent/10 border-4 rounded-xl" />
                         </div>
                         <!-- Platforms Badge -->
-                        <div class="mt-6 flex gap-4 justify-center">
-                            <div class="badge badge-lg badge-outline gap-2 p-4">
+                        <h2 class="mt-4 text-center font-cinzel font-bold italic">Supported Platforms</h2>
+                        <div class="mt-2 flex gap-2 justify-center">
+                            <div class="badge rounded-xl badge-lg gap-2 p-4">
                                 <IconWindows class="w-5 h-5 p-0.5" />
                                 <span>Windows</span>
                             </div>
-                            <div class="badge badge-lg badge-outline gap-2 p-4">
+                            <div class="badge rounded-xl badge-lg gap-2 p-4">
                                 <IconApple class="w-5 h-5" />
                                 <span>macOS</span>
                             </div>
-                            <div class="badge badge-lg badge-outline gap-2 p-4">
+                            <div class="badge rounded-xl badge-lg gap-2 p-4">
                                 <IconLinux class="w-5 h-5" />
                                 <span>Linux</span>
                             </div>
