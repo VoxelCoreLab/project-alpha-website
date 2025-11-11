@@ -25,24 +25,36 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
                                     </h2>
-                                    <p>Important: This Account E-Mail will get access to the game.</p>
-                                    <div class="form-control">
-                                        <label class="input w-full floating-label"
+                                    <div class="alert alert-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            class="stroke-current shrink-0 w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span>Important: This Account E-Mail will get access to the game.</span>
+                                    </div>
+
+                                    <fieldset class="fieldset">
+                                        <legend class="fieldset-legend">Account E-Mail</legend>
+                                         <label class="input w-full"
                                             :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
-                                            <span>Email Address</span>
-                                            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                                            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5"
+                                                    fill="none" stroke="currentColor">
                                                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                                                 </g>
                                             </svg>
-                                            <input class="text-base" type="text" name="email" v-model="email" @blur="handleBlur"
-                                                placeholder="your.email@example.com" autocomplete="email" />
+                                            <input class="text-base" type="text" name="email" v-model="email"
+                                                @blur="handleBlur" placeholder="your.email@example.com"
+                                                autocomplete="email" />
                                         </label>
-                                        <div v-if="isEmailFieldTouched && errors.email" class="text-error mt-2" role="alert" aria-live="assertive">
+                                        <div v-if="isEmailFieldTouched && errors.email" class="text-error mt-2"
+                                            role="alert" aria-live="assertive">
                                             {{ errors.email }}
                                         </div>
-                                    </div>
+                                    </fieldset>
 
                                     <!--
                                     <div class="grid md:grid-cols-2 gap-4">
@@ -197,7 +209,8 @@
                                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                                                 </path>
                                             </svg>
-                                            <span class="text-xs">Final tax calculation will be shown on the payment overview</span>
+                                            <span class="text-xs">Final tax calculation will be shown on the payment
+                                                overview</span>
                                         </div>
                                     </div>
                                     <!--
@@ -309,17 +322,17 @@ const stripeBasePaymentLink = import.meta.env.VITE_STRIPE_BASE_PAYMENT_LINK;
 const handleProceedToPayment = async () => {
     // Mark the email field as touched to show validation errors
     setTouched(true);
-    
+
     // Validate the form
     const result = await validate();
-    
+
     if (!result.valid) {
         return;
     }
 
     // Build Stripe payment URL with the email as a locked prefilled parameter
     const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(email.value as string)}&prefilled_promo_code=EARLYACCESS`;
-    
+
     // Redirect to Stripe payment page
     window.location.href = stripeUrl;
 };
