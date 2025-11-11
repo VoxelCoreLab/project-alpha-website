@@ -165,7 +165,7 @@
                                         <div class="flex gap-4">
                                             <div class="w-20 h-20 bg-base-300 rounded-lg overflow-hidden flex-shrink-0">
                                                 <img src="../assets/TitelLogoUpdate.png" alt="Shadow Infection"
-                                                    class="w-full h-full object-contain p-2" />
+                                                    class="w-full h-full object-contain p-0.5 bg-white/95" />
                                             </div>
                                             <div class="flex-1">
                                                 <h3 class="font-bold text-lg">Shadow Infection</h3>
