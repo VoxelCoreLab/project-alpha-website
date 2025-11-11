@@ -152,7 +152,7 @@
 
                     <!-- Right Side - Screenshot -->
                     <div class="relative scroll-animate" data-animation="slide-right">
-                        <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-secondary/30">
+                        <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-accent/10">
                             <img src="../assets/screenshots_ingame/Shot_03.webp" alt="Shadow Infection Gameplay Screenshot"
                                 class="w-full h-auto" />
                             <!-- Glow Effect -->
