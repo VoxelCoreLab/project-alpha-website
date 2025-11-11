@@ -1,7 +1,7 @@
 <template>
     <LayoutBasic>
         <!-- Hero -->
-        <section class="py-12 bg-gradient-to-b from-base-300 to-base-200">
+        <section class="pt-12 bg-gradient-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto text-center">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-4">
