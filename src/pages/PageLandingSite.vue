@@ -175,12 +175,13 @@
         <!-- Newsletter Section -->
         <section class="newsletter-section py-20 bg-base-100 relative overflow-hidden">
             <!-- Background Pattern -->
+            <!--
             <div class="absolute inset-0 opacity-5">
                 <div class="absolute inset-0"
                     style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);">
                 </div>
             </div>
-
+            -->
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-2xl mx-auto text-center scroll-animate" data-animation="fade-up">
                     <h2 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-6">
@@ -197,6 +198,7 @@
                     </div>
 
                     <!-- Social Proof -->
+                    <!--
                     <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-base-content/60">
                         <div class="text-center">
                             <div class="text-2xl font-bold text-secondary">Follow</div>
@@ -213,6 +215,7 @@
                             <div class="text-sm">Content</div>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>
         </section>
