@@ -27,7 +27,7 @@
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       </form>
-      <h3 class="text-lg font-nebulous-regular md:text-2xl">Subscribed to Newsletter</h3>
+      <h3 class="text-lg font-cinzel font-bold italic uppercase md:text-2xl">Subscribed to Newsletter</h3>
       <p class="py-4">You have successfully subscribed to the newsletter!</p>
       <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4" />
       <div class="modal-action">
