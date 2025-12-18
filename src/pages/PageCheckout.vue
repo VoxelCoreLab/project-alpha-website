@@ -209,8 +209,7 @@
                                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
                                                 </path>
                                             </svg>
-                                            <span class="text-xs">Final tax calculation will be shown on the payment
-                                                overview</span>
+                                            <span class="text-xs">All prices include applicable taxes.</span>
                                         </div>
                                     </div>
                                     <!--
