@@ -78,7 +78,7 @@ const isEmailFieldValid = useIsFieldValid('email')
 
 const signUpForNewsletter = async (email: string) => {
   const LISTMONK_API = 'https://listmonk.pibern.ch/api/public/subscription';
-  const LISTMONK_LIST_ID = '12c5bcdb-496d-4285-9566-a708ba4df46b';
+  const LISTMONK_LIST_ID = 'eaad840b-18cd-42d0-be35-cbac29616679';
   const payload = {
     email,
     name: '',
