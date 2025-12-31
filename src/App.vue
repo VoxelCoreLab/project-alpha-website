@@ -14,7 +14,7 @@
                                 d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </label>
-                    <a class="btn btn-ghost text-xl" href="/"><img class="h-8 w-8" alt="" src="./assets/logo.png"></a>
+                    <a class="btn btn-ghost text-xl" href="/"><img class="h-8 w-8" alt="" src="./assets/logo_accent.svg"></a>
                 </li>
                 <hr class="text-secondary/50 pb-3" />
                 <li v-for="link in links" :key="link.name">

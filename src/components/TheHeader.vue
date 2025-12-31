@@ -13,7 +13,7 @@
                     </label>
                 </div>
                 <a class="btn btn-ghost text-xl rounded" href="/"><img class="h-8 w-8" alt=""
-                        src="../assets/logo.png"></a>
+                        src="../assets/logo_accent.svg"></a>
             </div>
             <div class="navbar-center hidden md:flex md:flex-1">
                 <ul class="menu menu-horizontal px-1">
