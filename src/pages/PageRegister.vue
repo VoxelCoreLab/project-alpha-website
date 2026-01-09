@@ -1,9 +1,9 @@
 <template>
     <LayoutBasic>
         <!-- Registration Hero Section -->
-        <section class="py-12 bg-gradient-to-b from-base-300 to-base-200">
+        <section class="pt-12 pb-6 bg-gradient-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
-                <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mx-auto">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
                         Create Account
                     </h1>
@@ -13,7 +13,7 @@
         </section>
 
         <!-- Registration Content -->
-        <section class="py-12 bg-base-200">
+        <section class="pb-12 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-2xl mx-auto">
                     <div class="card bg-base-100 shadow-xl">
