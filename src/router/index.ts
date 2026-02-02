@@ -66,7 +66,7 @@ const router = createRouter({
 })
 
 
-router.beforeEach((to, from) => {
+router.beforeEach((to, _from) => {
   const { isAuthenticated } = useAuth(getAuth())
   // instead of having to check every route record with
   // to.matched.some(record => record.meta.requiresAuth)
