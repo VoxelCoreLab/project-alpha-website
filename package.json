@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vee-validate/zod": "^4.15.0",
+    "@vueuse/firebase": "^14.2.0",
     "firebase": "^12.8.0",
     "vee-validate": "^4.15.0",
     "vue": "^3.5.27",

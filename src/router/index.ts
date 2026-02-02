@@ -1,6 +1,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import PageLandingSite from '../pages/PageLandingSite.vue'
+import { getAuth } from 'firebase/auth'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,14 @@ const router = createRouter({
         {
             path: '/general-terms-and-conditions',
             component: () => import('../pages/PageGeneralTermsAndConditions.vue'),
+        },
+        {
+            path: '/logout',
+            redirect: () => {
+                const auth = getAuth()
+                auth.signOut()
+                return '/'
+            },
         },
         {
             path: '/:catchAll(.*)',
