@@ -1,7 +1,5 @@
 <template>
     <LayoutBasic>
-
-
         <!-- Login Content -->
         <section class="py-12 bg-base-200 h-full">
             <div class="container mx-auto px-4">
