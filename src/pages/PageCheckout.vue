@@ -25,19 +25,40 @@
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Customer Information
                                     </h2>
+                                    
                                     <div class="alert alert-info">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             class="stroke-current shrink-0 w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <span>Important: This Account E-Mail will get access to the game.</span>
-                                    </div>
+                                        <span>{{ purchaseType === 'self' ? 'Important: This Account E-Mail will get access to the game.' : 'Important: The recipient E-Mail will receive access to the game.' }}</span>
 
+                                    </div>
+                                    <!-- Purchase Type Selection -->
                                     <fieldset class="fieldset">
-                                        <legend class="fieldset-legend">Account E-Mail</legend>
-                                         <label class="input w-full"
-                                            :class="{ 'input-error': isEmailFieldTouched && errors.email, 'input-success': isEmailFieldTouched && isEmailFieldValid }">
+                                        <legend class="fieldset-legend">Purchase Type</legend>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center">
+                                                <input type="radio" id="purchaseSelf" v-model="purchaseType" value="self" class="radio radio-primary" />
+                                                <label for="purchaseSelf" class="label cursor-pointer ml-2">
+                                                    <span class="label-text" :class="{'text-secondary': purchaseType === 'self'}">Buy for myself: {{ user?.email }}</span>
+                                                </label>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" id="purchaseGift" v-model="purchaseType" value="gift" class="radio radio-primary" />
+                                                <label for="purchaseGift" class="label cursor-pointer ml-2" :class="{'text-secondary': purchaseType === 'gift'}">
+                                                    <span class="label-text">Buy as a gift for someone else</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <!-- Recipient Email (for gift) -->
+                                    <fieldset v-if="purchaseType === 'gift'" class="fieldset">
+                                        <legend class="fieldset-legend">Recipient E-Mail</legend>
+                                        <label class="input input-primary w-full"
+                                            :class="{ 'input-error': isRecipientEmailFieldTouched && errors.recipientEmail, 'input-success': isRecipientEmailFieldTouched && isRecipientEmailFieldValid }">
                                             <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24">
                                                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5"
@@ -46,110 +67,17 @@
                                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                                                 </g>
                                             </svg>
-                                            <input class="text-base" type="text" name="email" v-model="email"
-                                                @blur="handleBlur" placeholder="your.email@example.com"
+                                            <input class="text-base" type="text" name="recipientEmail" v-model="recipientEmail"
+                                                @blur="handleBlurRecipientEmail" placeholder="recipient.email@example.com"
                                                 autocomplete="email" />
                                         </label>
-                                        <div v-if="isEmailFieldTouched && errors.email" class="text-error mt-2"
+                                        <div v-if="isRecipientEmailFieldTouched && errors.recipientEmail" class="text-error mt-2"
                                             role="alert" aria-live="assertive">
-                                            {{ errors.email }}
+                                            {{ errors.recipientEmail }}
                                         </div>
                                     </fieldset>
-
-                                    <!--
-                                    <div class="grid md:grid-cols-2 gap-4">
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text font-semibold">First Name</span>
-                                            </label>
-                                            <input type="text" placeholder="John" class="input input-bordered w-full"
-                                                required />
-                                        </div>
-
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text font-semibold">Last Name</span>
-                                            </label>
-                                            <input type="text" placeholder="Doe" class="input input-bordered w-full"
-                                                required />
-                                        </div>
-                                    </div>
-                                    -->
                                 </div>
                             </div>
-
-                            <!-- Billing Address -->
-                            <!--
-                            <div class="card bg-base-100 shadow-xl">
-                                <div class="card-body">
-                                    <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
-                                        Billing Address
-                                    </h2>
-
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text font-semibold">Country</span>
-                                        </label>
-                                        <select class="select select-bordered w-full">
-                                            <option disabled selected>Select your country</option>
-                                            <option>Germany</option>
-                                            <option>Austria</option>
-                                            <option>Switzerland</option>
-                                            <option>United States</option>
-                                            <option>United Kingdom</option>
-                                            <option>France</option>
-                                            <option>Spain</option>
-                                            <option>Italy</option>
-                                            <option>Netherlands</option>
-                                            <option>Belgium</option>
-                                            <option>Other</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="grid md:grid-cols-2 gap-4">
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text font-semibold">City</span>
-                                            </label>
-                                            <input type="text" placeholder="Berlin" class="input input-bordered w-full"
-                                                required />
-                                        </div>
-
-                                        <div class="form-control">
-                                            <label class="label">
-                                                <span class="label-text font-semibold">Postal Code</span>
-                                            </label>
-                                            <input type="text" placeholder="10115" class="input input-bordered w-full"
-                                                required />
-                                        </div>
-                                    </div>
-
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text font-semibold">Street Address</span>
-                                        </label>
-                                        <input type="text" placeholder="Main Street 123"
-                                            class="input input-bordered w-full" required />
-                                    </div>
-                                </div>
-                            </div>
-                        -->
-
-                            <!-- Newsletter Opt-in -->
-                            <!--
-                            <div class="card bg-base-100 shadow-xl">
-                                <div class="card-body">
-                                    <div class="form-control">
-                                        <label class="label cursor-pointer justify-start gap-4">
-                                            <input type="checkbox" class="checkbox checkbox-accent" />
-                                            <span class="label-text">
-                                                Subscribe to our newsletter for game updates and exclusive content.
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            -->
                         </div>
 
                         <!-- Right Column - Order Summary -->
@@ -212,46 +140,6 @@
                                             <span class="text-xs">All prices include applicable taxes.</span>
                                         </div>
                                     </div>
-                                    <!--
-                                    <div class="divider"></div>
-                                    <div class="space-y-2">
-                                        <h3 class="font-semibold text-sm uppercase tracking-wide">What's Included:</h3>
-                                        <ul class="space-y-2 text-sm">
-                                            <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
-                                                <span>Instant digital download</span>
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
-                                                <span>Early access builds</span>
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
-                                                <span>All future updates</span>
-                                            </li>
-                                            <li class="flex items-start gap-2">
-                                                <svg class="w-4 h-4 text-success mt-0.5 flex-shrink-0" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
-                                                <span>Cross-platform multiplayer</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    -->
 
                                     <div class="divider"></div>
 
@@ -295,43 +183,65 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useField, useForm, useIsFieldTouched, useIsFieldValid } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
+import { useAuth } from '@vueuse/firebase/useAuth';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
+import { getAuth } from 'firebase/auth';
 
-const validationSchema = toTypedSchema(
-    zod.object({
-        email: zod.string({
-            required_error: 'Enter a valid E-Mail: example@mail.com'
-        }).nonempty('Enter a valid E-Mail: example@mail.com').email({ message: 'Enter a valid E-Mail: example@mail.com' }),
-    }).required()
-);
+const purchaseType = ref<'self' | 'gift'>('self');
+const auth = getAuth();
+const { user } = useAuth(auth);
+
+const buyForMyselfSchema = zod.object({
+    recipientEmail: zod.string().optional(),
+});
+
+const buyAsGiftSchema = zod.object({
+    recipientEmail: zod.string({
+        required_error: 'Enter a valid E-Mail: example@mail.com'
+    }).email({ message: 'Enter a valid E-Mail: example@mail.com' }),
+});
+
+const validationSchema = computed(() => toTypedSchema(
+    purchaseType.value === 'gift' ? buyAsGiftSchema : buyForMyselfSchema
+));
 
 const { errors, validate } = useForm({
     validationSchema,
 });
 
-const { value: email, handleBlur, setTouched } = useField<string>('email');
-const isEmailFieldTouched = useIsFieldTouched('email');
-const isEmailFieldValid = useIsFieldValid('email');
+const { value: recipientEmail, handleBlur: handleBlurRecipientEmail, setTouched: setRecipientEmailTouched } = useField<string>('recipientEmail');
+const isRecipientEmailFieldTouched = useIsFieldTouched('recipientEmail');
+const isRecipientEmailFieldValid = useIsFieldValid('recipientEmail');
 
 const stripeBasePaymentLink = import.meta.env.VITE_STRIPE_BASE_PAYMENT_LINK;
 
 const handleProceedToPayment = async () => {
-    // Mark the email field as touched to show validation errors
-    setTouched(true);
+    // If buying for myself, skip validation and proceed directly
+    if (purchaseType.value === 'self') {
+        const stripeEmail = user.value?.email;
+        if (!stripeEmail) {
+            // Handle error - no email available
+            return;
+        }
+        const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(stripeEmail)}&prefilled_promo_code=EARLYACCESS`;
+        window.location.href = stripeUrl;
+        return;
+    }
 
-    // Validate the form
+    // For gifts, validate the recipient email
+    setRecipientEmailTouched(true);
     const result = await validate();
 
     if (!result.valid) {
         return;
     }
 
-    // Build Stripe payment URL with the email as a locked prefilled parameter
-    const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(email.value as string)}&prefilled_promo_code=EARLYACCESS`;
+    // Build Stripe payment URL with the recipient email
+    const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(recipientEmail.value as string)}&prefilled_promo_code=EARLYACCESS`;
 
     // Redirect to Stripe payment page
     window.location.href = stripeUrl;
