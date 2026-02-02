@@ -33,7 +33,7 @@
                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </div>
-                    <ul tabindex="-1" class="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <ul tabindex="-1" class="menu dropdown-content bg-base-300 rounded-box z-1 mt-1 w-52 p-2 shadow-xl">
                         <div class="px-2 py-1">Hi {{ user?.displayName || user?.email?.charAt(0) }}!</div>
                         <div class="divider m-0"></div>
                         <li>

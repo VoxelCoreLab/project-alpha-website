@@ -1,7 +1,7 @@
 <template>
-    <LayoutBasic>
+    <LayoutBasic :breadcrumbs="breadcrumbs">
         <!-- Hero -->
-        <section class="pt-12 bg-gradient-to-b from-base-300 to-base-200">
+        <section class="pt-12 bg-base-100">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto text-center scroll-animate" data-animation="fade-up">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-4">
@@ -13,12 +13,12 @@
         </section>
 
         <!-- Download Buttons -->
-        <section class="py-16 bg-base-200">
+        <section class="py-16 bg-base-100 h-full">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Windows -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-left" data-delay="100">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-left" data-delay="100">
                             <div class="card-body items-center text-center">
                                 <IconWindows class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Windows</h2>
@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- Mac -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="fade-up" data-delay="150">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="fade-up" data-delay="150">
                             <div class="card-body items-center text-center">
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
@@ -48,7 +48,7 @@
                         </div>
 
                         <!-- Linux -->
-                        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-right" data-delay="200">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-right" data-delay="200">
                             <div class="card-body items-center text-center">
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
@@ -83,6 +83,13 @@ import LayoutBasic from '../layouts/LayoutBasic.vue';
 import IconWindows from '../components/IconWindows.vue';
 import IconApple from '../components/IconApple.vue';
 import IconLinux from '../components/IconLinux.vue';
+
+const breadcrumbs = [
+    {
+        text: 'Download',
+        href: '/download'
+    }
+]
 
 let observer: IntersectionObserver | null = null;
 
