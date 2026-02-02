@@ -18,12 +18,12 @@
     "zod": "^3.24.3"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.4",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "daisyui": "^5.0.27",
-    "tailwindcss": "^4.1.4",
+    "@tailwindcss/vite": "^4.1.18",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "daisyui": "^5.5.16",
+    "tailwindcss": "^4.1.18",
     "typescript": "~5.6.2",
-    "vite": "^5.4.10",
-    "vue-tsc": "^2.1.8"
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.2.4"
   }
 }
