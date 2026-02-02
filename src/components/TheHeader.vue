@@ -34,11 +34,27 @@
                         </svg>
                     </div>
                     <ul tabindex="-1" class="menu dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <div class="px-2 py-1">Hi {{ user?.displayName || user?.email?.charAt(0) }}!</div>
+                        <div class="divider m-0"></div>
                         <li>
-                            <RouterLink to="/download">Download</RouterLink>
+                            <RouterLink to="/download">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download
+                            </RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/logout">Logout</RouterLink>
+                            <RouterLink to="/logout">
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                                Logout
+                            </RouterLink>
                         </li>
                     </ul>
                 </div>

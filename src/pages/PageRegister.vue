@@ -174,8 +174,6 @@
                                     </label>
                                 </div>
 
-                                <div class="divider"></div>
-
                                 <!-- Submit Button -->
                                 <button type="submit"
                                     class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all"
