@@ -23,31 +23,22 @@
                             <div class="card bg-base-100 shadow-xl scroll-animate" data-animation="slide-left" data-delay="100">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
-                                        Customer Information
+                                        Game Access
                                     </h2>
                                     
-                                    <div class="alert alert-info">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            class="stroke-current shrink-0 w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        <span>{{ purchaseType === 'self' ? 'Important: This Account E-Mail will get access to the game.' : 'Important: The recipient E-Mail will receive access to the game.' }}</span>
-
-                                    </div>
                                     <!-- Purchase Type Selection -->
                                     <fieldset class="fieldset">
-                                        <legend class="fieldset-legend">Purchase Type</legend>
+                                        <legend class="fieldset-legend text-sm">Which account will receive the game access?</legend>
                                         <div class="space-y-3">
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseSelf" v-model="purchaseType" value="self" class="radio radio-primary" />
-                                                <label for="purchaseSelf" class="label cursor-pointer ml-2">
+                                                <label for="purchaseSelf" class="label text-base cursor-pointer ml-2">
                                                     <span class="label-text" :class="{'text-secondary': purchaseType === 'self'}">Buy for myself: {{ user?.email }}</span>
                                                 </label>
                                             </div>
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseGift" v-model="purchaseType" value="gift" class="radio radio-primary" />
-                                                <label for="purchaseGift" class="label cursor-pointer ml-2" :class="{'text-secondary': purchaseType === 'gift'}">
+                                                <label for="purchaseGift" class="label text-base cursor-pointer ml-2" :class="{'text-secondary': purchaseType === 'gift'}">
                                                     <span class="label-text">Buy as a gift for someone else</span>
                                                 </label>
                                             </div>

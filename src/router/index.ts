@@ -2,6 +2,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageLandingSite from '../pages/PageLandingSite.vue'
 import { getAuth } from 'firebase/auth'
+import { useAuth } from '@vueuse/firebase'
+
+declare module 'vue-router' {
+    interface RouteMeta {
+        requiresAuth?: boolean
+    }
+}
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,11 +16,15 @@ const router = createRouter({
         { path: '/', component: PageLandingSite },
         { path: '/old', component: () => import('../pages/PageHome.vue') },
         { path: '/product', component: () => import('../pages/PageProduct.vue') },
-        { path: '/checkout', component: () => import('../pages/PageCheckout.vue') },
+        { path: '/checkout', component: () => import('../pages/PageCheckout.vue'), meta: { requiresAuth: true } },
         { path: '/payment-success', component: () => import('../pages/PagePaymentSuccess.vue') },
-        { path: '/download', component: () => import('../pages/PageDownload.vue') },
-        { path: '/register', component: () => import('../pages/PageRegister.vue') },
-        { path: '/login', component: () => import('../pages/PageLogin.vue') },
+        { path: '/download', component: () => import('../pages/PageDownload.vue'), meta: { requiresAuth: true } },
+        {
+            path: '/register', component: () => import('../pages/PageRegister.vue')
+        },
+        {
+            path: '/login', component: () => import('../pages/PageLogin.vue')
+        },
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },
@@ -52,6 +63,22 @@ const router = createRouter({
             return { top: 0 }
         }
     },
+})
+
+
+router.beforeEach((to, from) => {
+  const { isAuthenticated } = useAuth(getAuth())
+  // instead of having to check every route record with
+  // to.matched.some(record => record.meta.requiresAuth)
+  if (to.meta.requiresAuth && !isAuthenticated.value) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    return {
+      path: '/login',
+      // save the location we were at to come back later
+      query: { redirect: to.fullPath },
+    }
+  }
 })
 
 export default router

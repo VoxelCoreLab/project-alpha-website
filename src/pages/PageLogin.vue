@@ -144,7 +144,7 @@
                                 <!-- Register Link -->
                                 <div class="text-center text-base-content/70">
                                     Don't have an account?
-                                    <router-link to="/register" class="link link-primary font-semibold">
+                                    <router-link :to="redirectPath ? `/register?redirect=${redirectPath}` : '/register'" class="link link-primary font-semibold">
                                         Create Account
                                     </router-link>
                                 </div>
@@ -163,11 +163,14 @@ import { ref, computed, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { z } from 'zod'
 import LayoutBasic from '../layouts/LayoutBasic.vue'
+import { useRouteQuery } from '@vueuse/router'
 import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 const auth = getAuth()
 
 const router = useRouter()
+
+const redirectPath = useRouteQuery<string>('redirect')
 
 // Zod validation schema
 const loginSchema = z.object({
@@ -238,12 +241,11 @@ const handleLogin = async () => {
     try {
         await signInWithEmailAndPassword(auth, formData.email, formData.password)
 
-        router.push('/')
+        router.push(redirectPath.value || '/')
     } catch (error) {
         console.error('Login failed:', error)
 
         isSubmitting.value = false
-        // TODO: Show error message to user
     } finally {
     }
 }
@@ -252,7 +254,7 @@ const handleGoogleSignIn = async () => {
     try {
         await signInWithPopup(auth, new GoogleAuthProvider())
         isSubmitting.value = true
-        router.push('/')
+        router.push(redirectPath.value || '/')
     } catch (error) {
         isSubmitting.value = false
     } finally {
