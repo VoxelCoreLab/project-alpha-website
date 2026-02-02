@@ -95,7 +95,7 @@
                                 <!-- Submit Button -->
                                 <button type="submit"
                                     class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all"
-                                    :disabled="isSubmitting || !isFormValid">
+                                    :disabled="isSubmitting">
                                     <span v-if="!isSubmitting">Sign In</span>
                                     <svg v-if="!isSubmitting" class="w-5 h-5 rotate-180" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
@@ -106,19 +106,10 @@
                                     <span v-if="isSubmitting" class="loading loading-spinner"></span>
                                 </button>
 
-                                <!-- Register Link -->
-                                <div class="text-center text-base-content/70">
-                                    Don't have an account?
-                                    <router-link to="/register" class="link link-primary font-semibold">
-                                        Create Account
-                                    </router-link>
-                                </div>
-                            </form>
-
-                            <div class="divider"></div>
+                                
 
                             <!-- Sign In with Google -->
-                            <div class="space-y-3">
+                            <div>
                                 <button type="button" @click="handleGoogleSignIn" class="btn btn-secondary btn-soft w-full gap-2"
                                     :disabled="isSubmitting">
                                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"
@@ -151,6 +142,15 @@
                                     <span>Sign in with Google</span>
                                 </button>
                             </div>
+
+                                <!-- Register Link -->
+                                <div class="text-center text-base-content/70">
+                                    Don't have an account?
+                                    <router-link to="/register" class="link link-primary font-semibold">
+                                        Create Account
+                                    </router-link>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
