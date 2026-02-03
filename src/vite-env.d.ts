@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv  {
-    readonly VITE_STRIPE_BASE_PAYMENT_LINK: string
+    readonly VITE_API_URL: string
 
     // Firebase Configs
     readonly VITE_FIREBASE_API_KEY: string

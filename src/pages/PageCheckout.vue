@@ -1,7 +1,7 @@
 <template>
     <LayoutBasic>
         <!-- Checkout Hero Section -->
-        <section class="py-12 bg-gradient-to-b from-base-300 to-base-200">
+        <section class="py-12 bg-linear-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto scroll-animate" data-animation="fade-up">
                     <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
@@ -20,25 +20,32 @@
                         <!-- Left Column - Order Details Form -->
                         <div class="lg:col-span-2 space-y-6">
                             <!-- Customer Information -->
-                            <div class="card bg-base-100 shadow-xl scroll-animate" data-animation="slide-left" data-delay="100">
+                            <div class="card bg-base-100 shadow-xl scroll-animate" data-animation="slide-left"
+                                data-delay="100">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Game Access
                                     </h2>
-                                    
+
                                     <!-- Purchase Type Selection -->
                                     <fieldset class="fieldset">
-                                        <legend class="fieldset-legend text-sm">Which account will receive the game access?</legend>
+                                        <legend class="fieldset-legend text-sm">Which account will receive the game
+                                            access?</legend>
                                         <div class="space-y-3">
                                             <div class="flex items-center">
-                                                <input type="radio" id="purchaseSelf" v-model="purchaseType" value="self" class="radio radio-primary" />
+                                                <input type="radio" id="purchaseSelf" v-model="purchaseType"
+                                                    value="self" class="radio radio-primary" />
                                                 <label for="purchaseSelf" class="label text-base cursor-pointer ml-2">
-                                                    <span class="label-text" :class="{'text-secondary': purchaseType === 'self'}">Buy for myself: {{ user?.email }}</span>
+                                                    <span class="label-text"
+                                                        :class="{ 'text-secondary': purchaseType === 'self' }">Buy for
+                                                        myself: {{ user?.email }}</span>
                                                 </label>
                                             </div>
                                             <div class="flex items-center">
-                                                <input type="radio" id="purchaseGift" v-model="purchaseType" value="gift" class="radio radio-primary" />
-                                                <label for="purchaseGift" class="label text-base cursor-pointer ml-2" :class="{'text-secondary': purchaseType === 'gift'}">
+                                                <input type="radio" id="purchaseGift" v-model="purchaseType"
+                                                    value="gift" class="radio radio-primary" />
+                                                <label for="purchaseGift" class="label text-base cursor-pointer ml-2"
+                                                    :class="{ 'text-secondary': purchaseType === 'gift' }">
                                                     <span class="label-text">Buy as a gift for someone else</span>
                                                 </label>
                                             </div>
@@ -58,12 +65,12 @@
                                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                                                 </g>
                                             </svg>
-                                            <input class="text-base" type="text" name="recipientEmail" v-model="recipientEmail"
-                                                @blur="handleBlurRecipientEmail" placeholder="recipient.email@example.com"
-                                                autocomplete="email" />
+                                            <input class="text-base" type="text" name="recipientEmail"
+                                                v-model="recipientEmail" @blur="handleBlurRecipientEmail"
+                                                placeholder="recipient.email@example.com" autocomplete="email" />
                                         </label>
-                                        <div v-if="isRecipientEmailFieldTouched && errors.recipientEmail" class="text-error mt-2"
-                                            role="alert" aria-live="assertive">
+                                        <div v-if="isRecipientEmailFieldTouched && errors.recipientEmail"
+                                            class="text-error mt-2" role="alert" aria-live="assertive">
                                             {{ errors.recipientEmail }}
                                         </div>
                                     </fieldset>
@@ -73,7 +80,8 @@
 
                         <!-- Right Column - Order Summary -->
                         <div class="lg:col-span-1">
-                            <div class="card bg-base-100 shadow-xl border-2 border-primary sticky top-4 scroll-animate" data-animation="slide-right" data-delay="100">
+                            <div class="card bg-base-100 shadow-xl border-2 border-primary sticky top-4 scroll-animate"
+                                data-animation="slide-right" data-delay="100">
                                 <div class="card-body">
                                     <h2 class="card-title text-2xl font-cinzel uppercase text-secondary mb-4">
                                         Order Summary
@@ -82,7 +90,7 @@
                                     <!-- Product Details -->
                                     <div class="space-y-4 mb-4">
                                         <div class="flex gap-4">
-                                            <div class="w-20 h-20 bg-base-300 rounded-lg overflow-hidden flex-shrink-0">
+                                            <div class="w-20 h-20 bg-base-300 rounded-lg overflow-hidden shrink-0">
                                                 <img src="../assets/TitelLogoUpdate.png" alt="Shadow Infection"
                                                     class="w-full h-full object-contain p-0.5 bg-white/95" />
                                             </div>
@@ -181,10 +189,13 @@ import * as zod from 'zod';
 import { useAuth } from '@vueuse/firebase/useAuth';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import { getAuth } from 'firebase/auth';
+import { useApiInstance } from '../generated';
 
 const purchaseType = ref<'self' | 'gift'>('self');
 const auth = getAuth();
 const { user } = useAuth(auth);
+const apiInstance = useApiInstance();
+
 
 const buyForMyselfSchema = zod.object({
     recipientEmail: zod.string().optional(),
@@ -208,8 +219,6 @@ const { value: recipientEmail, handleBlur: handleBlurRecipientEmail, setTouched:
 const isRecipientEmailFieldTouched = useIsFieldTouched('recipientEmail');
 const isRecipientEmailFieldValid = useIsFieldValid('recipientEmail');
 
-const stripeBasePaymentLink = import.meta.env.VITE_STRIPE_BASE_PAYMENT_LINK;
-
 const handleProceedToPayment = async () => {
     // If buying for myself, skip validation and proceed directly
     if (purchaseType.value === 'self') {
@@ -218,8 +227,14 @@ const handleProceedToPayment = async () => {
             // Handle error - no email available
             return;
         }
-        const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(stripeEmail)}&prefilled_promo_code=EARLYACCESS`;
-        window.location.href = stripeUrl;
+
+        try {
+            const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: stripeEmail })
+            window.location.href = response.data.url;
+
+        } catch (error) {
+            console.error('Error creating checkout session:', error);
+        }
         return;
     }
 
@@ -231,11 +246,14 @@ const handleProceedToPayment = async () => {
         return;
     }
 
-    // Build Stripe payment URL with the recipient email
-    const stripeUrl = `${stripeBasePaymentLink}?locked_prefilled_email=${encodeURIComponent(recipientEmail.value as string)}&prefilled_promo_code=EARLYACCESS`;
+    try {
+        const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: recipientEmail.value! });
 
-    // Redirect to Stripe payment page
-    window.location.href = stripeUrl;
+        // Redirect to Stripe payment page
+        window.location.href = response.data.url;
+    } catch (error) {
+        console.error('Error creating checkout session:', error);
+    }
 };
 
 let observer: IntersectionObserver | null = null;
@@ -247,11 +265,11 @@ onMounted(() => {
             if (entry.isIntersecting) {
                 const element = entry.target as HTMLElement;
                 const delay = element.dataset.delay || '0';
-                
+
                 setTimeout(() => {
                     element.classList.add('visible');
                 }, parseInt(delay));
-                
+
                 // Unobserve after animation triggers
                 observer?.unobserve(element);
             }
