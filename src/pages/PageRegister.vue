@@ -185,7 +185,7 @@
                                         </path>
                                     </svg>
                                     <span v-if="!isSubmitting">Create Account</span>
-                                    <span v-else class="loading loading-spinner"></span>
+                                    <span v-if="isSubmitting" class="loading loading-spinner"></span>
                                 </button>
 
                                 <!-- Login Link -->
