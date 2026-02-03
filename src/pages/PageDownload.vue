@@ -12,8 +12,34 @@
             </div>
         </section>
 
+        <!-- No License Modal -->
+        <div v-if="showNoLicenseModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <div class="modal modal-open">
+                <div class="modal-box max-w-md">
+                    <h3 class="font-bold text-2xl text-secondary mb-4 font-cinzel italic uppercase">
+                        Game Access Required
+                    </h3>
+                    <p class="py-4 text-base-content/80">
+                        You need to purchase Shadow Infection to download the game. 
+                        Get your copy now and start your adventure!
+                    </p>
+                    <div class="modal-action">
+                        <button @click="showNoLicenseModal = false" class="btn btn-ghost">
+                            Close
+                        </button>
+                        <button @click="goToCheckout" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Download Buttons -->
-        <section class="py-16 bg-base-100 h-full">
+        <section class="py-16 bg-base-100 h-full" :class="{ 'blur-sm pointer-events-none': showNoLicenseModal }">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -23,11 +49,14 @@
                                 <IconWindows class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Windows</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Windows 10/11</p>
-                                <button class="btn btn-primary btn-block">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <button @click="handleDownload('windows')" 
+                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    class="btn btn-primary btn-block"
+                                    :class="{ 'loading': isCheckingLicense }">
+                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    Download
+                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -38,11 +67,14 @@
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
                                 <p class="text-sm text-base-content/60 mb-4">macOS 10.15+</p>
-                                <button class="btn btn-primary btn-block">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <button @click="handleDownload('mac')" 
+                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    class="btn btn-primary btn-block"
+                                    :class="{ 'loading': isCheckingLicense }">
+                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    Download
+                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -53,11 +85,14 @@
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Ubuntu 20.04+</p>
-                                <button class="btn btn-primary btn-block">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <button @click="handleDownload('linux')" 
+                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    class="btn btn-primary btn-block"
+                                    :class="{ 'loading': isCheckingLicense }">
+                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    Download
+                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -78,11 +113,13 @@
     </LayoutBasic>
 </template>
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import IconWindows from '../components/IconWindows.vue';
 import IconApple from '../components/IconApple.vue';
 import IconLinux from '../components/IconLinux.vue';
+import { useApiInstance } from '../generated';
 
 const breadcrumbs = [
     {
@@ -91,11 +128,65 @@ const breadcrumbs = [
     }
 ]
 
-let observer: IntersectionObserver | null = null;
+const apiInstance = useApiInstance();
+const router = useRouter();
+
+const userOwnsGame = ref<boolean | null>(null);
+const showNoLicenseModal = ref(false);
+const isCheckingLicense = ref(true);
+
+const checkGameLicense = async () => {
+    try {
+        const result = await apiInstance.gameLicences.gameLicencesControllerGetMyLicence();
+        userOwnsGame.value = result.data;
+        
+        if (!result.data) {
+            showNoLicenseModal.value = true;
+        }
+    } catch (error) {
+        console.error('Error checking game license:', error);
+        userOwnsGame.value = false;
+        showNoLicenseModal.value = true;
+    } finally {
+        isCheckingLicense.value = false;
+    }
+};
+
+const handleDownload = async (platform: 'windows' | 'mac' | 'linux') => {
+    if (!userOwnsGame.value) {
+        showNoLicenseModal.value = true;
+        return;
+    }
+    
+    try {
+        // Get the download URL for the platform
+        let response;
+        if (platform === 'windows') {
+            response = await apiInstance.gameDownloads.gameDownloadsControllerGetWindowsDownloadUrl();
+        } else if (platform === 'mac') {
+            response = await apiInstance.gameDownloads.gameDownloadsControllerGetMacOsDownloadUrl();
+        } else {
+            response = await apiInstance.gameDownloads.gameDownloadsControllerGetLinuxDownloadUrl();
+        }
+        
+        // Trigger download by opening the URL
+        window.location.href = response.data.url;
+    } catch (error) {
+        console.error('Error downloading game:', error);
+        // Show error to user
+        alert('Failed to download the game. Please try again later or contact support.');
+    }
+};
+
+const goToCheckout = () => {
+    router.push('/checkout');
+};
 
 onMounted(() => {
+    checkGameLicense();
+
     // Create intersection observer for scroll animations
-    observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target as HTMLElement;
@@ -120,7 +211,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-    observer?.disconnect();
+    // Cleanup if needed
 });
 </script>
 
