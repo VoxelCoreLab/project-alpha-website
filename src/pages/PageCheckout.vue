@@ -21,8 +21,10 @@
                         <div class="lg:col-span-2 space-y-6">
                             <!-- Error Alert -->
                             <div v-if="errorMessage" class="alert alert-error shadow-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6"
+                                    fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <span>{{ errorMessage }}</span>
                             </div>
@@ -42,12 +44,16 @@
                                         <div class="space-y-3">
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseSelf" v-model="purchaseType"
-                                                    value="self" class="radio radio-primary" :disabled="userAlreadyOwnsGame === true" />
-                                                <label for="purchaseSelf" class="label text-base ml-2" :class="{'cursor-pointer': userAlreadyOwnsGame === false}">
+                                                    value="self" class="radio radio-primary"
+                                                    :disabled="userAlreadyOwnsGame === true" />
+                                                <label for="purchaseSelf" class="label text-base ml-2"
+                                                    :class="{ 'cursor-pointer': userAlreadyOwnsGame === false }">
                                                     <span class="label-text"
                                                         :class="{ 'text-secondary': purchaseType === 'self' }">Buy for
                                                         myself: {{ user?.email }}</span>
-                                                    <span v-if="userAlreadyOwnsGame === true" class="text-xs text-success ml-2">(You already own the game)</span>
+                                                    <span v-if="userAlreadyOwnsGame === true"
+                                                        class="text-xs text-success ml-2">(You already own the
+                                                        game)</span>
                                                 </label>
                                             </div>
                                             <div class="flex items-center">
@@ -64,8 +70,10 @@
                                     <!-- Recipient Email (for gift) -->
                                     <fieldset v-if="purchaseType === 'gift'" class="fieldset">
                                         <legend class="fieldset-legend">Recipient E-Mail</legend>
-                                        <label class="input input-primary w-full"
-                                            :class="{ 'input-error': isRecipientEmailFieldTouched && errors.recipientEmail, 'input-success': isRecipientEmailFieldTouched && isRecipientEmailFieldValid }">
+                                        <label class="input w-full"
+                                            :class="{ 
+                                            'input-primary': (!errors.recipientEmail && isRecipientEmailFieldTouched) || !isRecipientEmailFieldTouched,
+                                            'input-error': isRecipientEmailFieldTouched && errors.recipientEmail, 'input-success': isRecipientEmailFieldTouched && isRecipientEmailFieldValid }">
                                             <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24">
                                                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5"
@@ -152,11 +160,11 @@
                                     <div class="divider"></div>
 
                                     <!-- Proceed Button -->
-                                    <button @click="handleProceedToPayment"
-                                        :disabled="isLoading"
+                                    <button @click="handleProceedToPayment" :disabled="isLoading"
                                         class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all"
                                         :class="{ 'loading': isLoading }">
-                                        <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
                                             </path>
@@ -227,10 +235,15 @@ const buyForMyselfSchema = zod.object({
     recipientEmail: zod.string().optional(),
 });
 
+const emailsAlreadyOwningGame = ref(new Set<string>());
+
 const buyAsGiftSchema = zod.object({
     recipientEmail: zod.string({
         required_error: 'Enter a valid E-Mail: example@mail.com'
-    }).email({ message: 'Enter a valid E-Mail: example@mail.com' }),
+    }).email({ message: 'Enter a valid E-Mail: example@mail.com' })
+        .refine((val) => !emailsAlreadyOwningGame.value.has(val), {
+            message: 'The recipient already owns this game.',
+        }),
 });
 
 const validationSchema = computed(() => toTypedSchema(
@@ -278,10 +291,16 @@ const handleProceedToPayment = async () => {
         window.location.href = response.data.url;
     } catch (error) {
         console.error('Error creating checkout session:', error);
-        
+
         if (axios.isAxiosError(error) && error.response) {
-            // Extract error message from backend response
-            errorMessage.value = error.response.data?.message || 'Failed to create checkout session. Please try again.';
+            // Check if recipient already owns the game and trigger validation
+            if (error.response.data?.message?.includes('already owns') && purchaseType.value === 'gift' && recipientEmail.value) {
+                emailsAlreadyOwningGame.value.add(recipientEmail.value);
+                await validate();
+            } else {
+                // Extract error message from backend response
+                errorMessage.value = error.response.data?.message || 'Failed to create checkout session. Please try again.';
+            }
         } else {
             errorMessage.value = 'An unexpected error occurred. Please try again.';
         }
