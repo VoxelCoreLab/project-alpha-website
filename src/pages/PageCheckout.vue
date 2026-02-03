@@ -34,11 +34,12 @@
                                         <div class="space-y-3">
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseSelf" v-model="purchaseType"
-                                                    value="self" class="radio radio-primary" />
-                                                <label for="purchaseSelf" class="label text-base cursor-pointer ml-2">
+                                                    value="self" class="radio radio-primary" :disabled="userAlreadyOwnsGame === true" />
+                                                <label for="purchaseSelf" class="label text-base ml-2" :class="{'cursor-pointer': userAlreadyOwnsGame === false}">
                                                     <span class="label-text"
                                                         :class="{ 'text-secondary': purchaseType === 'self' }">Buy for
                                                         myself: {{ user?.email }}</span>
+                                                    <span v-if="userAlreadyOwnsGame === true" class="text-xs text-success ml-2">(You already own the game)</span>
                                                 </label>
                                             </div>
                                             <div class="flex items-center">
@@ -182,7 +183,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, computed } from 'vue';
+import { onMounted, onUnmounted, ref, computed, watch } from 'vue';
 import { useField, useForm, useIsFieldTouched, useIsFieldValid } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import * as zod from 'zod';
@@ -196,6 +197,20 @@ const auth = getAuth();
 const { user } = useAuth(auth);
 const apiInstance = useApiInstance();
 
+const userAlreadyOwnsGame = ref<boolean | null>(null);
+
+watch(userAlreadyOwnsGame, async (newValue) => {
+    if (newValue === true) {
+        purchaseType.value = 'gift'
+    }
+});
+
+const loadMyGameLicence = async () => {
+    const result = await apiInstance.gameLicences.gameLicencesControllerGetMyLicence();
+    userAlreadyOwnsGame.value = result.data;
+}
+
+loadMyGameLicence();
 
 const buyForMyselfSchema = zod.object({
     recipientEmail: zod.string().optional(),
