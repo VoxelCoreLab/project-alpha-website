@@ -145,7 +145,7 @@
                             </div>
                             <!-- Call To Action inside Features -->
                             <RouterLink to="/product" class="btn btn-accent btn-lg uppercase scroll-animate" data-animation="fade-up" data-delay="500">
-                                Buy Now
+                                Buy Game
                             </RouterLink>
                         </div>
                     </div>
