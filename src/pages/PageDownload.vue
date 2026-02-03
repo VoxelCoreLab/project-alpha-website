@@ -50,13 +50,13 @@
                                 <h2 class="card-title text-xl uppercase">Windows</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Windows 10/11</p>
                                 <button @click="handleDownload('windows')" 
-                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
                                     class="btn btn-primary btn-block"
-                                    :class="{ 'loading': isCheckingLicense }">
-                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'windows' }">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'windows'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'windows' ? 'Downloading...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -68,13 +68,13 @@
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
                                 <p class="text-sm text-base-content/60 mb-4">macOS 10.15+</p>
                                 <button @click="handleDownload('mac')" 
-                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
                                     class="btn btn-primary btn-block"
-                                    :class="{ 'loading': isCheckingLicense }">
-                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'mac' }">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'mac'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'mac' ? 'Downloading...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -86,13 +86,13 @@
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Ubuntu 20.04+</p>
                                 <button @click="handleDownload('linux')" 
-                                    :disabled="!userOwnsGame || isCheckingLicense"
+                                    :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
                                     class="btn btn-primary btn-block"
-                                    :class="{ 'loading': isCheckingLicense }">
-                                    <svg v-if="!isCheckingLicense" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'linux' }">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'linux'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'linux' ? 'Downloading...' : 'Download' }}
                                 </button>
                             </div>
                         </div>
@@ -134,6 +134,7 @@ const router = useRouter();
 const userOwnsGame = ref<boolean | null>(null);
 const showNoLicenseModal = ref(false);
 const isCheckingLicense = ref(true);
+const downloadingPlatform = ref<'windows' | 'mac' | 'linux' | null>(null);
 
 const checkGameLicense = async () => {
     try {
@@ -158,6 +159,13 @@ const handleDownload = async (platform: 'windows' | 'mac' | 'linux') => {
         return;
     }
     
+    // Prevent multiple simultaneous downloads
+    if (downloadingPlatform.value) {
+        return;
+    }
+    
+    downloadingPlatform.value = platform;
+    
     try {
         // Get the download URL for the platform
         let response;
@@ -171,8 +179,14 @@ const handleDownload = async (platform: 'windows' | 'mac' | 'linux') => {
         
         // Trigger download by opening the URL
         window.location.href = response.data.url;
+        
+        // Reset download state after 3 seconds to prevent accidental double downloads
+        setTimeout(() => {
+            downloadingPlatform.value = null;
+        }, 3000);
     } catch (error) {
         console.error('Error downloading game:', error);
+        downloadingPlatform.value = null;
         // Show error to user
         alert('Failed to download the game. Please try again later or contact support.');
     }
