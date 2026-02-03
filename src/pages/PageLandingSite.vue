@@ -28,7 +28,7 @@
                     </p>
                     <RouterLink to="/product"
                         class="btn btn-accent btn-xl shadow-2xl uppercase">
-                        Buy Game Now
+                        Buy Game
                     </RouterLink>
                 </div>
             </div>
