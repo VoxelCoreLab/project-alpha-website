@@ -66,6 +66,9 @@
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'windows'"
                                         class="loading loading-spinner"></span>
                                 </button>
+                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
+                                    Unlock with Purchase
+                                </button>
                             </div>
                         </div>
 
@@ -90,6 +93,9 @@
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'mac'"
                                         class="loading loading-spinner"></span>
                                 </button>
+                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
+                                    Unlock with Purchase
+                                </button>
                             </div>
                         </div>
 
@@ -113,6 +119,9 @@
                                     'Downloading...' : 'Download' }}
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'linux'"
                                         class="loading loading-spinner"></span>
+                                </button>
+                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
+                                    Unlock with Purchase
                                 </button>
                             </div>
                         </div>
