@@ -45,7 +45,7 @@
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseSelf" v-model="purchaseType"
                                                     value="self" class="radio radio-primary"
-                                                    :disabled="userAlreadyOwnsGame === true" />
+                                                    :disabled="userAlreadyOwnsGame === true || isLoading" />
                                                 <label for="purchaseSelf" class="label text-base ml-2"
                                                     :class="{ 'cursor-pointer': userAlreadyOwnsGame === false }">
                                                     <span class="label-text"
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="flex items-center">
                                                 <input type="radio" id="purchaseGift" v-model="purchaseType"
-                                                    value="gift" class="radio radio-primary" />
+                                                    value="gift" class="radio radio-primary" :disabled="isLoading" />
                                                 <label for="purchaseGift" class="label text-base cursor-pointer ml-2"
                                                     :class="{ 'text-secondary': purchaseType === 'gift' }">
                                                     <span class="label-text">Buy as a gift for someone else</span>
@@ -84,7 +84,7 @@
                                             </svg>
                                             <input class="text-base" type="text" name="recipientEmail"
                                                 v-model="recipientEmail" @blur="handleBlurRecipientEmail"
-                                                placeholder="recipient.email@example.com" autocomplete="email" />
+                                                placeholder="recipient.email@example.com" autocomplete="email" :disabled="isLoading" />
                                         </label>
                                         <div v-if="isRecipientEmailFieldTouched && errors.recipientEmail"
                                             class="text-error mt-2" role="alert" aria-live="assertive">
@@ -162,7 +162,7 @@
                                     <!-- Proceed Button -->
                                     <button @click="handleProceedToPayment" :disabled="isLoading"
                                         class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all"
-                                        :class="{ 'loading': isLoading }">
+                                    >
                                         <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -170,6 +170,7 @@
                                             </path>
                                         </svg>
                                         {{ isLoading ? 'Processing...' : 'Proceed to Payment' }}
+                                        <span v-if="isLoading" class="loading loading-spinner"></span>
                                     </button>
 
                                     <div class="flex items-center justify-center gap-2 mt-3">
@@ -304,8 +305,8 @@ const handleProceedToPayment = async () => {
         } else {
             errorMessage.value = 'An unexpected error occurred. Please try again.';
         }
-    } finally {
         isLoading.value = false;
+    } finally {
     }
 };
 
