@@ -1,13 +1,13 @@
 <template>
     <LayoutBasic>
         <!-- Product Hero Section -->
-        <section class="product-hero relative bg-gradient-to-b from-base-300 to-base-200 py-20">
+        <section class="product-hero relative bg-linear-to-b from-base-300 to-base-200 py-20">
             <div class="container mx-auto px-4">
                 <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start scroll-animate"
                     data-animation="fade-up">
                     <!-- Left Side - Product Image/Media -->
                     <div class="relative scroll-animate" data-animation="slide-left">
-                        <div class="aspect-[3/4] bg-base-300 rounded-xl overflow-hidden shadow-2xl">
+                        <div class="aspect-3/4 bg-base-300 rounded-xl overflow-hidden shadow-2xl">
                             <img src="../assets/LandscapeWithTitle4_3_v2.png" alt="Shadow Infection"
                                 class="w-full h-full object-cover object-top border-accent/10 border-4 rounded-xl" />
                         </div>
@@ -220,6 +220,7 @@
         </section>
 
         <!-- System Requirements Section -->
+        <!--
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
@@ -283,6 +284,7 @@
                 </div>
             </div>
         </section>
+        -->
 
         <!-- Final CTA Section -->
         <!--
