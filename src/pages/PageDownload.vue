@@ -119,7 +119,7 @@
                     </div>
 
                     <!-- Unlock with Purchase CTA -->
-                    <div v-if="!userOwnsGame" class="mt-12 p-8 bg-linear-to-r from-primary/20 to-secondary/20 rounded-lg border-2 border-primary/50 text-center scroll-animate" data-animation="fade-up" data-delay="250">
+                    <div v-if="!userOwnsGame && !isCheckingLicense" class="mt-12 p-8 bg-linear-to-r from-primary/20 to-secondary/20 rounded-lg border-2 border-primary/50 text-center scroll-animate" data-animation="fade-up" data-delay="250">
                         <h3 class="text-2xl font-cinzel font-bold italic uppercase text-secondary mb-3">
                             Unlock Downloads
                         </h3>
