@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "build:dev": "vite build --mode dev",
-    "build:firebase": "vite build --mode firebase",
+    "build:prod": "vite build --mode prod",
     "preview": "vite preview",
     "deploy:dev": "firebase deploy --only hosting:shadowinfection-dev",
+    "deploy:prod": "firebase deploy --only hosting:shadowinfection",
     "api:generate": "swagger-typescript-api generate -p http://localhost:3000/api-json -o src/generated  -n api-client.ts --axios"
   },
   "dependencies": {
