@@ -285,6 +285,8 @@ const handleProceedToPayment = async () => {
         const result = await validate();
 
         if (!result.valid) {
+
+            isLoading.value = false;
             return;
         }
 
