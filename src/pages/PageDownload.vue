@@ -20,7 +20,7 @@
                         Game Access Required
                     </h3>
                     <p class="py-4 text-base-content/80">
-                        You need to purchase Shadow Infection to download the game. 
+                        You need to purchase Shadow Infection to download the game.
                         Get your copy now and start your adventure!
                     </p>
                     <div class="modal-action">
@@ -28,8 +28,10 @@
                             Close
                         </button>
                         <button @click="goToCheckout" class="btn btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
                             Buy Now
                         </button>
@@ -44,55 +46,73 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Windows -->
-                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-left" data-delay="100">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate"
+                            data-animation="slide-left" data-delay="100">
                             <div class="card-body items-center text-center">
                                 <IconWindows class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Windows</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Windows 10/11</p>
-                                <button @click="handleDownload('windows')" 
+                                <button @click="handleDownload('windows')"
                                     :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
-                                    class="btn btn-primary btn-block"
-                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'windows' }">
-                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'windows'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    class="btn btn-primary btn-block">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'windows'"
+                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'windows' ? 'Downloading...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'windows' ?
+                                    'Downloading...' : 'Download' }}
+                                    <span v-if="isCheckingLicense || downloadingPlatform === 'windows'"
+                                        class="loading loading-spinner"></span>
                                 </button>
                             </div>
                         </div>
 
                         <!-- Mac -->
-                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="fade-up" data-delay="150">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate"
+                            data-animation="fade-up" data-delay="150">
                             <div class="card-body items-center text-center">
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
                                 <p class="text-sm text-base-content/60 mb-4">macOS 10.15+</p>
-                                <button @click="handleDownload('mac')" 
+                                <button @click="handleDownload('mac')"
                                     :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
-                                    class="btn btn-primary btn-block"
-                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'mac' }">
-                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'mac'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    class="btn btn-primary btn-block">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'mac'"
+                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'mac' ? 'Downloading...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'mac' ?
+                                    'Downloading...' : 'Download' }}
+                                    <span v-if="isCheckingLicense || downloadingPlatform === 'mac'"
+                                        class="loading loading-spinner"></span>
                                 </button>
                             </div>
                         </div>
 
                         <!-- Linux -->
-                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate" data-animation="slide-right" data-delay="200">
+                        <div class="card bg-base-300 shadow-xl hover:shadow-2xl transition-shadow scroll-animate"
+                            data-animation="slide-right" data-delay="200">
                             <div class="card-body items-center text-center">
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
                                 <p class="text-sm text-base-content/60 mb-4">Ubuntu 20.04+</p>
-                                <button @click="handleDownload('linux')" 
+                                <button @click="handleDownload('linux')"
                                     :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
-                                    class="btn btn-primary btn-block"
-                                    :class="{ 'loading loading-sm': isCheckingLicense || downloadingPlatform === 'linux' }">
-                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'linux'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    class="btn btn-primary btn-block">
+                                    <svg v-if="!isCheckingLicense && downloadingPlatform !== 'linux'"
+                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
-                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'linux' ? 'Downloading...' : 'Download' }}
+                                    {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'linux' ?
+                                    'Downloading...' : 'Download' }}
+                                    <span v-if="isCheckingLicense || downloadingPlatform === 'linux'"
+                                        class="loading loading-spinner"></span>
                                 </button>
                             </div>
                         </div>
@@ -101,9 +121,10 @@
                     <!-- System Requirements -->
                     <div class="mt-12 text-center scroll-animate" data-animation="fade-up" data-delay="300">
                         <div class="divider"></div>
-                        <h3 class="text-xl font-cinzel font-bold italic uppercase text-secondary mb-4">System Requirements</h3>
+                        <h3 class="text-xl font-cinzel font-bold italic uppercase text-secondary mb-4">System
+                            Requirements</h3>
                         <p class="text-sm text-base-content/70 max-w-2xl mx-auto">
-                            Make sure your system meets the minimum requirements. 
+                            Make sure your system meets the minimum requirements.
                             For the best experience, we recommend a dedicated graphics card and at least 8GB of RAM.
                         </p>
                     </div>
@@ -140,7 +161,7 @@ const checkGameLicense = async () => {
     try {
         const result = await apiInstance.gameLicences.gameLicencesControllerGetMyLicence();
         userOwnsGame.value = result.data;
-        
+
         if (!result.data) {
             showNoLicenseModal.value = true;
         }
@@ -158,14 +179,14 @@ const handleDownload = async (platform: 'windows' | 'mac' | 'linux') => {
         showNoLicenseModal.value = true;
         return;
     }
-    
+
     // Prevent multiple simultaneous downloads
     if (downloadingPlatform.value) {
         return;
     }
-    
+
     downloadingPlatform.value = platform;
-    
+
     try {
         // Get the download URL for the platform
         let response;
@@ -176,10 +197,10 @@ const handleDownload = async (platform: 'windows' | 'mac' | 'linux') => {
         } else {
             response = await apiInstance.gameDownloads.gameDownloadsControllerGetLinuxDownloadUrl();
         }
-        
+
         // Trigger download by opening the URL
         window.location.href = response.data.url;
-        
+
         // Reset download state after 3 seconds to prevent accidental double downloads
         setTimeout(() => {
             downloadingPlatform.value = null;
@@ -205,11 +226,11 @@ onMounted(() => {
             if (entry.isIntersecting) {
                 const element = entry.target as HTMLElement;
                 const delay = element.dataset.delay || '0';
-                
+
                 setTimeout(() => {
                     element.classList.add('visible');
                 }, parseInt(delay));
-                
+
                 // Unobserve after animation triggers
                 observer?.unobserve(element);
             }
