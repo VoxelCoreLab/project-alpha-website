@@ -66,9 +66,6 @@
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'windows'"
                                         class="loading loading-spinner"></span>
                                 </button>
-                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
-                                    Unlock with Purchase
-                                </button>
                             </div>
                         </div>
 
@@ -92,9 +89,6 @@
                                     'Downloading...' : 'Download' }}
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'mac'"
                                         class="loading loading-spinner"></span>
-                                </button>
-                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
-                                    Unlock with Purchase
                                 </button>
                             </div>
                         </div>
@@ -120,12 +114,23 @@
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'linux'"
                                         class="loading loading-spinner"></span>
                                 </button>
-                                <button v-if="!userOwnsGame" class="link link-secondary btn-xs mt-1" @click="goToCheckout">
-                                    Unlock with Purchase
-                                </button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Unlock with Purchase CTA -->
+                    <div v-if="!userOwnsGame" class="mt-12 p-8 bg-linear-to-r from-primary/20 to-secondary/20 rounded-lg border border-primary/50 text-center scroll-animate" data-animation="fade-up" data-delay="250">
+                        <h3 class="text-2xl font-cinzel font-bold italic uppercase text-secondary mb-3">
+                            Unlock Downloads
+                        </h3>
+                        <p class="text-base-content/80 mb-6">
+                            Purchase Shadow Infection to access downloads for all platforms.
+                        </p>
+                        <button @click="goToCheckout" class="btn btn-primary btn-lg gap-2">
+                            Unlock Downloads with a Purchase
+                        </button>
+                    </div>
+
 
                     <!-- System Requirements -->
                     <div class="mt-12 text-center scroll-animate" data-animation="fade-up" data-delay="300">
