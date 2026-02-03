@@ -19,6 +19,14 @@
                     <div class="grid lg:grid-cols-3 gap-8">
                         <!-- Left Column - Order Details Form -->
                         <div class="lg:col-span-2 space-y-6">
+                            <!-- Error Alert -->
+                            <div v-if="errorMessage" class="alert alert-error shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{{ errorMessage }}</span>
+                            </div>
+
                             <!-- Customer Information -->
                             <div class="card bg-base-100 shadow-xl scroll-animate" data-animation="slide-left"
                                 data-delay="100">
@@ -145,13 +153,15 @@
 
                                     <!-- Proceed Button -->
                                     <button @click="handleProceedToPayment"
-                                        class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        :disabled="isLoading"
+                                        class="btn btn-primary btn-lg w-full text-lg uppercase shadow-lg hover:shadow-xl transition-all"
+                                        :class="{ 'loading': isLoading }">
+                                        <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
                                             </path>
                                         </svg>
-                                        Proceed to Payment
+                                        {{ isLoading ? 'Processing...' : 'Proceed to Payment' }}
                                     </button>
 
                                     <div class="flex items-center justify-center gap-2 mt-3">
@@ -191,6 +201,7 @@ import { useAuth } from '@vueuse/firebase/useAuth';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import { getAuth } from 'firebase/auth';
 import { useApiInstance } from '../generated';
+import axios from 'axios';
 
 const purchaseType = ref<'self' | 'gift'>('self');
 const auth = getAuth();
@@ -234,40 +245,48 @@ const { value: recipientEmail, handleBlur: handleBlurRecipientEmail, setTouched:
 const isRecipientEmailFieldTouched = useIsFieldTouched('recipientEmail');
 const isRecipientEmailFieldValid = useIsFieldValid('recipientEmail');
 
+const errorMessage = ref<string | null>(null);
+const isLoading = ref(false);
+
 const handleProceedToPayment = async () => {
-    // If buying for myself, skip validation and proceed directly
-    if (purchaseType.value === 'self') {
-        const stripeEmail = user.value?.email;
-        if (!stripeEmail) {
-            // Handle error - no email available
+    errorMessage.value = null;
+    isLoading.value = true;
+
+    try {
+        // If buying for myself, skip validation and proceed directly
+        if (purchaseType.value === 'self') {
+            const stripeEmail = user.value?.email;
+            if (!stripeEmail) {
+                errorMessage.value = 'No email available for your account.';
+                return;
+            }
+
+            const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: stripeEmail });
+            window.location.href = response.data.url;
             return;
         }
 
-        try {
-            const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: stripeEmail })
-            window.location.href = response.data.url;
+        // For gifts, validate the recipient email
+        setRecipientEmailTouched(true);
+        const result = await validate();
 
-        } catch (error) {
-            console.error('Error creating checkout session:', error);
+        if (!result.valid) {
+            return;
         }
-        return;
-    }
 
-    // For gifts, validate the recipient email
-    setRecipientEmailTouched(true);
-    const result = await validate();
-
-    if (!result.valid) {
-        return;
-    }
-
-    try {
         const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: recipientEmail.value! });
-
-        // Redirect to Stripe payment page
         window.location.href = response.data.url;
     } catch (error) {
         console.error('Error creating checkout session:', error);
+        
+        if (axios.isAxiosError(error) && error.response) {
+            // Extract error message from backend response
+            errorMessage.value = error.response.data?.message || 'Failed to create checkout session. Please try again.';
+        } else {
+            errorMessage.value = 'An unexpected error occurred. Please try again.';
+        }
+    } finally {
+        isLoading.value = false;
     }
 };
 
