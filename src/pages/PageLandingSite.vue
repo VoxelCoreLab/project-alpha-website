@@ -73,7 +73,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-bold text-secondary mb-1">Intense Gameplay</h3>
-                                    <p class="text-base-content/80">Experience action and strategic combat in a
+                                    <p class="text-base-content/80">Experience action and strategic combat in an
                                         atmospheric, fantasy world.</p>
                                 </div>
                             </div>
