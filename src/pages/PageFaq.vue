@@ -4,7 +4,8 @@
             <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">FAQ</h1>
             <p class="text-sm">Here you can find the most frequently asked questions and answers about the game.</p>
             <div class="mt-4 grid gap-2">
-                <div v-for="(faq, index) in faqs" :key="index" tabindex="0" class="collapse collapse-arrow bg-base-100 border-secondary/40 border">
+                <div v-for="(faq, index) in faqs" :key="index" tabindex="0"
+                    class="collapse collapse-arrow bg-base-100 border-secondary/40 border">
                     <div class="collapse-title font-semibold">{{ faq.question }}</div>
                     <div class="collapse-content text-sm">
                         {{ faq.answer }}
@@ -49,10 +50,12 @@ const faqs: { question: string, answer: string }[] = [
         question: 'Which operating system is required?',
         answer: 'The game runs on Windows, Linux and MacOS.'
     },
+    /*
     {
         question: 'When will the game be released?',
         answer: 'The game is expected to be released in 2026.'
     }
+    */
 ]
 
 </script>
