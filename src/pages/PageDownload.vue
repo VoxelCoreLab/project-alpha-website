@@ -75,7 +75,7 @@
                             <div class="card-body items-center text-center">
                                 <IconApple class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Mac</h2>
-                                <p class="text-sm text-base-content/60 mb-4">macOS 10.15+</p>
+                                <p class="text-sm text-base-content/60 mb-4">Monterey 12 or newer</p>
                                 <button @click="handleDownload('mac')"
                                     :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
                                     class="btn btn-primary btn-block">
@@ -99,7 +99,7 @@
                             <div class="card-body items-center text-center">
                                 <IconLinux class="w-16 h-16 mb-4 text-primary" />
                                 <h2 class="card-title text-xl uppercase">Linux</h2>
-                                <p class="text-sm text-base-content/60 mb-4">Ubuntu 20.04+</p>
+                                <p class="text-sm text-base-content/60 mb-4">Ubuntu 22.04 or newer</p>
                                 <button @click="handleDownload('linux')"
                                     :disabled="!userOwnsGame || isCheckingLicense || downloadingPlatform !== null"
                                     class="btn btn-primary btn-block">
