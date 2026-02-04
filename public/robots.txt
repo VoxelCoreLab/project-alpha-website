@@ -2,4 +2,4 @@ user-agent: *
 disallow: /logout
 disallow: /payment-success
 disallow: /old
-Sitemap: http://shadowinfection.com/sitemap.xml
+sitemap: http://shadowinfection.com/sitemap.xml
