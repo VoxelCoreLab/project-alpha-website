@@ -10,6 +10,12 @@
  * ---------------------------------------------------------------
  */
 
+export interface ResponseDownloadLatestDto {
+  windows: string;
+  macos: string;
+  linux: string;
+}
+
 export interface ResponseDownloadUrlDto {
   url: string;
   versoin: string;
@@ -242,6 +248,23 @@ export class Api<
       }),
   };
   gameDownloads = {
+    /**
+     * No description
+     *
+     * @tags GameDownloads
+     * @name GameDownloadsControllerGetLatestGameVersions
+     * @request GET:/game-downloads/latest
+     */
+    gameDownloadsControllerGetLatestGameVersions: (
+      params: RequestParams = {},
+    ) =>
+      this.request<ResponseDownloadLatestDto, any>({
+        path: `/game-downloads/latest`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+
     /**
      * No description
      *

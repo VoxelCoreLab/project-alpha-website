@@ -62,7 +62,7 @@
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
                                     {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'windows' ?
-                                    'Downloading...' : 'Download' }}
+                                    'Downloading...' : 'Download Alpha v' + versions.windows }}
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'windows'"
                                         class="loading loading-spinner"></span>
                                 </button>
@@ -86,7 +86,7 @@
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
                                     {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'mac' ?
-                                    'Downloading...' : 'Download' }}
+                                    'Downloading...' : 'Download Alpha v' + versions.macos }}
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'mac'"
                                         class="loading loading-spinner"></span>
                                 </button>
@@ -110,7 +110,7 @@
                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                     </svg>
                                     {{ isCheckingLicense ? 'Checking...' : downloadingPlatform === 'linux' ?
-                                    'Downloading...' : 'Download' }}
+                                    'Downloading...' : 'Download Alpha v' + versions.linux }}
                                     <span v-if="isCheckingLicense || downloadingPlatform === 'linux'"
                                         class="loading loading-spinner"></span>
                                 </button>
@@ -148,7 +148,7 @@
     </LayoutBasic>
 </template>
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import IconWindows from '../components/IconWindows.vue';
@@ -171,6 +171,16 @@ const showNoLicenseModal = ref(false);
 const isCheckingLicense = ref(true);
 const downloadingPlatform = ref<'windows' | 'mac' | 'linux' | null>(null);
 
+var versions = reactive<{
+    windows: string | null;
+    macos: string | null;
+    linux: string | null;
+}>({
+    windows: null,
+    macos: null,
+    linux: null
+});
+
 const checkGameLicense = async () => {
     try {
         const result = await apiInstance.gameLicences.gameLicencesControllerGetMyLicence();
@@ -185,6 +195,17 @@ const checkGameLicense = async () => {
         showNoLicenseModal.value = true;
     } finally {
         isCheckingLicense.value = false;
+    }
+};
+
+const getLatestGameVersions = async () => {
+    try {
+        const result = await apiInstance.gameDownloads.gameDownloadsControllerGetLatestGameVersions();
+        versions.windows = result.data.windows;
+        versions.macos = result.data.macos;
+        versions.linux = result.data.linux;
+    } catch (error) {
+        console.error('Error fetching latest game versions:', error);
     }
 };
 
@@ -233,6 +254,7 @@ const goToCheckout = () => {
 
 onMounted(() => {
     checkGameLicense();
+    getLatestGameVersions();
 
     // Create intersection observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
