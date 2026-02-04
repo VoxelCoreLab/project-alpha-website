@@ -59,7 +59,7 @@ import { computed, ref } from 'vue'
 
 const breadcrumbs = [
     {
-        text: 'Fähigkeiten',
+        text: 'Skills',
         href: '/skills'
     }
 ]

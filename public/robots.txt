@@ -1,0 +1,12 @@
+# robots.txt for Project Alpha Website
+# Allow search engines to fully crawl the public site
+User-agent: *
+Allow: /
+
+# Block non-indexable or user-specific routes
+Disallow: /logout
+Disallow: /payment-success
+Disallow: /old
+
+# Provide sitemap to guide crawlers (keep this path; domain optional)
+Sitemap: /sitemap.xml
