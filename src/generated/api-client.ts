@@ -24,11 +24,17 @@ export interface ResponseDownloadUrlDto {
 export interface CreateCheckoutSessionDto {
   /** @format email */
   recipientEmail: string;
+  currency: "EUR" | "CHF" | "USD";
 }
 
 export interface CreateCheckoutSessionResponseDto {
   url: string;
   sessionId: string;
+}
+
+export interface ResponseGamePriceDto {
+  currency: string;
+  amount: number;
 }
 
 import type {
@@ -352,6 +358,22 @@ export class Api<
       this.request<void, any>({
         path: `/stripe/webhook`,
         method: "POST",
+        ...params,
+      }),
+  };
+  gamePrices = {
+    /**
+     * No description
+     *
+     * @tags GamePrices
+     * @name GamePricesControllerListGamePrices
+     * @request GET:/game-prices
+     */
+    gamePricesControllerListGamePrices: (params: RequestParams = {}) =>
+      this.request<ResponseGamePriceDto[], any>({
+        path: `/game-prices`,
+        method: "GET",
+        format: "json",
         ...params,
       }),
   };

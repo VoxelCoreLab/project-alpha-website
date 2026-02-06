@@ -123,17 +123,17 @@
                                     <div class="divider"></div>
 
                                     <!-- Price Preview Selector -->
-                                    <label class="form-control w-full mb-3">
-                                        <div class="label">
-                                            <span class="label-text text-sm">Preview pricing</span>
-                                        </div>
-                                        <select v-model="selectedCurrency" class="select select-bordered">
-                                            <option v-for="option in pricingOptions" :key="option.value"
-                                                :value="option.value">
-                                                {{ option.label }}
-                                            </option>
-                                        </select>
-                                    </label>
+                                    <label class="form-control grid pb-6">
+                                            <div class="label">
+                                                <span class="label-text text-sm">Preview pricing in</span>
+                                            </div>
+                                            <select v-model="selectedCurrency" class="select select-sm">
+                                                <option v-for="option in pricingOptions" :key="option.value"
+                                                    :value="option.value">
+                                                    {{ option.label }}
+                                                </option>
+                                            </select>
+                                        </label>
 
                                     <!-- Price Breakdown -->
                                     <div class="space-y-3">
@@ -296,7 +296,10 @@ const handleProceedToPayment = async () => {
                 return;
             }
 
-            const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: stripeEmail });
+            const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ 
+                recipientEmail: stripeEmail,
+                currency: selectedCurrency.value
+            });
             window.location.href = response.data.url;
             return;
         }
@@ -311,7 +314,10 @@ const handleProceedToPayment = async () => {
             return;
         }
 
-        const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ recipientEmail: recipientEmail.value! });
+        const response = await apiInstance.stripe.stripeControllerCreateCheckoutSession({ 
+            recipientEmail: recipientEmail.value!,
+            currency: selectedCurrency.value
+        });
         window.location.href = response.data.url;
     } catch (error) {
         console.error('Error creating checkout session:', error);

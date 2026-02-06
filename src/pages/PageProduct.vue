@@ -47,25 +47,24 @@
                                 <div class="divider"></div>
                                 <div class="flex items-center justify-between mb-4">
                                     <div>
-                                        <div class="pb-4">
-                                        <label class="form-control w-full max-w-xs">
+                                        <label class="form-control grid pb-4">
                                             <div class="label">
                                                 <span class="label-text text-sm">Preview pricing</span>
                                             </div>
-                                            <select v-model="selectedCurrency" class="select select-bordered">
+                                            <select v-model="selectedCurrency" class="select select-sm">
                                                 <option v-for="option in pricingOptions" :key="option.value"
                                                     :value="option.value">
                                                     {{ option.label }}
                                                 </option>
                                             </select>
                                         </label>
-                                        </div>
                                         <div class="badge badge-success badge-lg mb-2">
                                             Early Access - 25% OFF
                                         </div>
                                         <div class="flex items-baseline gap-3">
                                             <span class="text-4xl font-bold">{{ formattedSubtotal }}</span>
-                                            <span class="text-2xl text-base-content/50 line-through">{{ formattedOriginalPrice }}</span>
+                                            <span class="text-2xl text-base-content/50 line-through">{{
+                                                formattedOriginalPrice }}</span>
                                         </div>
                                     </div>
                                 </div>

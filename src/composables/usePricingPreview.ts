@@ -1,6 +1,6 @@
 import { computed, ref, watch } from 'vue';
 
-type CurrencyKey = 'eur' | 'usd' | 'chf';
+type CurrencyKey = 'EUR' | 'USD' | 'CHF';
 
 type PricingConfig = {
     currency: 'EUR' | 'USD' | 'CHF';
@@ -9,24 +9,24 @@ type PricingConfig = {
 };
 
 const pricingByCurrency: Record<CurrencyKey, PricingConfig> = {
-    eur: { currency: 'EUR', symbol: '€', price: 20 },
-    usd: { currency: 'USD', symbol: '$', price: 25 },
-    chf: { currency: 'CHF', symbol: 'CHF', price: 20 },
+    EUR: { currency: 'EUR', symbol: '€', price: 20 },
+    USD: { currency: 'USD', symbol: '$', price: 25 },
+    CHF: { currency: 'CHF', symbol: 'CHF', price: 20 },
 };
 
 const discountRate = 0.25;
 
 const pricingOptions = [
-    { value: 'eur', label: 'Default (EUR)' },
-    { value: 'usd', label: 'United States (USD)' },
-    { value: 'chf', label: 'Switzerland (CHF)' },
+    { value: 'EUR', label: 'EUR (Default)' },
+    { value: 'USD', label: 'USD (United States)' },
+    { value: 'CHF', label: 'CHF (Switzerland)' },
 ] as const;
 
 const storageKey = 'pricingPreviewCurrency';
 
 const getInitialCurrency = (): CurrencyKey => {
     if (typeof window === 'undefined') {
-        return 'eur';
+        return 'EUR';
     }
 
     const stored = window.localStorage.getItem(storageKey) as CurrencyKey | null;
@@ -34,7 +34,7 @@ const getInitialCurrency = (): CurrencyKey => {
         return stored;
     }
 
-    return 'eur';
+    return 'EUR';
 };
 
 const formatAmount = (amount: number, pricing: PricingConfig) => {
