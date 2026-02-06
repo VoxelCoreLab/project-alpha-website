@@ -122,19 +122,32 @@
 
                                     <div class="divider"></div>
 
+                                    <!-- Price Preview Selector -->
+                                    <label class="form-control w-full mb-3">
+                                        <div class="label">
+                                            <span class="label-text text-sm">Preview pricing</span>
+                                        </div>
+                                        <select v-model="selectedCurrency" class="select select-bordered">
+                                            <option v-for="option in pricingOptions" :key="option.value"
+                                                :value="option.value">
+                                                {{ option.label }}
+                                            </option>
+                                        </select>
+                                    </label>
+
                                     <!-- Price Breakdown -->
                                     <div class="space-y-3">
                                         <div class="flex justify-between text-base-content/80">
                                             <span>Original Price</span>
-                                            <span class="line-through">€20.00</span>
+                                            <span class="line-through">{{ formattedOriginalPrice }}</span>
                                         </div>
                                         <div class="flex justify-between text-success">
                                             <span>Early Access Discount (25%)</span>
-                                            <span>-€5.00</span>
+                                            <span>-{{ formattedDiscountAmount }}</span>
                                         </div>
                                         <div class="flex justify-between">
                                             <span>Subtotal</span>
-                                            <span>€15.00</span>
+                                            <span>{{ formattedSubtotal }}</span>
                                         </div>
                                     </div>
 
@@ -144,7 +157,7 @@
                                     <div class="space-y-2">
                                         <div class="flex justify-between items-center text-xl font-bold">
                                             <span>Estimated Total</span>
-                                            <span>€15.00</span>
+                                            <span>{{ formattedSubtotal }}</span>
                                         </div>
                                         <div class="alert bg-transparent text-base-content/50 py-2 px-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -211,8 +224,16 @@ import LayoutBasic from '../layouts/LayoutBasic.vue';
 import { getAuth } from 'firebase/auth';
 import { useApiInstance } from '../generated';
 import axios from 'axios';
+import { usePricingPreview } from '../composables/usePricingPreview';
 
 const purchaseType = ref<'self' | 'gift'>('self');
+const {
+    pricingOptions,
+    selectedCurrency,
+    formattedOriginalPrice,
+    formattedDiscountAmount,
+    formattedSubtotal,
+} = usePricingPreview();
 const auth = getAuth();
 const { user } = useAuth(auth);
 const apiInstance = useApiInstance();

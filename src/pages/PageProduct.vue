@@ -47,12 +47,25 @@
                                 <div class="divider"></div>
                                 <div class="flex items-center justify-between mb-4">
                                     <div>
+                                        <div class="pb-4">
+                                        <label class="form-control w-full max-w-xs">
+                                            <div class="label">
+                                                <span class="label-text text-sm">Preview pricing</span>
+                                            </div>
+                                            <select v-model="selectedCurrency" class="select select-bordered">
+                                                <option v-for="option in pricingOptions" :key="option.value"
+                                                    :value="option.value">
+                                                    {{ option.label }}
+                                                </option>
+                                            </select>
+                                        </label>
+                                        </div>
                                         <div class="badge badge-success badge-lg mb-2">
                                             Early Access - 25% OFF
                                         </div>
                                         <div class="flex items-baseline gap-3">
-                                            <span class="text-4xl font-bold">€15.00</span>
-                                            <span class="text-2xl text-base-content/50 line-through">€20.00</span>
+                                            <span class="text-4xl font-bold">{{ formattedSubtotal }}</span>
+                                            <span class="text-2xl text-base-content/50 line-through">{{ formattedOriginalPrice }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -313,8 +326,10 @@ import IconApple from '../components/IconApple.vue';
 import IconLinux from '../components/IconLinux.vue';
 import IconWindows from '../components/IconWindows.vue';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
+import { usePricingPreview } from '../composables/usePricingPreview';
 
 const router = useRouter();
+const { pricingOptions, selectedCurrency, formattedOriginalPrice, formattedSubtotal } = usePricingPreview();
 
 const handleCheckout = () => {
     router.push('/checkout');
