@@ -43,7 +43,7 @@
                             4. Preise und Zahlung
                         </h2>
                         <p>
-                            Alle Preise sind in Euro (EUR) angegeben und inklusive der gesetzlichen Mehrwertsteuer.
+                            Alle Preise sind in Euro (EUR), Schweizer Franken (CHF) oder US-Dollar (USD) angegeben und inklusive der gesetzlichen Mehrwertsteuer.
                             Die Zahlung erfolgt sicher über unseren Partner Stripe, der verschiedene Zahlungsmethoden
                             (z. B. Kreditkarte) anbietet.
                             Der Download des Spiels wird nach erfolgreicher Zahlung freigeschaltet.
@@ -52,7 +52,7 @@
 
                     <div class="grid gap-1">
                         <h2 class="text-lg font-bold">
-                            5.Lieferung (Download)
+                            5. Lieferung (Download)
                         </h2>
                         <p>
                             Nach erfolgreicher Bezahlung erhältst du Zugriff auf den Download-Link des Spiels.
@@ -67,8 +67,6 @@
                         <p>
                             Da es sich um digitale Inhalte handelt, die sofort nach dem Kauf verfügbar sind, besteht
                             kein Widerrufs- oder Rückgaberecht.
-                            Mit dem Abschluss des Kaufs stimmst du ausdrücklich zu, dass die Ausführung des Vertrags vor
-                            Ablauf der Widerrufsfrist beginnt und du dein Widerrufsrecht verlierst.
                         </p>
                     </div>
 
@@ -79,9 +77,6 @@
                         <p>Es ist nicht erlaubt:</p>
                         <ul class="list-inside list-disc">
                             <li>das Spiel zu kopieren, zu verbreiten oder öffentlich zugänglich zu machen,</li>
-                            <li>
-                                den Code, die Assets oder sonstige Bestandteile zu verändern oder weiterzuverwenden,
-                            </li>
                             <li>
                                 die Lizenz weiterzuverkaufen oder zu übertragen.
                             </li>
@@ -124,8 +119,7 @@
                         <h2 class="text-lg font-bold">11. Anwendbares Recht und Gerichtsstand</h2>
                         <p>
                             Es gilt ausschliesslich Schweizer Recht, unter Ausschluss des UN-Kaufrechts (CISG).
-                            Gerichtsstand ist Bern, Schweiz, sofern keine zwingenden gesetzlichen Vorschriften
-                            entgegenstehen.
+                            Gerichtsstand ist Bern, Schweiz.
                         </p>
                     </div>
 
@@ -139,7 +133,7 @@
                         </p>
                     </div>
 
-                    <p>Stand: November 2025</p>
+                    <p>Stand: März 2026</p>
                 </div>
             </div>
         </div>
