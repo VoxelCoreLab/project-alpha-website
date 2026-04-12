@@ -16,10 +16,13 @@
                         src="../assets/logo_accent.svg"></a>
             </div>
             <div class="navbar-center hidden md:flex md:flex-1">
-                <ul class="menu menu-horizontal px-1">
+                <ul class="menu menu-horizontal px-1 gap-1">
                     <li class="rounded" v-for="link in links" :key="link.name">
-                        <RouterLink :to="link.path" class="uppercase font-bold rounded" activeClass="text-primary">{{
-                            link.name }}</RouterLink>
+
+                        <RouterLink v-if="!link.external" :to="link.path" class="uppercase font-bold rounded" activeClass="text-primary"><span>{{ link.name }}</span></RouterLink>
+
+                        <a v-if="link.external" :href="link.path" class="uppercase font-bold rounded gap-0" target="_blank" rel="noopener noreferrer"><span>{{ link.name }}</span><IconExternalLink class="inline-block h-4 w-4" /></a>
+
                     </li>
                 </ul>
             </div>
@@ -69,6 +72,7 @@
 import { getAuth } from 'firebase/auth';
 import { useNavigationLinks } from '../composables/useNavigationLinks';
 import { useAuth } from '@vueuse/firebase';
+import IconExternalLink from './IconExternalLink.vue';
 
 const auth = getAuth();
 

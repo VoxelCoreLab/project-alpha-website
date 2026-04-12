@@ -18,7 +18,8 @@
                 </li>
                 <hr class="text-secondary/50 pb-3" />
                 <li v-for="link in links" :key="link.name">
-                    <RouterLink class="py-2 text-lg mx-2" :to="link.path" activeClass="bg-secondary/25" @click="() => closeDrawer()">{{ link.name }}</RouterLink>
+                    <RouterLink v-if="!link.external" class="py-2 text-lg mx-2" :to="link.path" activeClass="bg-secondary/25" @click="() => closeDrawer()">{{ link.name }}</RouterLink>
+                    <a v-if="link.external" class="py-2 text-lg mx-2 flex items-center gap-0" :href="link.path" target="_blank" rel="noopener noreferrer" @click="() => closeDrawer()">{{ link.name }}<IconExternalLink class="inline-block h-4 w-4" /></a>
                 </li>
             </ul>
         </div>
@@ -30,6 +31,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useNavigationLinks } from './composables/useNavigationLinks';
+import IconExternalLink from './components/IconExternalLink.vue';
 
 const { links } = useNavigationLinks();
 
