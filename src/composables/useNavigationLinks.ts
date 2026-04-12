@@ -7,7 +7,7 @@ export function useNavigationLinks() {
         { name: 'Skills', path: '/skills' },
         */
         { name: 'FAQ', path: '/faq', external: false },
-        { name: 'Feature Requests', path: 'https://shadowinfection.userjot.com', external: true }
+        { name: 'Feedback', path: 'https://shadowinfection.userjot.com', external: true }
     ]
     return {
         links
