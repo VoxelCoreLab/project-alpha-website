@@ -16,7 +16,7 @@
             <div class="relative z-10 text-center px-4 py-20">
                 <!-- Game Title Image -->
                 <div class="animate-fade-in">
-                    <img src="../assets/TitelLogoUpdate.png" alt="Shadow Infection Logo"
+                    <img src="../assets/ShadowInfectionTitel.webp" alt="Shadow Infection Logo"
                         class="mx-auto max-w-2xl w-full drop-shadow-2xl"
                         style="filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));" />
                 </div>
@@ -64,7 +64,7 @@
                         <div class="space-y-4 mt-8">
                             <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="100">
                                 <div
-                                    class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
+                                    class="shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -80,7 +80,7 @@
 
                             <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="200">
                                 <div
-                                    class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
+                                    class="shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -113,7 +113,7 @@
 
                             <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="300">
                                 <div
-                                    class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
+                                    class="shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -130,7 +130,7 @@
 
                             <div class="feature-item flex items-start gap-4 scroll-animate" data-animation="slide-left" data-delay="400">
                                 <div
-                                    class="flex-shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
+                                    class="shrink-0 w-10 h-10 bg-secondary/20 rounded-lg flex items-center justify-center">
                                     <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -157,7 +157,7 @@
                                 class="w-full h-auto" />
                             <!-- Glow Effect -->
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-base-300/20 to-transparent pointer-events-none">
+                                class="absolute inset-0 bg-linear-to-t from-base-300/20 to-transparent pointer-events-none">
                             </div>
                         </div>
                         <!-- Floating Badge -->

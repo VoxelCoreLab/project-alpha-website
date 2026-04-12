@@ -17,7 +17,7 @@
               <a href="/world-map"
                 class="btn btn-secondary btn-md lg:btn-xl inline-flex items-center gap-2 relative overflow-hidden group scale-100 hover:scale-103 transition-transform duration-300">
                 <span
-                  class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  class="absolute inset-0 bg-linear-to-r from-purple-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <span class="relative z-10">To the World Map</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 relative z-10" fill="none" viewBox="0 0 24 24"
                   stroke="currentColor" stroke-width="2">
@@ -58,10 +58,10 @@
     <div class="bg-base-100 pt-8 md:pt-16">
       <div class="max-w-6xl mx-auto relative">
         <div
-          class="absolute top-0 bottom-0 left-0 w-16 md:w-64 bg-gradient-to-r from-base-100 to-transparent pointer-events-none z-10">
+          class="absolute top-0 bottom-0 left-0 w-16 md:w-64 bg-linear-to-r from-base-100 to-transparent pointer-events-none z-10">
         </div>
         <div
-          class="absolute top-0 bottom-0 right-0 w-16 md:w-64 bg-gradient-to-l from-base-100 to-transparent pointer-events-none z-10">
+          class="absolute top-0 bottom-0 right-0 w-16 md:w-64 bg-linear-to-l from-base-100 to-transparent pointer-events-none z-10">
         </div>
         <Carousel :itemsToShow="2" :wrapAround="true" tabindex="-1">
           <Slide v-for="(slide, index) in characterSlides" :key="index">
