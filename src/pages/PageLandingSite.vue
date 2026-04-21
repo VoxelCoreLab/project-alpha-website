@@ -44,6 +44,29 @@
             -->
         </section>
 
+        <!-- Game Vision Section -->
+        <section class="vision-section py-20 bg-base-100">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-left scroll-animate" data-animation="fade-up">
+                    <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
+                        Game Vision
+                    </h2>
+                    <p class="text-lg text-base-content/90 leading-relaxed">
+                        The vision for this game is to recapture the feeling of shared evenings with friends, where playing together is at the heart of the experience. It is built around the idea that games are not only about progression or challenge, but about the moments created between players.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        Character design is centered on player freedom. Each player can shape their own playstyle through a wide range of abilities and weapons, allowing for personal expression. Combat is intended to feel fast, fluid, and responsive, encouraging experimentation and mastery.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        The world is set in a fantasy setting filled with dangerous foes and powerful bosses that demand cooperation and strategy. While the core of the experience is strongly focused on cooperative play, the game also offers a variety of PvP modes.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        This is a game designed to be enjoyed together. Where the mechanics support the social experience.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Game Features Section -->
         <section class="features-section py-20 bg-base-200">
             <div class="container mx-auto px-4">
@@ -145,7 +168,7 @@
                             </div>
                             <!-- Call To Action inside Features -->
                             <RouterLink to="/product" class="btn btn-accent btn-lg uppercase scroll-animate" data-animation="fade-up" data-delay="500">
-                                Buy Game
+                                Support This Game
                             </RouterLink>
                         </div>
                     </div>
