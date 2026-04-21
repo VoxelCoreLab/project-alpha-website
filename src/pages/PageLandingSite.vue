@@ -58,11 +58,33 @@
                         Character design is centered on player freedom. Each player can shape their own playstyle through a wide range of abilities and weapons, allowing for personal expression. Combat is intended to feel fast, fluid, and responsive, encouraging experimentation and mastery.
                     </p>
                     <p class="text-lg text-base-content/90 leading-relaxed mt-6">
-                        The world is set in a fantasy setting filled with dangerous foes and powerful bosses that demand cooperation and strategy. While the core of the experience is strongly focused on cooperative play, the game also offers a variety of PvP modes.
+                        The world is set in a fantasy setting filled with dangerous foes and powerful bosses that demand cooperation and strategy. The core of the experience is strongly focused on cooperative play.
                     </p>
                     <p class="text-lg text-base-content/90 leading-relaxed mt-6">
                         This is a game designed to be enjoyed together. Where the mechanics support the social experience.
                     </p>
+                    
+                    <!-- Alternative Vision Statement -->
+                    <!--
+                    <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
+                        Game Vision
+                    </h2>
+                    <p class="text-lg text-base-content/90 leading-relaxed">
+                        The vision for this game is to recapture the feeling of shared evenings with friends, where playing together is at the heart of the experience.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        A cooperative PvE game focused on build synergy and team play.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        Players create unique builds through abilities and weapons. The goal is not just individual strength, but how builds interact and support each other.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        Combat is fast and requires coordination. Enemies and bosses are designed to force teamwork, adaptation, and role synergy.
+                    </p>
+                    <p class="text-lg text-base-content/90 leading-relaxed mt-6">
+                        The fantasy setting provides repeatable challenges that encourage experimenting with different builds and strategies.
+                    </p>
+                    -->
                 </div>
             </div>
         </section>
