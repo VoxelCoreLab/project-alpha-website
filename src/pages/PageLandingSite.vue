@@ -23,8 +23,8 @@
 
                 <!-- Call to Action -->
                 <div class="animate-fade-in-delay">
-                    <p class="mb-12 font-cinzel font-black italic uppercase text-base-content/80 text-xl">
-                        Shadow Infection – a co-op PvE moba where you try<br /> to survive hords of enemies as long as possible.
+                    <p class="mb-12 font-cinzel font-black italic uppercase text-base-content/80 text-xl mx-auto max-w-3xl">
+                        Shadow Infection – a 1-5 player co-op PvE moba where you try to survive hords of enemies as long as possible.
                     </p>
                     <RouterLink to="/product"
                         class="btn btn-accent btn-xl shadow-2xl uppercase">
