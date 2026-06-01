@@ -20,8 +20,8 @@
                             </div>
 
                             <div v-if="resetSuccess" class="alert alert-success shadow-lg mb-4" role="status" aria-live="polite">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m2 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                                 <div>
                                     <p>{{ resetSuccess }}</p>
