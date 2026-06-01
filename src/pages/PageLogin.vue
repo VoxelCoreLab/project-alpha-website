@@ -91,9 +91,9 @@
 
                                 <!-- Remember Me & Forgot Password -->
                                 <div class="flex items-center justify-end">
-                                    <a href="#" class="link link-primary text-sm" @click.prevent="handleForgotPassword">
+                                    <router-link to="/forgot-password" class="link link-primary text-sm">
                                         Forgot password?
-                                    </a>
+                                    </router-link>
                                 </div>
 
                                 <!-- Submit Button -->
@@ -291,11 +291,5 @@ const handleGoogleSignIn = async () => {
     } finally {
         isSubmitting.value = false
     }
-}
-
-const handleForgotPassword = () => {
-    // TODO: Implement forgot password functionality
-    console.log('Forgot password clicked')
-    alert('Password reset functionality will be implemented soon. Please contact support at voxelcorelab@gmail.com')
 }
 </script>

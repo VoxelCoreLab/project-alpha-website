@@ -25,6 +25,9 @@ const router = createRouter({
         {
             path: '/login', component: () => import('../pages/PageLogin.vue')
         },
+        {
+            path: '/forgot-password', component: () => import('../pages/PageForgotPassword.vue')
+        },
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },
