@@ -16,6 +16,12 @@
 
                             <!-- Registration Form -->
                             <form @submit.prevent="handleRegister" class="space-y-6">
+                                <div v-if="registerError" class="alert alert-error shadow-lg" role="alert" aria-live="assertive">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>{{ registerError }}</span>
+                                </div>
                                 <!-- Email Field -->
                                 <div class="form-control">
                                     <label class="input w-full floating-label"
@@ -257,6 +263,7 @@ const touched = reactive({
 const showPassword = ref(false)
 const showConfirmPassword = ref(false)
 const isSubmitting = ref(false)
+const registerError = ref('')
 
 const errors = computed(() => {
     const err: Record<string, string> = {}
@@ -292,12 +299,32 @@ const isFormValid = computed(() => {
     return result.success && formData.acceptTerms
 })
 
+const mapRegisterError = (error: unknown) => {
+    const code = typeof error === 'object' && error !== null && 'code' in error ? (error as { code?: string }).code : undefined
+
+    switch (code) {
+        case 'auth/email-already-in-use':
+            return 'That email is already in use. Please sign in or use a different email.'
+        case 'auth/invalid-email':
+            return 'Please enter a valid email address.'
+        case 'auth/weak-password':
+            return 'Password is too weak. Use at least 8 characters.'
+        case 'auth/operation-not-allowed':
+            return 'Registration is currently unavailable. Please try again later.'
+        case 'auth/invalid-credential':
+            return 'The credentials provided are invalid. Please try again.'
+        default:
+            return error instanceof Error ? error.message : 'Registration failed. Please try again.'
+    }
+}
+
 const handleRegister = async () => {
     // Mark all fields as touched
     touched.email = true
     touched.username = true
     touched.password = true
     touched.confirmPassword = true
+    registerError.value = ''
 
     if (!isFormValid.value) {
         return
@@ -319,8 +346,8 @@ const handleRegister = async () => {
         // For now, redirect to home or login
         router.push(redirectPath.value || '/')
     } catch (error) {
+        registerError.value = mapRegisterError(error)
         console.error('Registration failed:', error)
-        // TODO: Show error message to user
     } finally {
         isSubmitting.value = false
     }

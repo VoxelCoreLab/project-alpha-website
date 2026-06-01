@@ -14,6 +14,12 @@
                             </div>
                             <!-- Login Form -->
                             <form @submit.prevent="handleLogin" class="space-y-6">
+                                <div v-if="loginError" class="alert alert-error shadow-lg" role="alert" aria-live="assertive">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>{{ loginError }}</span>
+                                </div>
                                 <!-- Email Field -->
                                 <div class="form-control">
                                     <label class="input w-full floating-label"
@@ -29,7 +35,7 @@
                                         </svg>
                                         <input class="text-base" type="email" name="email" v-model="formData.email"
                                             @blur="touched.email = true" placeholder="your.email@example.com"
-                                            autocomplete="email" require :disabled="isSubmitting" />
+                                            autocomplete="email" required :disabled="isSubmitting" />
                                     </label>
                                     <div v-if="touched.email && errors.email" class="text-error mt-2" role="alert"
                                         aria-live="assertive">
@@ -196,6 +202,7 @@ const touched = reactive({
 
 const showPassword = ref(false)
 const isSubmitting = ref(false)
+const loginError = ref('')
 
 const errors = computed(() => {
     const err: Record<string, string> = {}
@@ -227,10 +234,32 @@ const isFormValid = computed(() => {
     return result.success
 })
 
+const mapAuthError = (error: unknown) => {
+    const code = typeof error === 'object' && error !== null && 'code' in error ? (error as { code?: string }).code : undefined
+
+    switch (code) {
+        case 'auth/user-not-found':
+            return 'No account was found with that email address.'
+        case 'auth/wrong-password':
+            return 'The password is invalid. Please try again.'
+        case 'auth/invalid-email':
+            return 'Please enter a valid email address.'
+        case 'auth/invalid-credential':
+            return 'The credentials provided are invalid. Please try signing in again.'
+        case 'auth/too-many-requests':
+            return 'Too many failed attempts. Please try again later.'
+        case 'auth/popup-closed-by-user':
+            return 'Google sign-in was cancelled. Please try again.'
+        default:
+            return error instanceof Error ? error.message : 'Sign in failed. Please try again.'
+    }
+}
+
 const handleLogin = async () => {
     // Mark all fields as touched
     touched.email = true
     touched.password = true
+    loginError.value = ''
 
     if (!isFormValid.value) {
         return
@@ -240,24 +269,27 @@ const handleLogin = async () => {
 
     try {
         await signInWithEmailAndPassword(auth, formData.email, formData.password)
-
         router.push(redirectPath.value || '/')
     } catch (error) {
+        loginError.value = mapAuthError(error)
         console.error('Login failed:', error)
-
-        isSubmitting.value = false
     } finally {
+        isSubmitting.value = false
     }
 }
 
 const handleGoogleSignIn = async () => {
+    loginError.value = ''
+    isSubmitting.value = true
+
     try {
         await signInWithPopup(auth, new GoogleAuthProvider())
-        isSubmitting.value = true
         router.push(redirectPath.value || '/')
     } catch (error) {
-        isSubmitting.value = false
+        loginError.value = mapAuthError(error)
+        console.error('Google sign-in failed:', error)
     } finally {
+        isSubmitting.value = false
     }
 }
 
