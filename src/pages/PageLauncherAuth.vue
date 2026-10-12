@@ -5,7 +5,7 @@ const state = params.get('state')
 const ready = Boolean(code && state)
 
 if (code && state) {
-  const target = new URL('shadowinfection://auth/callback')
+  const target = new URL('shadowinfection-launcher://auth/callback')
   target.searchParams.set('code', code)
   target.searchParams.set('state', state)
   window.location.replace(target.toString())
