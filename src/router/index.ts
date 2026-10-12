@@ -26,6 +26,10 @@ const router = createRouter({
             path: '/login', component: () => import('../pages/PageLogin.vue')
         },
         {
+            path: '/auth/launcher',
+            component: () => import('../pages/PageLauncherAuth.vue'),
+        },
+        {
             path: '/forgot-password', component: () => import('../pages/PageForgotPassword.vue')
         },
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
