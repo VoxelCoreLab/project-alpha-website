@@ -12,7 +12,7 @@
                         </svg>
                     </label>
                 </div>
-                <a class="btn btn-ghost text-xl rounded" href="/"><img class="h-8 w-8" alt=""
+                <a class="btn btn-ghost text-xl rounded" href="/" aria-label="Zur Startseite"><img class="h-8 w-8" alt=""
                         src="/icons/128x128.png"></a>
             </div>
             <div class="navbar-center hidden md:flex md:flex-1">
