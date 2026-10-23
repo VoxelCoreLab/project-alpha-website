@@ -4,7 +4,7 @@
         <section class="hero-section relative min-h-[80vh] flex items-center justify-center overflow-hidden">
             <!-- Video Background -->
             <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
-                <video autoplay muted loop playsinline class="absolute min-w-full min-h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <video autoplay muted loop playsinline preload="auto" class="absolute min-w-full min-h-full object-cover top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <source src="../assets/video/video-background.mp4" type="video/mp4" />
                     <!--<source src="/video/hero-background.webm" type="video/webm" />-->
                 </video>
