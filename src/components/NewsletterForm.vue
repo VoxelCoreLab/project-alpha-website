@@ -29,7 +29,7 @@
       </form>
       <h3 class="text-lg font-cinzel font-black italic uppercase md:text-2xl">Subscribed to Newsletter</h3>
       <p class="py-4">You have successfully subscribed to the newsletter!</p>
-      <img alt="" src="../assets/adler.webp" class="h-40 w-40 mx-auto mt-4" />
+      <img alt="" src="../assets/adler.webp" width="1024" height="1083" class="h-40 w-auto mx-auto mt-4" />
       <div class="modal-action">
         <form method="dialog">
           <!-- if there is a button in form, it will close the modal -->
