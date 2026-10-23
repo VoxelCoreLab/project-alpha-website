@@ -12,8 +12,8 @@
                         </svg>
                     </label>
                 </div>
-                <a class="btn btn-ghost text-xl rounded" href="/" aria-label="Zur Startseite"><img class="h-8 w-8" alt=""
-                        src="/icons/128x128.png"></a>
+                <a class="btn btn-ghost text-xl rounded" href="/" aria-label="Zur Startseite"><img class="h-8 w-8" alt="" width="32" height="32"
+                        src="/icons/64x64.webp"></a>
             </div>
             <div class="navbar-center hidden md:flex md:flex-1">
                 <ul class="menu menu-horizontal px-1 gap-1">
