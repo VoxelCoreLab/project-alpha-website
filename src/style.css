@@ -85,3 +85,7 @@
     --font-cinzel: "Cinzel", serif;
     --font-merriweather-sans: "Merriweather_Sans", sans-serif;
 }
+html,
+body {
+  overflow-x: clip;
+}
