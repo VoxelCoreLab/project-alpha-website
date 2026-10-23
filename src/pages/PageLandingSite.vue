@@ -16,7 +16,7 @@
             <div class="relative z-10 text-center px-4 py-20">
                 <!-- Game Title Image -->
                 <div class="animate-fade-in">
-                    <img src="../assets/ShadowInfectionTitel.webp" alt="Shadow Infection Logo"
+                    <img src="../assets/brand/shadow-infection-logo.webp" alt="Shadow Infection Logo"
                         class="mx-auto max-w-2xl w-full drop-shadow-2xl"
                         style="filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));" />
                 </div>
