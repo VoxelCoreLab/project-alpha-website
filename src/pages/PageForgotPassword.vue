@@ -6,7 +6,7 @@
                     <div class="card bg-base-100 shadow-xl">
                         <div class="card-body">
                             <div class="max-w-2xl mb-6">
-                                <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
+                                <h1 class="text-4xl md:text-5xl font-cinzel font-black italic uppercase text-secondary mb-2">
                                     Reset Password
                                 </h1>
                                 <p class="text-base-content/60">Enter your email and we'll send you a reset link.</p>

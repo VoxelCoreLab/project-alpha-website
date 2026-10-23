@@ -4,7 +4,7 @@
         <section class="pt-12 bg-base-100">
             <div class="container mx-auto px-4">
                 <div class="max-w-5xl mx-auto text-center scroll-animate" data-animation="fade-up">
-                    <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-4">
+                    <h1 class="text-4xl md:text-5xl font-cinzel font-black italic uppercase text-secondary mb-4">
                         Download Shadow Infection
                     </h1>
                     <p class="text-lg text-base-content/60">Choose your platform and start playing</p>
@@ -120,7 +120,7 @@
 
                     <!-- Unlock with Purchase CTA -->
                     <div v-if="!userOwnsGame && !isCheckingLicense" class="mt-12 p-8 bg-linear-to-r from-primary/20 to-secondary/20 rounded-lg border-2 border-primary/50 text-center scroll-animate" data-animation="fade-up" data-delay="250">
-                        <h3 class="text-2xl font-cinzel font-bold italic uppercase text-secondary mb-3">
+                        <h3 class="text-2xl font-cinzel font-black italic uppercase text-secondary mb-3">
                             Unlock Downloads
                         </h3>
                         <p class="text-base-content/80 mb-6">
@@ -135,7 +135,7 @@
                     <!-- System Requirements -->
                     <div class="mt-12 text-center scroll-animate" data-animation="fade-up" data-delay="300">
                         <div class="divider"></div>
-                        <h3 class="text-xl font-cinzel font-bold italic uppercase text-secondary mb-4">System
+                        <h3 class="text-xl font-cinzel font-black italic uppercase text-secondary mb-4">System
                             Requirements</h3>
                         <p class="text-sm text-base-content/70 max-w-2xl mx-auto">
                             Make sure your system meets the minimum requirements.

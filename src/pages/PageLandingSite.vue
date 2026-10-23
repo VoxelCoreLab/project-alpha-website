@@ -28,7 +28,7 @@
                     </p>
                     <RouterLink to="/product"
                         class="btn btn-accent btn-xl shadow-2xl uppercase">
-                        Support This Game
+                       Play Now
                     </RouterLink>
                 </div>
             </div>
@@ -48,7 +48,7 @@
         <section class="vision-section py-20 bg-base-100">
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto text-left scroll-animate" data-animation="fade-up">
-                    <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
+                    <h2 class="text-5xl font-cinzel font-black italic uppercase text-secondary mb-8">
                         Game Vision
                     </h2>
                     <p class="text-lg text-base-content/90 leading-relaxed">
@@ -66,7 +66,7 @@
                     
                     <!-- Alternative Vision Statement -->
                     <!--
-                    <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
+                    <h2 class="text-5xl font-cinzel font-black italic uppercase text-secondary mb-8">
                         Game Vision
                     </h2>
                     <p class="text-lg text-base-content/90 leading-relaxed">
@@ -95,7 +95,7 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
                     <!-- Left Side - Features Content -->
                     <div class="space-y-6 scroll-animate" data-animation="slide-left">
-                        <h2 class="text-5xl font-cinzel font-bold italic uppercase text-secondary mb-8">
+                        <h2 class="text-5xl font-cinzel font-black italic uppercase text-secondary mb-8">
                             Game Features
                         </h2>
                         <!--
@@ -229,7 +229,7 @@
             -->
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-2xl mx-auto text-center scroll-animate" data-animation="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-6">
+                    <h2 class="text-4xl md:text-5xl font-cinzel font-black italic uppercase text-secondary mb-6">
                         Newsletter
                     </h2>
                     <p class="text-lg text-base-content/80 mb-8">

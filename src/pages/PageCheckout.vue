@@ -4,7 +4,7 @@
         <section class="py-12 bg-linear-to-b from-base-300 to-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto scroll-animate" data-animation="fade-up">
-                    <h1 class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-secondary mb-2">
+                    <h1 class="text-4xl md:text-5xl font-cinzel font-black italic uppercase text-secondary mb-2">
                         Checkout
                     </h1>
                     <p class="text-base-content/60">Complete your purchase of Shadow Infection</p>

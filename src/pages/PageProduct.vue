@@ -12,7 +12,7 @@
                                 class="w-full h-full object-cover object-top border-accent/10 border-4 rounded-xl" />
                         </div>
                         <!-- Platforms Badge -->
-                        <h2 class="mt-4 text-center font-cinzel font-bold italic">Supported Platforms</h2>
+                        <h2 class="mt-4 text-center font-cinzel font-black italic">Supported Platforms</h2>
                         <div class="mt-2 flex gap-2 justify-center">
                             <div class="badge rounded-xl md:badge-lg gap-2 p-2 md:p-4">
                                 <IconWindows class="w-5 h-5 p-0.5" />
@@ -36,7 +36,7 @@
                             <div class="card-body">
                                 <div>
                                     <h1
-                                        class="text-4xl md:text-5xl font-cinzel font-bold italic uppercase text-base-content mb-4">
+                                        class="text-4xl md:text-5xl font-cinzel font-black italic uppercase text-base-content mb-4">
                                         Shadow Infection
                                     </h1>
                                     <p class="text-xl text-base-content/80">
@@ -149,7 +149,7 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate"
+                    <h2 class="text-4xl font-cinzel font-black italic uppercase text-secondary mb-8 text-center scroll-animate"
                         data-animation="fade-up">About
                         the Game</h2>
 
@@ -236,7 +236,7 @@
         <section class="py-20 bg-base-200">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-8 text-center scroll-animate"
+                    <h2 class="text-4xl font-cinzel font-black italic uppercase text-secondary mb-8 text-center scroll-animate"
                         data-animation="fade-up">
                         System Requirements
                     </h2>
@@ -302,7 +302,7 @@
         <!--
         <section class="py-20 bg-gradient-to-b from-base-200 to-base-300">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl font-cinzel font-bold italic uppercase text-secondary mb-6">
+                <h2 class="text-4xl font-cinzel font-black italic uppercase text-secondary mb-6">
                     Ready to Enter the World of Shadow Infection?
                 </h2>
                 <p class="text-xl text-base-content/80 mb-8 max-w-2xl mx-auto">

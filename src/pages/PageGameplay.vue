@@ -6,7 +6,7 @@
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
             </div>
             <div class="max-w-6xl mx-auto px-4 relative z-10">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-cinzel font-bold italic text-center mb-6 uppercase">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-cinzel font-black italic text-center mb-6 uppercase">
                     How It Works
                 </h1>
                 <p class="text-xl md:text-2xl text-center text-base-content/80 max-w-3xl mx-auto">
@@ -48,7 +48,7 @@
         <!-- Game Modes -->
         <div class="bg-base-300 py-16 md:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl md:text-6xl font-cinzel font-bold italic text-center mb-12 uppercase">Game Modes</h2>
+                <h2 class="text-4xl md:text-6xl font-cinzel font-black italic text-center mb-12 uppercase">Game Modes</h2>
                 
                 <!-- Zombie Mode -->
                 <div class="mb-16 bg-base-200 rounded-lg overflow-hidden border border-base-300">
@@ -175,7 +175,7 @@
         <!-- Abilities & Loadouts -->
         <div class="bg-base-100 py-16 md:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl md:text-6xl font-cinzel font-bold italic text-center mb-6 uppercase">Abilities & Loadouts</h2>
+                <h2 class="text-4xl md:text-6xl font-cinzel font-black italic text-center mb-6 uppercase">Abilities & Loadouts</h2>
                 <p class="text-center text-xl text-base-content/80 max-w-3xl mx-auto mb-12">
                     Build your perfect loadout with a combination of offensive, defensive, and support abilities.
                 </p>
@@ -275,7 +275,7 @@
         <!-- Progression System -->
         <div class="bg-base-200 py-16 md:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl md:text-6xl font-cinzel font-bold italic text-center mb-6 uppercase">Progression</h2>
+                <h2 class="text-4xl md:text-6xl font-cinzel font-black italic text-center mb-6 uppercase">Progression</h2>
                 <p class="text-center text-xl text-base-content/80 max-w-3xl mx-auto mb-12">
                     Earn Essence through matches to unlock new abilities, cosmetics, and customization options.
                 </p>
@@ -324,7 +324,7 @@
         <!-- The World of Umbra -->
         <div class="bg-base-300 py-16 md:py-24">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-4xl md:text-6xl font-cinzel font-bold italic text-center mb-6 uppercase">The World of Umbra</h2>
+                <h2 class="text-4xl md:text-6xl font-cinzel font-black italic text-center mb-6 uppercase">The World of Umbra</h2>
                 <div class="max-w-3xl mx-auto">
                     <p class="text-xl text-center text-base-content/80 mb-8">
                         A realm corrupted by shadow magic, where brave Guardians stand as the last line of defense against the spreading darkness.
@@ -364,7 +364,7 @@
         <!-- CTA Section -->
         <div class="bg-gradient-to-b from-base-200 to-base-300 py-16 md:py-24">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-cinzel font-bold italic mb-6 uppercase">Ready to Become a Guardian?</h2>
+                <h2 class="text-4xl md:text-5xl font-cinzel font-black italic mb-6 uppercase">Ready to Become a Guardian?</h2>
                 <p class="text-xl text-base-content/80 mb-8">
                     Join the fight against the shadow infection and save the world of Umbra.
                 </p>
