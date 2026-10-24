@@ -3,6 +3,9 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import { setupFirebase } from './bootstrap/firebase'
+import { setupTrustedTypes } from './bootstrap/trustedTypes'
+
+setupTrustedTypes()
 
 async function bootstrap() {
     await setupFirebase({
