@@ -2,7 +2,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PageLandingSite from '../pages/PageLandingSite.vue'
 import { getAuth } from 'firebase/auth'
-import { useAuth } from '@vueuse/firebase'
 
 declare module 'vue-router' {
     interface RouteMeta {
@@ -73,11 +72,14 @@ const router = createRouter({
 })
 
 
-router.beforeEach((to, _from) => {
-  const { isAuthenticated } = useAuth(getAuth())
+router.beforeEach(async (to, _from) => {
+  const auth = getAuth()
   // instead of having to check every route record with
   // to.matched.some(record => record.meta.requiresAuth)
-  if (to.meta.requiresAuth && !isAuthenticated.value) {
+  if (!to.meta.requiresAuth) return
+  // only protected routes need to wait for the persisted user to be resolved
+  await auth.authStateReady()
+  if (!auth.currentUser) {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
     return {

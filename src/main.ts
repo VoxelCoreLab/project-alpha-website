@@ -8,7 +8,7 @@ import { setupTrustedTypes } from './bootstrap/trustedTypes'
 setupTrustedTypes()
 
 async function bootstrap() {
-    await setupFirebase({
+    setupFirebase({
         apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
         authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
         projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
