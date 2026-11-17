@@ -92,6 +92,9 @@
             </div>
         </section>
 
+        <!-- Build Showcase Section -->
+        <BuildShowcase class="border-t border-base-200" />
+
         <!-- Game Features Section -->
         <section class="features-section py-20 bg-base-200">
             <div class="container mx-auto px-4">
@@ -276,6 +279,7 @@
 import { onMounted, onUnmounted } from 'vue';
 import LayoutBasic from '../layouts/LayoutBasic.vue';
 import NewsletterForm from '../components/NewsletterForm.vue';
+import BuildShowcase from '../components/builds/BuildShowcase.vue';
 
 let observer: IntersectionObserver | null = null;
 

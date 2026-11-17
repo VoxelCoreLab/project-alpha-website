@@ -34,6 +34,7 @@ const router = createRouter({
         { path: '/world-map', component: () => import('../pages/PageWorldMap.vue') },
         { path: '/game-process', component: () => import('../pages/PageGameProcess.vue') },
         { path: '/skills', component: () => import('../pages/PageSkills.vue') },
+        { path: '/builds', component: () => import('../pages/PageBuilds.vue') },
         { path: '/characters', component: () => import('../pages/PageCharacters.vue') },
         { path: '/characters/:characterId', component: () => import('../pages/PageCharacter.vue') },
         { path: '/gameplay', component: () => import('../pages/PageGameplay.vue') },

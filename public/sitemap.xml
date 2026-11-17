@@ -17,6 +17,10 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shadowinfection.com/builds</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://shadowinfection.com/gameplay</loc>
     <priority>0.6</priority>
   </url>
